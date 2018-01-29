@@ -99,6 +99,66 @@ public class AlphabetFragment extends BaseFragment {
 
         alphabetModel = new AlphabetModel("F","f","FISH",R.drawable.ladybug);
         alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("G","g","GOAT",R.drawable.schedule);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("H","h","HORSE",R.drawable.hamburger);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("I","i","ICE CREAM",R.drawable.pencils);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("J","j","JUICE",R.drawable.shark);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("K","k","KITE",R.drawable.bed);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("L","l","LION",R.drawable.ladybug);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("M","m","MONKEY",R.drawable.cow);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("N","n","NEST",R.drawable.computer);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("O","o","ORANGE",R.drawable.dove);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("P","p","PARROT",R.drawable.teapot);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("Q","q","QUEEN",R.drawable.guitar);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("R","r","RABBIT",R.drawable.ladybug);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("S","s","SUN",R.drawable.alphabet);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("T","t","TIGER",R.drawable.tiger);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("U","u","UMBRELLA",R.drawable.bus);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("V","v","VAN",R.drawable.football);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("W","w","WATCH",R.drawable.guitar);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("X","x","XYLOPHONE",R.drawable.ladybug);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("Y","y","YAK",R.drawable.number);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("Z","z","ZEBRA",R.drawable.ladybug);
+        alphabetModels.add(alphabetModel);
     }
 
     private void initPager(){
