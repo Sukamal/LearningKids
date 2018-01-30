@@ -305,9 +305,6 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new FlatImageModel("ONION",R.drawable.onion);
         flatImageList.add(flatImageModel);
 
-        flatImageModel = new FlatImageModel("ZINNIA",R.drawable.zinnia);
-        flatImageList.add(flatImageModel);
-
         flatImageModel = new FlatImageModel("BITTER GOURD",R.drawable.bittergourd);
         flatImageList.add(flatImageModel);
 
