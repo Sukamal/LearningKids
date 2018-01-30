@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
@@ -75,27 +74,35 @@ public class HomeActivity extends AppCompatActivity {
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("COLOURS",R.drawable.color,R.color.color3,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.COLOR.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("SHAPES",R.drawable.shape,R.color.color4,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.SHAPE.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("FLOWERS",R.drawable.flower,R.color.color5,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.FLOWER.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("FRUITS",R.drawable.fruit,R.color.color6,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.FRUIT.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("VEGETABLES",R.drawable.carrot,R.color.color7,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.VEGETABLE.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("DOMESTIC ANIMALS",R.drawable.cow,R.color.color8,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.DOMESTICANIMAL.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("WILD ANIMALS",R.drawable.tiger,R.color.color9,R.color.color_11);
+        menuModel = new MenuModel("WILD ANIMALS",R.drawable.tiger_i,R.color.color9,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.WILDANIMAL.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("BIRDS",R.drawable.dove,R.color.color10,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.BIRD.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("INSECTS REPTILES & AMPHIBIANS",R.drawable.ladybug,R.color.color1,R.color.color_11);

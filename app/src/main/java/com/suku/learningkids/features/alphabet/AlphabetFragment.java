@@ -1,21 +1,21 @@
 package com.suku.learningkids.features.alphabet;
 
 import android.os.Bundle;
-import android.os.Handler;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.features.BaseFragment;
+import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,9 +37,13 @@ public class AlphabetFragment extends BaseFragment {
 
     @BindView(R.id.vp_alphabet_vp)
     ViewPager vpAlphabetVp;
+    @BindView(R.id.rv_alphabet_list)
+    RecyclerView rvAlphabetList;
 
     private AlphabetPagerAdapter pagerAdapter;
-    ArrayList<AlphabetModel> alphabetModels;
+    private AlphabetListAdapter listAdapter;
+    private ArrayList<AlphabetModel> alphabetModels;
+    private TextToSpeech textToSpeech;
 
 
     @Nullable
@@ -47,10 +51,10 @@ public class AlphabetFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_alphabet,container,false);
         ButterKnife.bind(this,view);
-        setAlphabets();
-        initPager();
+        initItems();
         return view;
     }
+
 
     @Override
     public void onResume() {
@@ -58,6 +62,158 @@ public class AlphabetFragment extends BaseFragment {
 
 //        applyAnimation();
     }
+
+    private void initItems(){
+        setAlphabets();
+        initTextToSpeach();
+        initPager();
+        initAlphabetRecyclerView();
+
+    }
+
+
+
+    private void setAlphabets(){
+        alphabetModels = new ArrayList<>();
+
+        AlphabetModel alphabetModel;
+
+        alphabetModel = new AlphabetModel("A","a","APPLE",R.drawable.apple);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("B","b","BALL",R.drawable.ball);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("C","c","CAT",R.drawable.cat);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("D","d","DOG",R.drawable.dog);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("E","e","ELEPHANT",R.drawable.elephant);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("F","f","FISH",R.drawable.fish);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("G","g","GOAT",R.drawable.goat);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("H","h","HORSE",R.drawable.horse);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("I","i","ICE CREAM",R.drawable.ice_cream);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("J","j","JUICE",R.drawable.juice);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("K","k","KITE",R.drawable.kite);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("L","l","LION",R.drawable.lion);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("M","m","MONKEY",R.drawable.monkey);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("N","n","NEST",R.drawable.nest);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("O","o","ORANGE",R.drawable.orange);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("P","p","PARROT",R.drawable.parrot);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("Q","q","QUEEN",R.drawable.queen);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("R","r","RABBIT",R.drawable.rabbit);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("S","s","SHIP",R.drawable.ship);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("T","t","TIGER",R.drawable.tiger);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("U","u","UMBRELLA",R.drawable.umbrella);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("V","v","VAN",R.drawable.van);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("W","w","WATCH",R.drawable.watch);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("X","x","XYLOPHONE",R.drawable.xylophone);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("Y","y","YAK",R.drawable.yak);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new AlphabetModel("Z","z","ZEBRA",R.drawable.zebra);
+        alphabetModels.add(alphabetModel);
+    }
+
+    private void initPager(){
+        pagerAdapter = new AlphabetPagerAdapter(getContext(),alphabetModels);
+        vpAlphabetVp.setAdapter(pagerAdapter);
+        vpAlphabetVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                pagerAdapter.startAnimation();
+                AlphabetModel alphabetModel = alphabetModels.get(position);
+                String text = alphabetModel.getAlphabetCaps() + " for " + alphabetModel.getWord();
+                speakOut(text);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+    }
+
+    private void initAlphabetRecyclerView(){
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvAlphabetList.setLayoutManager(layoutManager);
+        rvAlphabetList.addItemDecoration(new RecyclerSpacesItemDecoration(0));
+
+        listAdapter = new AlphabetListAdapter(alphabetModels, new AlphabetListAdapter.ClickListener() {
+            @Override
+            public void onAdapterItemClick(View view, int position, Object selectedItem) {
+                vpAlphabetVp.setCurrentItem(position,true);
+            }
+        });
+
+        rvAlphabetList.setAdapter(listAdapter);
+    }
+
+    private void initTextToSpeach(){
+        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = textToSpeech.setLanguage(Locale.US);
+                }
+            }
+        });
+    }
+
+    private void speakOut(String text) {
+        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
 
 //    private void applyAnimation(){
 //        new Handler().post(new Runnable() {
@@ -76,111 +232,4 @@ public class AlphabetFragment extends BaseFragment {
 //
 //
 //    }
-
-    private void setAlphabets(){
-        alphabetModels = new ArrayList<>();
-
-        AlphabetModel alphabetModel;
-
-        alphabetModel = new AlphabetModel("A","a","APPLE",R.drawable.alphabet);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("B","b","BALL",R.drawable.computer);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("C","c","CAT",R.drawable.summer);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("D","d","DOG",R.drawable.football);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("E","e","ELEPHANT",R.drawable.guitar);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("F","f","FISH",R.drawable.ladybug);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("G","g","GOAT",R.drawable.schedule);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("H","h","HORSE",R.drawable.hamburger);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("I","i","ICE CREAM",R.drawable.pencils);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("J","j","JUICE",R.drawable.shark);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("K","k","KITE",R.drawable.bed);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("L","l","LION",R.drawable.ladybug);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("M","m","MONKEY",R.drawable.cow);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("N","n","NEST",R.drawable.computer);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("O","o","ORANGE",R.drawable.dove);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("P","p","PARROT",R.drawable.teapot);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("Q","q","QUEEN",R.drawable.guitar);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("R","r","RABBIT",R.drawable.ladybug);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("S","s","SUN",R.drawable.alphabet);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("T","t","TIGER",R.drawable.tiger);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("U","u","UMBRELLA",R.drawable.bus);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("V","v","VAN",R.drawable.football);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("W","w","WATCH",R.drawable.guitar);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("X","x","XYLOPHONE",R.drawable.ladybug);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("Y","y","YAK",R.drawable.number);
-        alphabetModels.add(alphabetModel);
-
-        alphabetModel = new AlphabetModel("Z","z","ZEBRA",R.drawable.ladybug);
-        alphabetModels.add(alphabetModel);
-    }
-
-    private void initPager(){
-        pagerAdapter = new AlphabetPagerAdapter(getContext(),alphabetModels);
-        vpAlphabetVp.setAdapter(pagerAdapter);
-        vpAlphabetVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-                pagerAdapter.startAnimation();
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-    }
 }

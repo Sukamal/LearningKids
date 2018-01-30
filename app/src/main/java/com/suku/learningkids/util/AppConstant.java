@@ -31,6 +31,9 @@ public class AppConstant {
     }
 
     public static enum ExtraTag{
-        HOME_MENU_ACTION
+        HOME_MENU_ACTION,
+        FLAT_IMAGE_DISPLAY_CODE
     }
+
+
 }

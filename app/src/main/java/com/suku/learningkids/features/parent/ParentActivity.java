@@ -13,6 +13,9 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.suku.learningkids.R;
 import com.suku.learningkids.features.alphabet.AlphabetFragment;
+import com.suku.learningkids.features.color.ColorFragment;
+import com.suku.learningkids.features.flatimages.FlatImageFragment;
+import com.suku.learningkids.features.numbers.NumberFragment;
 import com.suku.learningkids.util.AppConstant;
 
 public class ParentActivity extends AppCompatActivity {
@@ -37,34 +40,53 @@ public class ParentActivity extends AppCompatActivity {
 
     private void displayView(int menuItem){
         Fragment fragment = null;
+        Bundle bundle = null;
 
         if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
             fragment = new AlphabetFragment();
-        }else if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
+        }else if(menuItem == AppConstant.HomeMenu.NUMBER.getEnumValue()){
+            fragment = new NumberFragment();
+        }else if(menuItem == AppConstant.HomeMenu.COLOR.getEnumValue()){
+            fragment = new ColorFragment();
+        }else if(menuItem == AppConstant.HomeMenu.SHAPE.getEnumValue()){
 
-        }if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
-
-        }if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
-
-        }if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
-
-        }if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
-
-        }if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
-
-        }if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
-
+        }else if(menuItem == AppConstant.HomeMenu.FLOWER.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.FLOWER.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.FRUIT.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.FRUIT.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.VEGETABLE.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.VEGETABLE.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.DOMESTICANIMAL.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.DOMESTICANIMAL.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.WILDANIMAL.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.WILDANIMAL.getEnumValue());
         }
 
         if(fragment != null){
-            addFragment(fragment,false);
+            addFragment(fragment,false,bundle);
         }
     }
 
-    private void addFragment(final Fragment fragment, final boolean addtoBac){
+    private void addFragment(final Fragment fragment, final boolean addtoBac, final Bundle bundle){
         new Handler().post(new Runnable() {
             @Override
             public void run() {
+
+
+                if(bundle != null){
+                    fragment.setArguments(bundle);
+                }
+
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.popBackStackImmediate(fragment.getClass().getName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

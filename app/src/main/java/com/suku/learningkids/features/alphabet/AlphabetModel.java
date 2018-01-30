@@ -1,5 +1,7 @@
 package com.suku.learningkids.features.alphabet;
 
+import android.graphics.Color;
+
 /**
  * Created by SukamalD on 29-01-2018.
  */
@@ -10,6 +12,7 @@ public class AlphabetModel {
     private String alphabetSmall;
     private String word;
     private int image;
+    private int textColor = Color.BLACK;
 
     public AlphabetModel(String alphabetCaps,String alphabetSmall,String word,int image){
         this.alphabetCaps = alphabetCaps;
@@ -49,5 +52,13 @@ public class AlphabetModel {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public int getTextColor() {
+        return textColor;
+    }
+
+    public void setTextColor(int textColor) {
+        this.textColor = textColor;
     }
 }
