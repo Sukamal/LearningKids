@@ -70,6 +70,58 @@ public class ParentActivity extends AppCompatActivity {
             fragment = new FlatImageFragment();
             bundle = new Bundle();
             bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.WILDANIMAL.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.WILDANIMAL.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.BIRD.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.BIRD.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.BIRD.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.INSECTS.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.INSECTS.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.SEACREATURES.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SEACREATURES.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.FOOD.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.FOOD.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.VEHICLES.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.VEHICLES.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.KITCHEN.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.KITCHEN.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.BATHROOM.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.BATHROOM.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.BEDROOM.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.BEDROOM.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.STATIONARY.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.STATIONARY.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
+        }else if(menuItem == AppConstant.HomeMenu.SEASONS.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SEASONS.getEnumValue());
         }
 
         if(fragment != null){

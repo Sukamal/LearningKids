@@ -89,11 +89,11 @@ public class HomeActivity extends AppCompatActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.FRUIT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("VEGETABLES",R.drawable.carrot,R.color.color7,R.color.color_11);
+        menuModel = new MenuModel("VEGETABLES",R.drawable.carrot_i,R.color.color7,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.VEGETABLE.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("DOMESTIC ANIMALS",R.drawable.cow,R.color.color8,R.color.color_11);
+        menuModel = new MenuModel("DOMESTIC ANIMALS",R.drawable.cow_i,R.color.color8,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.DOMESTICANIMAL.getEnumValue());
         menuModels.add(menuModel);
 
@@ -106,45 +106,59 @@ public class HomeActivity extends AppCompatActivity {
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("INSECTS REPTILES & AMPHIBIANS",R.drawable.ladybug,R.color.color1,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.INSECTS.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("SEA CREATURES",R.drawable.shark,R.color.color2,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.SEACREATURES.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("FOOD AND BEVERAGES",R.drawable.hamburger,R.color.color3,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.FOOD.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("VEHICLES",R.drawable.bus,R.color.color4,R.color.color_11);
+        menuModel = new MenuModel("VEHICLES",R.drawable.bus_i,R.color.color4,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.VEHICLES.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("KITCHEN",R.drawable.teapot,R.color.color5,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.KITCHEN.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("BATHROOM",R.drawable.bathtub,R.color.color6,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.BATHROOM.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("BEDROOM",R.drawable.bed,R.color.color7,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.BEDROOM.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("STATIONERY",R.drawable.pencils,R.color.color8,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.STATIONARY.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("MUSICAL INSTRUMENTS",R.drawable.guitar,R.color.color9,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("SPORTS EQUIPMENTS",R.drawable.football,R.color.color10,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("SEASONS",R.drawable.summer,R.color.color8,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.SEASONS.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("MONTHS",R.drawable.calendar,R.color.color7,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.MONTHS.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("TIME AND CALENDER",R.drawable.schedule,R.color.color6,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.TIMEANDCALENDER.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("COMPUTER PARTS & PERIPHERALS",R.drawable.computer,R.color.color5,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue());
         menuModels.add(menuModel);
 
 

@@ -4,17 +4,12 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.GridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.features.BaseFragment;
-import com.suku.learningkids.features.alphabet.AlphabetModel;
-import com.suku.learningkids.features.color.ColorListAdapter;
-import com.suku.learningkids.features.color.ColorPagerAdapter;
-import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
@@ -76,6 +71,16 @@ public class FlatImageFragment extends BaseFragment {
             setDomesticAnimalImages();
         }else if(displayCode == AppConstant.HomeMenu.WILDANIMAL.getEnumValue()){
             setWildAnimalImages();
+        }else if(displayCode == AppConstant.HomeMenu.BIRD.getEnumValue()){
+            setBirds();
+        }else if(displayCode == AppConstant.HomeMenu.INSECTS.getEnumValue()){
+            setInsectsReptiles();
+        }else if(displayCode == AppConstant.HomeMenu.SEACREATURES.getEnumValue()){
+            setSeaCreatures();
+        }else if(displayCode == AppConstant.HomeMenu.FOOD.getEnumValue()){
+            setFoodAndBevarage();
+        }else if(displayCode == AppConstant.HomeMenu.VEHICLES.getEnumValue()){
+            setVehicles();
         }
 
 
@@ -443,4 +448,330 @@ public class FlatImageFragment extends BaseFragment {
         flatImageList.add(flatImageModel);
 
     }
+
+    private void setBirds(){
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("MYNA",R.drawable.myna);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PIGEON",R.drawable.pigeon);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SWALLOW",R.drawable.swallow);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PENGUIN",R.drawable.penguin);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HERON",R.drawable.heron);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SWAN",R.drawable.swan);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PARTRIDGE",R.drawable.partridge);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("QUAIL",R.drawable.quail);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SPARROW",R.drawable.sparrow);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MAGPIE",R.drawable.magpies);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("OSTRICH",R.drawable.ostrich);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PEACOCK",R.drawable.peacock);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("OWL",R.drawable.owl);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CROW",R.drawable.crow);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HOOPOE",R.drawable.hoopoe);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PARROT",R.drawable.parrot);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CUCKOO",R.drawable.cuckoo);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SEAGULL",R.drawable.seagull);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("EAGLE",R.drawable.eagle);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MACAW",R.drawable.macaw);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("WOODPECKER",R.drawable.woodpecker);
+        flatImageList.add(flatImageModel);
+
+    }
+
+    private void setInsectsReptiles(){
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("ANT",R.drawable.ant);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BEDBUG",R.drawable.brdbug);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("COCKROACH",R.drawable.cockroach);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HONEY BEE",R.drawable.honeybee);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("WASP",R.drawable.wasp);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CENTIPEDE",R.drawable.centipede);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HOUSEFLY",R.drawable.housefly);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("LADYBIRD",R.drawable.ladybird);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SPIDER",R.drawable.spider);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MANTIS",R.drawable.mantis);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SCORPION",R.drawable.scorpion);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BUTTERFLY",R.drawable.butterfly);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MOSQUITO",R.drawable.mosquito);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("GREEN IGUANA",R.drawable.greeniguana);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CROCODILE",R.drawable.crocodile);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CHAMELEON",R.drawable.chameleon);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("ALLIGATOR",R.drawable.alligator);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("COBRA",R.drawable.cobra);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("LIZARD",R.drawable.lizard);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PYTHON",R.drawable.python);
+        flatImageList.add(flatImageModel);
+
+    }
+
+    private void setSeaCreatures(){
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("OCTOPUS",R.drawable.octopus);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SEAL",R.drawable.seal);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("LOBSTER",R.drawable.lobster);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TORTOISE",R.drawable.tortoise);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TURTLE",R.drawable.turtle);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("WHALE",R.drawable.whale);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TOAD",R.drawable.toad);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FISH",R.drawable.fish);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FROG",R.drawable.frog);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SHARK",R.drawable.shark);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SEA HORSE",R.drawable.seahorse);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CRAB",R.drawable.crab);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SEA CUCUMBER",R.drawable.seacucumber);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("ANACONDA",R.drawable.anaconda);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("STAR FISH",R.drawable.starfish);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("DOLPHIN",R.drawable.dolphin);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("JELLY FISH",R.drawable.jellyfish);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SNAIL",R.drawable.snail);
+        flatImageList.add(flatImageModel);
+
+
+
+    }
+
+    private void setFoodAndBevarage(){
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("BURGER",R.drawable.burger);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PIZZA",R.drawable.pizza);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("GERLIC BREAD",R.drawable.gerlicbread);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("OMELETTE",R.drawable.omelette);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("ROASTED CHICKEN",R.drawable.roastedchiken);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FRIED FISH",R.drawable.friedfish);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("NOODLES",R.drawable.noodles);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SANDWICH",R.drawable.sandwich);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("RICE",R.drawable.rice);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TOMATO SAUCE",R.drawable.tomato_sauce);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SOUP",R.drawable.soupe);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FRUIT JAM",R.drawable.fruit_jam);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("COOKIES",R.drawable.cookies);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FRENCH FRIES",R.drawable.frenchfry);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("DONUT",R.drawable.donut);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BREAD",R.drawable.bread);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CAKE",R.drawable.cake);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CHEESE",R.drawable.cheese);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MILK",R.drawable.milk);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SMOOTHIE",R.drawable.smoothies);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SOFT DRINK",R.drawable.soft_drink);
+        flatImageList.add(flatImageModel);
+
+    }
+
+    private void setVehicles(){
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("PARAMBULATOR",R.drawable.parambulator);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TRICYCLE",R.drawable.trycycle);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BICYCLE",R.drawable.bicycle);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SCOOTER",R.drawable.scooter);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("AEROPLANE",R.drawable.aeroplane);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("JEEP",R.drawable.jeep);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MOTORCYCLE",R.drawable.motorcycle);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HELICOPTER",R.drawable.helicopter);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("METRO",R.drawable.metro);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TRUCK",R.drawable.truck);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SHIP",R.drawable.ship);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CAR",R.drawable.car);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BOAT",R.drawable.boat);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TRAIN",R.drawable.train);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BUS",R.drawable.bus);
+        flatImageList.add(flatImageModel);
+
+
+
+    }
+
+
 }

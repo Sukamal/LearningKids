@@ -17,6 +17,21 @@ public class AppConstant {
         DOMESTICANIMAL(8),
         WILDANIMAL(9),
         BIRD(10),
+        INSECTS(11),
+        SEACREATURES(12),
+        FOOD(13),
+        VEHICLES(14),
+        KITCHEN(15),
+        BATHROOM(16),
+        BEDROOM(17),
+        STATIONARY(18),
+        MUSICALINSTRUMENT(19),
+        SPORTSEQUIPEMENT(20),
+        SEASONS(21),
+        MONTHS(22),
+        TIMEANDCALENDER(23),
+        COMPUTERPARTS(24)
+
         ;
 
         private int enumValue;
