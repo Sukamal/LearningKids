@@ -45,6 +45,26 @@ public class AppConstant {
         }
     }
 
+    public static enum AppType{
+        FREE(1),
+        PAID(2)
+        ;
+
+        private int enumValue;
+
+        AppType(int enumValue){
+            this.enumValue = enumValue;
+        }
+
+        public int getEnumValue() {
+            return enumValue;
+        }
+    }
+
+    public enum Preferences {
+        APPLICATION_TYPE
+    }
+
     public static enum ExtraTag{
         HOME_MENU_ACTION,
         FLAT_IMAGE_DISPLAY_CODE

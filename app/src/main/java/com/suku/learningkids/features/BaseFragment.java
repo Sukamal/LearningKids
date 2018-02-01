@@ -1,11 +1,26 @@
 package com.suku.learningkids.features;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.suku.learningkids.R;
+import com.suku.learningkids.addvertise.AddManager;
+import com.suku.learningkids.addvertise.GoogleAdd;
+import com.suku.learningkids.application.KidApplication;
+
+import java.util.List;
 
 
 /**
@@ -13,6 +28,9 @@ import com.suku.learningkids.R;
  */
 
 public class BaseFragment extends Fragment {
+
+    private AddManager addManager;
+    private View view;
 
     public void addFragment(Fragment fragment, Bundle bundle){
         if(bundle != null){
@@ -52,4 +70,29 @@ public class BaseFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
+    public void disableAdd(View view){
+    }
+
+
+    public void displayAddBasedOnAppType(List<AddManager.AddType> addTypeList, View view){
+        addManager = new AddManager(getActivity());
+        this.view = view;
+
+        if(((KidApplication)getActivity().getApplication()).mAppPreference.isPaidVersion()){
+            disableAdd();
+        }else{
+            anableAdd();
+            addManager.displayAdd(addTypeList,view);
+        }
+    }
+
+    private void disableAdd(){
+        view.findViewById(R.id.ll_banner).setVisibility(View.GONE);
+    }
+
+    private void anableAdd(){
+        view.findViewById(R.id.ll_banner).setVisibility(View.VISIBLE);
+    }
+
 }

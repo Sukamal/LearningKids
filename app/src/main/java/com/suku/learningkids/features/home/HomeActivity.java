@@ -8,7 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.suku.learningkids.R;
+import com.suku.learningkids.addvertise.AddManager;
+import com.suku.learningkids.addvertise.GoogleAdd;
+import com.suku.learningkids.features.BaseActivity;
 import com.suku.learningkids.features.parent.ParentActivity;
 import com.suku.learningkids.util.AppConstant;
 
@@ -17,13 +23,14 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     @BindView(R.id.rv_home)
     RecyclerView mRvHome;
 
     private HomeMenuAdapter menuAdapter;
     private  ArrayList<MenuModel> menuModels;
+    private ArrayList<AddManager.AddType> addTypeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,17 @@ public class HomeActivity extends AppCompatActivity {
         initRecyclerView();
     }
 
+    private void setAddType(){
+        addTypeList = new ArrayList<>();
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setAddType();
+        displayAddBasedOnAppType(addTypeList);
+    }
 
     private void initRecyclerView(){
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
