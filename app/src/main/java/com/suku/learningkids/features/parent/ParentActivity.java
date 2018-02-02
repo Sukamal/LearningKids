@@ -34,8 +34,9 @@ public class ParentActivity extends BaseActivity {
     }
 
     private void setAddType(){
-        addTypeList = new ArrayList<>();
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList = new ArrayList<>();
+//        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     @Override

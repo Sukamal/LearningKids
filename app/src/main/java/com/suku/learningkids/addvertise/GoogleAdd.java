@@ -1,12 +1,16 @@
 package com.suku.learningkids.addvertise;
 
 import android.content.Context;
-import android.widget.Toast;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.startapp.android.publish.ads.banner.Banner;
 import com.suku.learningkids.R;
 
 /**
@@ -16,18 +20,51 @@ import com.suku.learningkids.R;
 public class GoogleAdd {
 
     private Context context;
-    private AdView googleAdd;
 
     public GoogleAdd(Context context){
         this.context = context;
     }
 
-    public GoogleAdd(Context context, AdView googleAdd){
-        this.context = context;
-        this.googleAdd = googleAdd;
+    public void showGoogleInterstitialAdd(){
+
+        final InterstitialAd mInterstitialAd;
+        mInterstitialAd = new InterstitialAd(context);
+        mInterstitialAd.setAdUnitId(context.getResources().getString(R.string.google_add_interstitial_id));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mInterstitialAd.loadAd(adRequest);
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
+            }
+        });
+
     }
 
-    public void showGoogleBannerAdd(){
+    public void showGoogleBanner(View view){
+        LinearLayout mainLayout = (LinearLayout)view.findViewById(R.id.ll_banner);
+
+        int childCount = mainLayout.getChildCount();
+        for(int index=0; index<childCount; ++index) {
+            View nextChild = mainLayout.getChildAt(index);
+            if(nextChild instanceof AdView);
+                mainLayout.removeView(nextChild);
+        }
+
+        AdView adView = new AdView(context);
+        adView.setId(R.id.googleBannerId);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId(context.getResources().getString(R.string.google_add_banner_id));
+        LinearLayout.LayoutParams bannerParameters =
+                new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+        mainLayout.addView(adView, bannerParameters);
+        showGoogleBannerAdd(adView);
+    }
+
+    private void showGoogleBannerAdd(AdView googleAdd){
 //        AdView googleAdd = findViewById(R.id.av_google_add);
 //        googleAdd.setAdSize(AdSize.BANNER);
 //        googleAdd.setAdUnitId(getString(R.string.banner_footer));
@@ -69,21 +106,5 @@ public class GoogleAdd {
         });
 
         googleAdd.loadAd(adRequest);
-    }
-
-    public void showGoogleInterstitialAdd(){
-
-        final InterstitialAd mInterstitialAd;
-        mInterstitialAd = new InterstitialAd(context);
-        mInterstitialAd.setAdUnitId(context.getResources().getString(R.string.add_interstitial_id));
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mInterstitialAd.loadAd(adRequest);
-        mInterstitialAd.setAdListener(new AdListener() {
-            public void onAdLoaded() {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                }
-            }
-        });
     }
 }

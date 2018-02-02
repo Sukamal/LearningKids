@@ -11,8 +11,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
 import com.suku.learningkids.features.alphabet.AlphabetModel;
 
 import java.util.List;
@@ -27,6 +29,15 @@ public class FlatImagePagerAdapter extends PagerAdapter {
     private LayoutInflater mLayoutInflater;;
     private List<FlatImageModel> flatImageModels;
     private View itemView;
+    private ClickListener clickListener;
+
+    public interface ClickListener {
+        void onAdapterItemClick(View view, int position, Object selectedItem);
+    }
+
+    public void setItemClickListner(FlatImagePagerAdapter.ClickListener clickListener){
+        this.clickListener = clickListener;
+    }
 
     public FlatImagePagerAdapter(Context context, List<FlatImageModel> flatImageModels){
         this.context = context;
@@ -51,11 +62,20 @@ public class FlatImagePagerAdapter extends PagerAdapter {
         TextView tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
         ImageView ivImage = (ImageView) itemView.findViewById(R.id.iv_item_image);
 
-        FlatImageModel flatImageModel = flatImageModels.get(position);
+        final FlatImageModel flatImageModel = flatImageModels.get(position);
 
         tvTitle.setText(flatImageModel.getText());
         ivImage.setImageResource(flatImageModel.getImage());
         container.addView(itemView);
+
+        ivImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"Click on Image "+flatImageModel.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         return itemView;
     }
 

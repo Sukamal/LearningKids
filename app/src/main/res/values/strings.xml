@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">LearningKids</string>
 
-    <string name="add_app_id">ca-app-pub-7080915292810431~5957117468</string>
-    <string name="add_banner_id">ca-app-pub-7080915292810431/2969181418</string>
-    <string name="add_interstitial_id">ca-app-pub-7080915292810431/3735160685</string>
+    <string name="google_add_app_id">ca-app-pub-7080915292810431~5957117468</string>
+    <string name="google_add_banner_id">ca-app-pub-7080915292810431/2969181418</string>
+    <string name="google_add_interstitial_id">ca-app-pub-7080915292810431/3735160685</string>
+
+    <string name="startapp_add_app_id">201528678</string>
+    <string name="banner_id">123456</string>
+
 
 </resources>

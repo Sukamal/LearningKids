@@ -1,9 +1,12 @@
 package com.suku.learningkids.addvertise;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdView;
+import com.startapp.android.publish.ads.banner.Banner;
 import com.suku.learningkids.R;
 
 import java.util.List;
@@ -16,7 +19,8 @@ public class AddManager {
 
     public static enum AddType{
         GOOGLE_BANNER(1),
-        GOOGLE_INTERSTITIAL(2)
+        GOOGLE_INTERSTITIAL(2),
+        STARTAPP_BANNER(3)
         ;
 
         private int enumValue;
@@ -30,10 +34,10 @@ public class AddManager {
         }
     }
 
-    private Context context;
+    private Activity activity;
 
-    public AddManager(Context context){
-        this.context = context;
+    public AddManager(Activity activity){
+        this.activity = activity;
     }
 
     public void displayAdd(List<AddType> addTypes,View view){
@@ -47,20 +51,28 @@ public class AddManager {
                     case GOOGLE_INTERSTITIAL:
                         displayGoogleInterstitialAdd();
                         break;
+                    case STARTAPP_BANNER:
+                        displayStartAppBanner(view);
+                        break;
                 }
             }
         }
     }
 
     private void displayGoogleBanner(View view){
-        AdView googleAdd = view.findViewById(R.id.av_google_add);
-        GoogleAdd googleAdd1 = new GoogleAdd(context,googleAdd);
-        googleAdd1.showGoogleBannerAdd();
+        GoogleAdd googleAdd = new GoogleAdd(activity);
+        googleAdd.showGoogleBanner(view);
+
     }
 
     private void displayGoogleInterstitialAdd(){
-        GoogleAdd googleAdd1 = new GoogleAdd(context);
+        GoogleAdd googleAdd1 = new GoogleAdd(activity);
         googleAdd1.showGoogleInterstitialAdd();
+    }
+
+    private void displayStartAppBanner(View view){
+        StartAppAdd startAppAdd = new StartAppAdd(activity);
+        startAppAdd.showStartAppBanner(view);
     }
 
 

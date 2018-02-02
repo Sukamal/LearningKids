@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,16 +7,28 @@
 
     <include layout="@layout/layout_add_banner"></include>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_flower"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/ll_banner">
+        android:layout_above="@id/ll_banner"
+        android:orientation="vertical">
 
-    </android.support.v4.view.ViewPager>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_flower"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.85"
+            android:layout_below="@id/rv_alphabet_list">
+        </android.support.v4.view.ViewPager>
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_image_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.15">
 
-
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 
 
 </RelativeLayout>

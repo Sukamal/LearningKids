@@ -4,14 +4,19 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.addvertise.AddManager;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.features.BaseFragment;
+import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
+import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
@@ -28,9 +33,12 @@ public class FlatImageFragment extends BaseFragment {
 
     @BindView(R.id.vp_flower)
     ViewPager vpFlower;
+    @BindView(R.id.rv_image_list)
+    RecyclerView rvImageList;
 
     private FlatImagePagerAdapter pagerAdapter;
     private ArrayList<FlatImageModel> flatImageList;
+    private ButtomImageAdapter imageAdapter;
     private TextToSpeech textToSpeech;
     private int displayCode = -1;
     private ArrayList<AddManager.AddType> addTypeList;
@@ -51,7 +59,7 @@ public class FlatImageFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
     }
 
@@ -87,6 +95,7 @@ public class FlatImageFragment extends BaseFragment {
     private void initCommonItems() {
         initTextToSpeach();
         initPager();
+        initBottomImageRecyclerView();
     }
 
     private void getImageSets(boolean isPaid) {
@@ -139,6 +148,24 @@ public class FlatImageFragment extends BaseFragment {
             }
         });
 
+    }
+
+
+
+    private void initBottomImageRecyclerView(){
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvImageList.setLayoutManager(layoutManager);
+        rvImageList.addItemDecoration(new RecyclerSpacesItemDecoration(0));
+
+        imageAdapter = new ButtomImageAdapter(flatImageList, new ButtomImageAdapter.ClickListener() {
+            @Override
+            public void onAdapterItemClick(View view, int position, Object selectedItem) {
+                vpFlower.setCurrentItem(position,true);
+            }
+        });
+
+        rvImageList.setAdapter(imageAdapter);
     }
 
 
@@ -223,6 +250,9 @@ public class FlatImageFragment extends BaseFragment {
 
             flatImageModel = new FlatImageModel("DAHLIA", R.drawable.dahlia);
             flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
+            flatImageList.add(flatImageModel);
         }
 
 
@@ -285,6 +315,9 @@ public class FlatImageFragment extends BaseFragment {
             flatImageList.add(flatImageModel);
 
             flatImageModel = new FlatImageModel("GRAPES", R.drawable.green_grapes);
+            flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
             flatImageList.add(flatImageModel);
         }
 
@@ -362,6 +395,9 @@ public class FlatImageFragment extends BaseFragment {
 
             flatImageModel = new FlatImageModel("CHILLI", R.drawable.chilli);
             flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
+            flatImageList.add(flatImageModel);
         }
     }
 
@@ -415,6 +451,9 @@ public class FlatImageFragment extends BaseFragment {
             flatImageList.add(flatImageModel);
 
             flatImageModel = new FlatImageModel("WHITE RAT", R.drawable.whiterat);
+            flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
             flatImageList.add(flatImageModel);
         }
     }
@@ -484,6 +523,9 @@ public class FlatImageFragment extends BaseFragment {
             flatImageList.add(flatImageModel);
 
             flatImageModel = new FlatImageModel("PANTHER", R.drawable.panther);
+            flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
             flatImageList.add(flatImageModel);
         }
 
@@ -558,6 +600,9 @@ public class FlatImageFragment extends BaseFragment {
 
             flatImageModel = new FlatImageModel("WOODPECKER", R.drawable.woodpecker);
             flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
+            flatImageList.add(flatImageModel);
         }
 
     }
@@ -628,6 +673,9 @@ public class FlatImageFragment extends BaseFragment {
 
             flatImageModel = new FlatImageModel("PYTHON", R.drawable.python);
             flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
+            flatImageList.add(flatImageModel);
         }
 
     }
@@ -690,6 +738,9 @@ public class FlatImageFragment extends BaseFragment {
             flatImageList.add(flatImageModel);
 
             flatImageModel = new FlatImageModel("SNAIL", R.drawable.snail);
+            flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
             flatImageList.add(flatImageModel);
         }
 
@@ -764,6 +815,9 @@ public class FlatImageFragment extends BaseFragment {
 
             flatImageModel = new FlatImageModel("SOFT DRINK", R.drawable.soft_drink);
             flatImageList.add(flatImageModel);
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
+            flatImageList.add(flatImageModel);
         }
     }
 
@@ -819,6 +873,9 @@ public class FlatImageFragment extends BaseFragment {
             flatImageModel = new FlatImageModel("BUS", R.drawable.bus);
             flatImageList.add(flatImageModel);
 
+        }else{
+            flatImageModel = new FlatImageModel("FOR MORE PLEASE SUBSCRIBE", R.drawable.subscribe);
+            flatImageList.add(flatImageModel);
         }
     }
 

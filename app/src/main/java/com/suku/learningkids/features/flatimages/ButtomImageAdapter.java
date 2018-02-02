@@ -1,14 +1,14 @@
-package com.suku.learningkids.features.adapter;
+package com.suku.learningkids.features.flatimages;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.suku.learningkids.R;
-import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,10 +17,9 @@ import butterknife.ButterKnife;
  * Created by SukamalD on 30-01-2018.
  */
 
-public class NumberImageAdapter extends RecyclerView.Adapter<NumberImageAdapter.ImageViewHolder>{
+public class ButtomImageAdapter extends RecyclerView.Adapter<ButtomImageAdapter.ImageViewHolder>{
 
-    private int imageCount;
-    private int image;
+    private List<FlatImageModel> flatImageModels;
 
     private ClickListener clickListener;
 
@@ -32,28 +31,36 @@ public class NumberImageAdapter extends RecyclerView.Adapter<NumberImageAdapter.
         this.clickListener = clickListener;
     }
 
-    public NumberImageAdapter(int imageCount,int image){
-        this.imageCount = imageCount;
-        this.image = image;
+    public ButtomImageAdapter(List<FlatImageModel> flatImageModels){
+        this.flatImageModels = flatImageModels;
+    }
+
+    public ButtomImageAdapter(List<FlatImageModel> flatImageModels,ClickListener clickListener){
+        this.flatImageModels = flatImageModels;
+        this.clickListener = clickListener;
     }
 
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.image_list_item, parent, false);
-        NumberImageAdapter.ImageViewHolder holder = new NumberImageAdapter.ImageViewHolder(view);
+        ButtomImageAdapter.ImageViewHolder holder = new ButtomImageAdapter.ImageViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position) {
 
-        holder.ivImages.setImageResource(image);
+        FlatImageModel flatImageModel = flatImageModels.get(position);
+        holder.ivImages.setImageResource(flatImageModel.getImage());
+        holder.position = position;
+        holder.flatImageModel = flatImageModel;
+
     }
 
     @Override
     public int getItemCount() {
-        return imageCount;
+        return flatImageModels.size();
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder{
@@ -61,10 +68,19 @@ public class NumberImageAdapter extends RecyclerView.Adapter<NumberImageAdapter.
         @BindView(R.id.iv_images)
         ImageView ivImages;
         int position;
+        FlatImageModel flatImageModel;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(clickListener != null){
+                        clickListener.onAdapterItemClick(v,position,flatImageModel);
+                    }
+                }
+            });
         }
     }
 }
