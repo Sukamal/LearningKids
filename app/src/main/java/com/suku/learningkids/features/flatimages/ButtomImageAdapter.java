@@ -56,6 +56,12 @@ public class ButtomImageAdapter extends RecyclerView.Adapter<ButtomImageAdapter.
         holder.position = position;
         holder.flatImageModel = flatImageModel;
 
+        if(flatImageModel.isLocked()){
+            holder.ivImagesLock.setVisibility(View.VISIBLE);
+        }else{
+            holder.ivImagesLock.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
@@ -67,6 +73,9 @@ public class ButtomImageAdapter extends RecyclerView.Adapter<ButtomImageAdapter.
 
         @BindView(R.id.iv_images)
         ImageView ivImages;
+        @BindView(R.id.iv_images_lock)
+        ImageView ivImagesLock;
+
         int position;
         FlatImageModel flatImageModel;
 

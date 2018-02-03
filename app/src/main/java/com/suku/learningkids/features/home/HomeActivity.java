@@ -1,19 +1,14 @@
 package com.suku.learningkids.features.home;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.suku.learningkids.R;
 import com.suku.learningkids.addvertise.AddManager;
-import com.suku.learningkids.addvertise.GoogleAdd;
 import com.suku.learningkids.features.BaseActivity;
 import com.suku.learningkids.features.parent.ParentActivity;
 import com.suku.learningkids.util.AppConstant;
@@ -127,7 +122,7 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.INSECTS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SEA CREATURES",R.drawable.shark,R.color.color2,R.color.color_11);
+        menuModel = new MenuModel("SEA CREATURES",R.drawable.shark_i,R.color.color2,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.SEACREATURES.getEnumValue());
         menuModels.add(menuModel);
 
@@ -139,15 +134,15 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.VEHICLES.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("KITCHEN",R.drawable.teapot,R.color.color5,R.color.color_11);
+        menuModel = new MenuModel("KITCHEN",R.drawable.teapot_i,R.color.color5,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.KITCHEN.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("BATHROOM",R.drawable.bathtub,R.color.color6,R.color.color_11);
+        menuModel = new MenuModel("BATHROOM",R.drawable.bathtub_i,R.color.color6,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.BATHROOM.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("BEDROOM",R.drawable.bed,R.color.color7,R.color.color_11);
+        menuModel = new MenuModel("BEDROOM",R.drawable.bed_i,R.color.color7,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.BEDROOM.getEnumValue());
         menuModels.add(menuModel);
 
@@ -196,6 +191,7 @@ public class HomeActivity extends BaseActivity {
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("ACTIONS",R.drawable.splash,R.color.color10,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.ACTIONS.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("OUR HELPERS",R.drawable.splash,R.color.color1,R.color.color_11);

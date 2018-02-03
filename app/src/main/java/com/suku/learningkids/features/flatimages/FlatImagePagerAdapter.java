@@ -64,9 +64,15 @@ public class FlatImagePagerAdapter extends PagerAdapter {
 
         final FlatImageModel flatImageModel = flatImageModels.get(position);
 
-        tvTitle.setText(flatImageModel.getText());
-        ivImage.setImageResource(flatImageModel.getImage());
-        container.addView(itemView);
+        if(!flatImageModel.isLocked()){
+            tvTitle.setText(flatImageModel.getText());
+            ivImage.setImageResource(flatImageModel.getImage());
+            container.addView(itemView);
+        }else{
+            tvTitle.setText("Please Subscribe");
+            ivImage.setImageResource(R.drawable.subscribe);
+            container.addView(itemView);
+        }
 
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override

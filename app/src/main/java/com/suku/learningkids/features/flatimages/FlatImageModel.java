@@ -11,10 +11,12 @@ public class FlatImageModel {
     private String text;
     private int image;
     private int textColor = Color.BLACK;
+    private boolean isLocked = false;
 
-    public FlatImageModel(String text, int image){
+    public FlatImageModel(String text, int image, boolean isLocked){
         this.text = text;
         this.image = image;
+        this.isLocked = isLocked;
     }
 
     public String getText() {
@@ -39,5 +41,13 @@ public class FlatImageModel {
 
     public void setTextColor(int textColor) {
         this.textColor = textColor;
+    }
+
+    public boolean isLocked() {
+        return isLocked;
+    }
+
+    public void setLocked(boolean locked) {
+        isLocked = locked;
     }
 }

@@ -30,7 +30,11 @@ public class AppConstant {
         SEASONS(21),
         MONTHS(22),
         TIMEANDCALENDER(23),
-        COMPUTERPARTS(24)
+        COMPUTERPARTS(24),
+
+
+
+        ACTIONS(25)
 
         ;
 

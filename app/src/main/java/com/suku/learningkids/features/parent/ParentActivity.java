@@ -140,6 +140,13 @@ public class ParentActivity extends BaseActivity {
             setApplicationMode(AppConstant.AppType.PAID);
         }
 
+
+        else if(menuItem == AppConstant.HomeMenu.ACTIONS.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.ACTIONS.getEnumValue());
+        }
+
         if(fragment != null){
             addFragment(fragment,false,bundle);
         }
