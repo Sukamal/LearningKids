@@ -1,6 +1,7 @@
 package com.suku.learningkids.features.numbers;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.GridLayoutManager;
@@ -59,6 +60,11 @@ public class NumberPagerAdapter extends PagerAdapter {
         AlphabetModel alphabetModel = alphabetModels.get(position);
         tvAlphabetCaps.setText(alphabetModel.getAlphabetCaps());
 //        tvWord.setText(alphabetModel.getWord());
+
+        Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/kid1.ttf");
+        tvAlphabetCaps.setTypeface(custom_font);
+        tvAlphabetCaps.setTextColor(context.getResources().getColor(R.color.color1));
+
 
         initImages(recyclerView,Integer.valueOf(alphabetModel.getAlphabetCaps()),alphabetModel.getImage());
         container.addView(itemView);

@@ -1,6 +1,7 @@
 package com.suku.learningkids.features.flatimages;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -63,7 +64,8 @@ public class FlatImagePagerAdapter extends PagerAdapter {
         ImageView ivImage = (ImageView) itemView.findViewById(R.id.iv_item_image);
 
         final FlatImageModel flatImageModel = flatImageModels.get(position);
-
+        Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/kid1.ttf");
+        tvTitle.setTypeface(custom_font);
         if(!flatImageModel.isLocked()){
             tvTitle.setText(flatImageModel.getText());
             ivImage.setImageResource(flatImageModel.getImage());

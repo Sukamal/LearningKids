@@ -127,6 +127,14 @@ public class FlatImageFragment extends BaseFragment {
             setBedroom(isPaid);
         }
 
+        else if (displayCode == AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue()) {
+            setSportsEquipment(isPaid);
+        }else if (displayCode == AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue()) {
+            setMusicalInstrument(isPaid);
+        }else if (displayCode == AppConstant.HomeMenu.STATIONARY.getEnumValue()) {
+            setStationaryItem(isPaid);
+        }
+
 
         else if (displayCode == AppConstant.HomeMenu.ACTIONS.getEnumValue()) {
             setActions(isPaid);
@@ -1114,6 +1122,242 @@ public class FlatImageFragment extends BaseFragment {
         flatImageList.add(flatImageModel);
 
         flatImageModel = new FlatImageModel("DRINKING", R.drawable.drinking, !isPaid);
+        flatImageList.add(flatImageModel);
+
+    }
+
+    private void setMusicalInstrument(boolean isPaid) {
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("ACCORDION", R.drawable.accordion, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BAGPIPE", R.drawable.bagpipe, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BANJO", R.drawable.banjo, false);
+        flatImageList.add(flatImageModel);
+
+
+        flatImageModel = new FlatImageModel("CLARINET", R.drawable.clarinet, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CONGA", R.drawable.conga, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("DHOL", R.drawable.dhol, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("DRUM", R.drawable.drums, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FLUTE", R.drawable.flute, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("GUITAR", R.drawable.guiter, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HARMONIUM", R.drawable.harmonium, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HARP", R.drawable.harp, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MANDOLIN", R.drawable.mandolin, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("MOUTH ORGAN", R.drawable.mouthorgan, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PIANO", R.drawable.piano, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SARANGI", R.drawable.sarangi, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SAXOPHONE", R.drawable.saxophone, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SYNTHESIZER", R.drawable.synthesizer, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TABLA", R.drawable.tabla, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TAMBOURINE", R.drawable.tambourine, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TANPURA", R.drawable.tanpura, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TRUMPET", R.drawable.trumpet, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("VEENA", R.drawable.veena, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("VIOLIN", R.drawable.violin, !isPaid);
+        flatImageList.add(flatImageModel);
+
+
+    }
+
+    private void setSportsEquipment(boolean isPaid) {
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("CRICKET BAT", R.drawable.cricket_bat, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CRICKET BALL", R.drawable.cricket_ball, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("WICKET", R.drawable.wicket, false);
+        flatImageList.add(flatImageModel);
+
+
+        flatImageModel = new FlatImageModel("BASKETBALL", R.drawable.asketball, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BADMINTON RACKET", R.drawable.badminton, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SHUTTLECOCK", R.drawable.shuttlecock, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BASEBALL BAT", R.drawable.baseball_bat, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BASEBALL BALL", R.drawable.baseball_ball, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("BOWLING", R.drawable.bowling, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FOOTBALL", R.drawable.football, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CAROM BOARD", R.drawable.carrom_board, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CHESS BOARD", R.drawable.chessboard, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("RUGBY", R.drawable.rugby, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TENNIS RACKET", R.drawable.tennisracket, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TENNIS BALL", R.drawable.tennis_ball, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HOKEY STICK", R.drawable.hockeystick, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TABLE TENNIS RACKET AND BALL", R.drawable.ttracketball, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("POOL TABLE", R.drawable.pulltable, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("GOLF KIT", R.drawable.golfkit, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("GOLF BALL", R.drawable.golfball, !isPaid);
+        flatImageList.add(flatImageModel);
+
+
+    }
+
+    private void setStationaryItem(boolean isPaid) {
+        flatImageList = new ArrayList<>();
+
+        FlatImageModel flatImageModel;
+
+        flatImageModel = new FlatImageModel("BALL PEN", R.drawable.ballpen, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CALCULATOR", R.drawable.calculator, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CLIPBOARD", R.drawable.clipboard, false);
+        flatImageList.add(flatImageModel);
+
+
+        flatImageModel = new FlatImageModel("CLUCHPENCIL", R.drawable.cluchpencil, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("COLOUR PENCILS", R.drawable.colorpencil, false);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("COLOUR PLATE", R.drawable.colorplate, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("DRAWING COMPASS", R.drawable.compass, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CORRECTION FLUID", R.drawable.correctionfluid, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CRAYON", R.drawable.crayon, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("CUTTER", R.drawable.cutter, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("ERASER", R.drawable.eraser, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FILES", R.drawable.files, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("FOUNTAIN PEN", R.drawable.fountainpen, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("GEOMETRY BOX", R.drawable.geobox, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("GLUE STICK", R.drawable.glue_stick, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("HIGHLIGHT PEN", R.drawable.highlight, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("INK POT", R.drawable.inkpot, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PAINT BRUSH", R.drawable.paint_brush, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("PENCIL", R.drawable.pencil, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SCALE", R.drawable.scale, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SCHOOL BAG", R.drawable.schoolbag, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SHARPENER", R.drawable.sharpener, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SKETCH PEN", R.drawable.sketchpen, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("SLATE", R.drawable.slate, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("TAPE DISPENSER", R.drawable.tapedispenser, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("WATER COLOUR", R.drawable.watercolor, !isPaid);
+        flatImageList.add(flatImageModel);
+
+        flatImageModel = new FlatImageModel("WHITEBOARD MARKER", R.drawable.whiteboardmarker, !isPaid);
         flatImageList.add(flatImageModel);
 
     }

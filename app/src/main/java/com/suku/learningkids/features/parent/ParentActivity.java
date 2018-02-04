@@ -129,14 +129,14 @@ public class ParentActivity extends BaseActivity {
             bundle = new Bundle();
             bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue());
         }else if(menuItem == AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue()){
-//            fragment = new FlatImageFragment();
-//            bundle = new Bundle();
-//            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
             setApplicationMode(AppConstant.AppType.FREE);
         }else if(menuItem == AppConstant.HomeMenu.SEASONS.getEnumValue()){
-//            fragment = new FlatImageFragment();
-//            bundle = new Bundle();
-//            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SEASONS.getEnumValue());
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SEASONS.getEnumValue());
             setApplicationMode(AppConstant.AppType.PAID);
         }
 
