@@ -5,7 +5,6 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
-import com.suku.learningkids.features.adapter.NumberImageAdapter;
+import com.suku.learningkids.adapter.NumberImageAdapter;
 import com.suku.learningkids.features.alphabet.AlphabetModel;
 
 import java.util.List;
@@ -41,7 +40,10 @@ public class NumberPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return alphabetModels.size();
+        if(alphabetModels != null)
+            return alphabetModels.size();
+        else
+            return 0;
     }
 
     @Override

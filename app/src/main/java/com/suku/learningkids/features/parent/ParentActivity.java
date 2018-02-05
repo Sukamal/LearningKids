@@ -16,6 +16,8 @@ import com.suku.learningkids.features.alphabet.AlphabetFragment;
 import com.suku.learningkids.features.color.ColorFragment;
 import com.suku.learningkids.features.flatimages.FlatImageFragment;
 import com.suku.learningkids.features.numbers.NumberFragment;
+import com.suku.learningkids.features.season.SeasonFragment;
+import com.suku.learningkids.features.shape.ShapeFragment;
 import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
@@ -63,7 +65,7 @@ public class ParentActivity extends BaseActivity {
         }else if(menuItem == AppConstant.HomeMenu.COLOR.getEnumValue()){
             fragment = new ColorFragment();
         }else if(menuItem == AppConstant.HomeMenu.SHAPE.getEnumValue()){
-
+            fragment = new ShapeFragment();
         }else if(menuItem == AppConstant.HomeMenu.FLOWER.getEnumValue()){
             fragment = new FlatImageFragment();
             bundle = new Bundle();
@@ -134,9 +136,7 @@ public class ParentActivity extends BaseActivity {
             bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
             setApplicationMode(AppConstant.AppType.FREE);
         }else if(menuItem == AppConstant.HomeMenu.SEASONS.getEnumValue()){
-            fragment = new FlatImageFragment();
-            bundle = new Bundle();
-            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SEASONS.getEnumValue());
+            fragment = new SeasonFragment();
             setApplicationMode(AppConstant.AppType.PAID);
         }
 

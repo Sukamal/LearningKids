@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
 import com.suku.learningkids.features.alphabet.AlphabetModel;
@@ -180,7 +181,7 @@ public class ColorFragment extends BaseFragment {
         rvColorList.setLayoutManager(gridLayoutManager);
         rvColorList.addItemDecoration(new RecyclerSpacesItemDecoration(0));
 
-        listAdapter = new ColorListAdapter(alphabetModels, new ColorListAdapter.ClickListener() {
+        listAdapter = new ColorListAdapter(alphabetModels, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 vpColor.setCurrentItem(position,true);

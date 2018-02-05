@@ -1,4 +1,4 @@
-package com.suku.learningkids.features.flatimages;
+package com.suku.learningkids.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -15,8 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.suku.learningkids.R;
-import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
-import com.suku.learningkids.features.alphabet.AlphabetModel;
+import com.suku.learningkids.commonInterface.AdapterItemClickListener;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.List;
 
@@ -24,23 +24,19 @@ import java.util.List;
  * Created by SukamalD on 29-01-2018.
  */
 
-public class FlatImagePagerAdapter extends PagerAdapter {
+public class ImageItemPagerAdapter extends PagerAdapter {
 
-    private Context context;
-    private LayoutInflater mLayoutInflater;;
-    private List<FlatImageModel> flatImageModels;
-    private View itemView;
-    private ClickListener clickListener;
+    protected Context context;
+    protected LayoutInflater mLayoutInflater;;
+    protected List<ItemModel> flatImageModels;
+    protected View itemView;
+    protected AdapterItemClickListener clickListener;
 
-    public interface ClickListener {
-        void onAdapterItemClick(View view, int position, Object selectedItem);
-    }
-
-    public void setItemClickListner(FlatImagePagerAdapter.ClickListener clickListener){
+    public void setItemClickListner(AdapterItemClickListener clickListener){
         this.clickListener = clickListener;
     }
 
-    public FlatImagePagerAdapter(Context context, List<FlatImageModel> flatImageModels){
+    public ImageItemPagerAdapter(Context context, List<ItemModel> flatImageModels){
         this.context = context;
         this.flatImageModels = flatImageModels;
         mLayoutInflater = LayoutInflater.from(context);
@@ -48,7 +44,10 @@ public class FlatImagePagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return flatImageModels.size();
+        if(flatImageModels != null)
+            return flatImageModels.size();
+        else
+            return 0;
     }
 
     @Override
@@ -63,11 +62,11 @@ public class FlatImagePagerAdapter extends PagerAdapter {
         TextView tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
         ImageView ivImage = (ImageView) itemView.findViewById(R.id.iv_item_image);
 
-        final FlatImageModel flatImageModel = flatImageModels.get(position);
+        final ItemModel flatImageModel = flatImageModels.get(position);
         Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/kid1.ttf");
         tvTitle.setTypeface(custom_font);
         if(!flatImageModel.isLocked()){
-            tvTitle.setText(flatImageModel.getText());
+            tvTitle.setText(flatImageModel.getHeading());
             ivImage.setImageResource(flatImageModel.getImage());
             container.addView(itemView);
         }else{
@@ -79,7 +78,6 @@ public class FlatImagePagerAdapter extends PagerAdapter {
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"Click on Image "+flatImageModel.getText(),Toast.LENGTH_SHORT).show();
             }
         });
 

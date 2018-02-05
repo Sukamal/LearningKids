@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 
@@ -189,7 +190,7 @@ public class AlphabetFragment extends BaseFragment {
         rvAlphabetList.setLayoutManager(layoutManager);
         rvAlphabetList.addItemDecoration(new RecyclerSpacesItemDecoration(0));
 
-        listAdapter = new AlphabetListAdapter(alphabetModels, new AlphabetListAdapter.ClickListener() {
+        listAdapter = new AlphabetListAdapter(alphabetModels, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 vpAlphabetVp.setCurrentItem(position,true);

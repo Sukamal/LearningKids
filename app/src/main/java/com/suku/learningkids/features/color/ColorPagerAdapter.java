@@ -39,7 +39,9 @@ public class ColorPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return alphabetModels.size();
+        if(alphabetModels != null)
+            return alphabetModels.size();
+        return 0;
     }
 
     @Override

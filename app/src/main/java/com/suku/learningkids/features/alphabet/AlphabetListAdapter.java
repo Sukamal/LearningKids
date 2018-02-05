@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 
 import java.util.List;
 
@@ -20,22 +21,20 @@ import butterknife.ButterKnife;
 public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapter.AlphabetViewHolder>{
 
     private List<AlphabetModel> alphabetList;
-    private ClickListener clickListener;
+    private AdapterItemClickListener clickListener;
 
-    public interface ClickListener {
-        void onAdapterItemClick(View view, int position, Object selectedItem);
-    }
+
 
     public AlphabetListAdapter(List<AlphabetModel> alphabetList){
         this.alphabetList = alphabetList;
     }
 
-    public AlphabetListAdapter(List<AlphabetModel> alphabetList,ClickListener clickListener){
+    public AlphabetListAdapter(List<AlphabetModel> alphabetList,AdapterItemClickListener clickListener){
         this.alphabetList = alphabetList;
         this.clickListener = clickListener;
     }
 
-    public void setItemClickListner(ClickListener clickListener){
+    public void setItemClickListner(AdapterItemClickListener clickListener){
         this.clickListener = clickListener;
     }
 
@@ -80,7 +79,10 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
 
     @Override
     public int getItemCount() {
-        return alphabetList.size();
+        if(alphabetList != null)
+            return alphabetList.size();
+        else
+            return 0;
     }
 
     public class AlphabetViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

@@ -1,14 +1,13 @@
-package com.suku.learningkids.features.adapter;
+package com.suku.learningkids.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.suku.learningkids.R;
-import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
+import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,13 +21,13 @@ public class NumberImageAdapter extends RecyclerView.Adapter<NumberImageAdapter.
     private int imageCount;
     private int image;
 
-    private ClickListener clickListener;
+    private AdapterItemClickListener clickListener;
 
     public interface ClickListener {
         void onAdapterItemClick(View view, int position, Object selectedItem);
     }
 
-    public void setItemClickListner(ClickListener clickListener){
+    public void setItemClickListner(AdapterItemClickListener clickListener){
         this.clickListener = clickListener;
     }
 

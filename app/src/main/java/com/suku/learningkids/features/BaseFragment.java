@@ -1,23 +1,13 @@
 package com.suku.learningkids.features;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.suku.learningkids.R;
 import com.suku.learningkids.addvertise.AddManager;
-import com.suku.learningkids.addvertise.GoogleAdd;
 import com.suku.learningkids.application.KidApplication;
 
 import java.util.List;

@@ -35,7 +35,10 @@ public class AlphabetPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return alphabetModels.size();
+        if(alphabetModels != null)
+            return alphabetModels.size();
+        else
+            return 0;
     }
 
     @Override
