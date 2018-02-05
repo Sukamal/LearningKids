@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_margin="1dp"
+    android:padding="@dimen/margin_5"
+    android:background="@drawable/rounded_corner_rectangle">
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="JAN"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/color_12"
+        android:src="@drawable/apple"/>
+    <ImageView
+        android:id="@+id/iv_images_lock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:src="@drawable/lock"
+        android:visibility="gone"/>
+
+</FrameLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/rounded_corner_rectangle_bigborder">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/color_12">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_10"
+            android:gravity="center"
+            android:text="DELIVERY VAN"
+            android:textSize="70sp"
+            android:textColor="@color/color2"/>
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="DELIVERY VAN"
+            android:textSize="30sp"
+            android:textColor="@color/color_brown"/>
+        <TextView
+            android:id="@+id/tv_sub_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:gravity="center"
+            android:text="DELIVERY VAN"
+            android:textSize="20sp"
+            android:textColor="@color/color_11"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_item_image"
+        android:padding="@dimen/margin_20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/delivery_van"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

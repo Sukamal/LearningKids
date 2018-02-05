@@ -15,6 +15,7 @@ import com.suku.learningkids.features.BaseActivity;
 import com.suku.learningkids.features.alphabet.AlphabetFragment;
 import com.suku.learningkids.features.color.ColorFragment;
 import com.suku.learningkids.features.flatimages.FlatImageFragment;
+import com.suku.learningkids.features.months.MonthsFragment;
 import com.suku.learningkids.features.numbers.NumberFragment;
 import com.suku.learningkids.features.season.SeasonFragment;
 import com.suku.learningkids.features.shape.ShapeFragment;
@@ -138,7 +139,10 @@ public class ParentActivity extends BaseActivity {
         }else if(menuItem == AppConstant.HomeMenu.SEASONS.getEnumValue()){
             fragment = new SeasonFragment();
             setApplicationMode(AppConstant.AppType.PAID);
+        }else if(menuItem == AppConstant.HomeMenu.MONTHS.getEnumValue()){
+            fragment = new MonthsFragment();
         }
+
 
 
         else if(menuItem == AppConstant.HomeMenu.ACTIONS.getEnumValue()){

@@ -10,6 +10,7 @@ public class ItemModel {
 
     private String heading;
     private String subheading;
+    private String subheading2;
     private int image;
     private int imageIcon;
     private int textColor = Color.BLACK;
@@ -24,8 +25,13 @@ public class ItemModel {
     }
 
     public ItemModel(String heading,String subheading,int image,int imageIcon,boolean isLocked){
+        this(heading,subheading,null,image,imageIcon,isLocked);
+    }
+
+    public ItemModel(String heading,String subheading,String subheading2,int image,int imageIcon,boolean isLocked){
         this.heading = heading;
         this.subheading = subheading;
+        this.subheading2 = subheading2;
         this.image = image;
         this.imageIcon = imageIcon;
         this.isLocked = isLocked;
@@ -77,5 +83,13 @@ public class ItemModel {
 
     public void setLocked(boolean locked) {
         isLocked = locked;
+    }
+
+    public String getSubheading2() {
+        return subheading2;
+    }
+
+    public void setSubheading2(String subheading2) {
+        this.subheading2 = subheading2;
     }
 }
