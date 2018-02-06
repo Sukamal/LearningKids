@@ -5,20 +5,17 @@ import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
-import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
-import com.suku.learningkids.features.alphabet.AlphabetModel;
-import com.suku.learningkids.features.alphabet.AlphabetPagerAdapter;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
-import com.suku.learningkids.features.numbers.NumberPagerAdapter;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -39,8 +36,10 @@ public class ColorFragment extends BaseFragment {
 
     private ColorPagerAdapter pagerAdapter;
     private ColorListAdapter listAdapter;
-    private ArrayList<AlphabetModel> alphabetModels;
+    private ArrayList<ItemModel> alphabetModels;
     private TextToSpeech textToSpeech;
+    private int pagerItemPosition;
+
 
 
     @Nullable
@@ -48,20 +47,38 @@ public class ColorFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_color,container,false);
         ButterKnife.bind(this,view);
-        initItems();
+        checkVersion(view);
         return view;
     }
 
+    private void checkVersion(View view) {
+        isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
+        if (isPaidApp) {
+            initPaidVersion(view);
+        } else {
+            initFreeVersion(view);
+        }
+    }
+
+    private void initFreeVersion(View view) {
+        setAlphabets(false);
+        initCommonItems();
+
+    }
+
+    private void initPaidVersion(View view) {
+        setAlphabets(true);
+        initCommonItems();
+    }
 
     @Override
     public void onResume() {
         super.onResume();
-
+        isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
 //        applyAnimation();
     }
 
-    private void initItems(){
-        setAlphabets();
+    private void initCommonItems(){
         initTextToSpeach();
         initPager();
         initAlphabetRecyclerView();
@@ -70,80 +87,80 @@ public class ColorFragment extends BaseFragment {
 
 
 
-    private void setAlphabets(){
+    private void setAlphabets(boolean isPaid){
         alphabetModels = new ArrayList<>();
 
-        AlphabetModel alphabetModel;
+        ItemModel alphabetModel;
 
-        alphabetModel = new AlphabetModel("","","RED",R.color.color_red);
+        alphabetModel = new ItemModel("","","RED",R.color.color_red,false);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","GREEN",R.color.color_green);
+        alphabetModel = new ItemModel("","","GREEN",R.color.color_green,false);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","BLACK",R.color.color_black);
+        alphabetModel = new ItemModel("","","BLACK",R.color.color_black,false);
         alphabetModel.setTextColor(R.color.color_white);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","BLUE",R.color.color_blue);
+        alphabetModel = new ItemModel("","","BLUE",R.color.color_blue,false);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","WHITE",R.color.color_white);
+        alphabetModel = new ItemModel("","","WHITE",R.color.color_white,false);
         alphabetModel.setTextColor(R.color.color_black);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","GRAY",R.color.color_grey);
+        alphabetModel = new ItemModel("","","GRAY",R.color.color_grey,false);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","BROWN",R.color.color_brown);
+        alphabetModel = new ItemModel("","","BROWN",R.color.color_brown,false);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","ORANGE",R.color.color_orange);
+        alphabetModel = new ItemModel("","","ORANGE",R.color.color_orange,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","YELLOW",R.color.color_yellow);
+        alphabetModel = new ItemModel("","","YELLOW",R.color.color_yellow,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","VIOLET",R.color.color_violet);
+        alphabetModel = new ItemModel("","","VIOLET",R.color.color_violet,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","PINK",R.color.color_pink);
+        alphabetModel = new ItemModel("","","PINK",R.color.color_pink,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","PURPLE",R.color.color_purple);
+        alphabetModel = new ItemModel("","","PURPLE",R.color.color_purple,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","CREAM",R.color.color_cream);
+        alphabetModel = new ItemModel("","","CREAM",R.color.color_cream,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","GOLDEN",R.color.color_golden);
+        alphabetModel = new ItemModel("","","GOLDEN",R.color.color_golden,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","SILVER",R.color.color_silver);
+        alphabetModel = new ItemModel("","","SILVER",R.color.color_silver,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","LIGHT BLUE",R.color.color_light_blue);
+        alphabetModel = new ItemModel("","","LIGHT BLUE",R.color.color_light_blue,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","SKY BLUE",R.color.color_sky_blue);
+        alphabetModel = new ItemModel("","","SKY BLUE",R.color.color_sky_blue,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","IRIS BLUE",R.color.color_iris_blue);
+        alphabetModel = new ItemModel("","","IRIS BLUE",R.color.color_iris_blue,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","ROYAL BLUE",R.color.color_royal_blue);
+        alphabetModel = new ItemModel("","","ROYAL BLUE",R.color.color_royal_blue,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","NAVY BLUE",R.color.color_navy_blue);
+        alphabetModel = new ItemModel("","","NAVY BLUE",R.color.color_navy_blue,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","CHOCOLATE",R.color.color_chocolate);
+        alphabetModel = new ItemModel("","","CHOCOLATE",R.color.color_chocolate,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","OLIVE GREEN",R.color.color_oliv_green);
+        alphabetModel = new ItemModel("","","OLIVE GREEN",R.color.color_oliv_green,!isPaid);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("","","MAGENTA",R.color.color_magenta);
+        alphabetModel = new ItemModel("","","MAGENTA",R.color.color_magenta,!isPaid);
         alphabetModels.add(alphabetModel);
 
 
@@ -161,9 +178,11 @@ public class ColorFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
+                pagerItemPosition = position;
+                rvColorList.scrollToPosition(position);
                 pagerAdapter.startAnimation();
-                AlphabetModel alphabetModel = alphabetModels.get(position);
-                String text = alphabetModel.getWord() + " color";
+                ItemModel alphabetModel = alphabetModels.get(position);
+                String text = alphabetModel.getSubheading2() + " color";
                 speakOut(text);
 
             }
@@ -185,6 +204,11 @@ public class ColorFragment extends BaseFragment {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 vpColor.setCurrentItem(position,true);
+                if(pagerItemPosition == position){
+                    ItemModel alphabetModel = alphabetModels.get(position);
+                    String text = alphabetModel.getSubheading2() + " color";
+                    speakOut(text);
+                }
             }
         });
 

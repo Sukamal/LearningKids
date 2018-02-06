@@ -15,8 +15,11 @@ import com.suku.learningkids.features.BaseActivity;
 import com.suku.learningkids.features.alphabet.AlphabetFragment;
 import com.suku.learningkids.features.color.ColorFragment;
 import com.suku.learningkids.features.flatimages.FlatImageFragment;
+import com.suku.learningkids.features.goodhabit.GoodHabitFragment;
+import com.suku.learningkids.features.goodmanners.GoodMannersFragment;
 import com.suku.learningkids.features.months.MonthsFragment;
 import com.suku.learningkids.features.numbers.NumberFragment;
+import com.suku.learningkids.features.safety.SafetyFragment;
 import com.suku.learningkids.features.season.SeasonFragment;
 import com.suku.learningkids.features.shape.ShapeFragment;
 import com.suku.learningkids.util.AppConstant;
@@ -141,6 +144,12 @@ public class ParentActivity extends BaseActivity {
             setApplicationMode(AppConstant.AppType.PAID);
         }else if(menuItem == AppConstant.HomeMenu.MONTHS.getEnumValue()){
             fragment = new MonthsFragment();
+        }else if(menuItem == AppConstant.HomeMenu.SAFETY.getEnumValue()){
+            fragment = new SafetyFragment();
+        }else if(menuItem == AppConstant.HomeMenu.GOODHABIT.getEnumValue()){
+            fragment = new GoodHabitFragment();
+        }else if(menuItem == AppConstant.HomeMenu.GOODMANERS.getEnumValue()){
+            fragment = new GoodMannersFragment();
         }
 
 

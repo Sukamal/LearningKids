@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.List;
 
@@ -24,10 +25,10 @@ public class AlphabetPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater mLayoutInflater;;
-    private List<AlphabetModel> alphabetModels;
+    private List<ItemModel> alphabetModels;
     private View itemView;
 
-    public AlphabetPagerAdapter(Context context,List<AlphabetModel> alphabetModels){
+    public AlphabetPagerAdapter(Context context,List<ItemModel> alphabetModels){
         this.context = context;
         this.alphabetModels = alphabetModels;
         mLayoutInflater = LayoutInflater.from(context);
@@ -55,10 +56,10 @@ public class AlphabetPagerAdapter extends PagerAdapter {
         TextView tvWord = (TextView) itemView.findViewById(R.id.tv_word);
         ImageView ivImage = (ImageView) itemView.findViewById(R.id.iv_image);
 
-        AlphabetModel alphabetModel = alphabetModels.get(position);
-        tvAlphabetCaps.setText(alphabetModel.getAlphabetCaps());
-        tvAlphabetSmall.setText(alphabetModel.getAlphabetSmall());
-        tvWord.setText(alphabetModel.getWord());
+        ItemModel alphabetModel = alphabetModels.get(position);
+        tvAlphabetCaps.setText(alphabetModel.getHeading());
+        tvAlphabetSmall.setText(alphabetModel.getSubheading());
+        tvWord.setText(alphabetModel.getSubheading2());
         ivImage.setImageResource(alphabetModel.getImage());
         container.addView(itemView);
 

@@ -14,9 +14,8 @@ import com.suku.learningkids.R;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.alphabet.AlphabetListAdapter;
-import com.suku.learningkids.features.alphabet.AlphabetModel;
-import com.suku.learningkids.features.alphabet.AlphabetPagerAdapter;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -35,10 +34,12 @@ public class NumberFragment extends BaseFragment {
     @BindView(R.id.rv_number_list)
     RecyclerView rvNnumberList;
 
-    private ArrayList<AlphabetModel> alphabetModels;
+    private ArrayList<ItemModel> alphabetModels;
     private NumberPagerAdapter pagerAdapter;
     private AlphabetListAdapter listAdapter;
     private TextToSpeech textToSpeech;
+    private int pagerItemPosition;
+
 
 
     @Nullable
@@ -70,9 +71,9 @@ public class NumberFragment extends BaseFragment {
 
     private void setAlphabets(){
         alphabetModels = new ArrayList<>();
-        AlphabetModel alphabetModel;
+        ItemModel alphabetModel;
         for(int i=1; i <= 20;i++){
-            alphabetModel = new AlphabetModel(String.valueOf(i),"","APPLE",R.drawable.apple);
+            alphabetModel = new ItemModel(String.valueOf(i),"","APPLE",R.drawable.apple,false);
             alphabetModels.add(alphabetModel);
         }
     }
@@ -88,10 +89,16 @@ public class NumberFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
+                pagerItemPosition = position;
+                rvNnumberList.scrollToPosition(position);
 //                pagerAdapter.startAnimation();
-                AlphabetModel alphabetModel = alphabetModels.get(position);
-                String text = alphabetModel.getAlphabetCaps();
-                speakOut(text);
+                ItemModel alphabetModel = alphabetModels.get(position);
+                String text = alphabetModel.getHeading();
+                if(alphabetModel.isLocked()){
+                    speakOut("Please Subscribe");
+                }else{
+                    speakOut(text);
+                }
 
             }
 
@@ -113,6 +120,15 @@ public class NumberFragment extends BaseFragment {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 vpNumber.setCurrentItem(position,true);
+                if(pagerItemPosition == position){
+                    ItemModel alphabetModel = alphabetModels.get(position);
+                    String text = alphabetModel.getHeading();
+                    if(alphabetModel.isLocked()){
+                        speakOut("Please Subscribe");
+                    }else{
+                        speakOut(text);
+                    }
+                }
             }
         });
 

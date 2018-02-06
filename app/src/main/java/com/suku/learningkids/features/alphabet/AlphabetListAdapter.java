@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.List;
 
@@ -20,16 +21,16 @@ import butterknife.ButterKnife;
 
 public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapter.AlphabetViewHolder>{
 
-    private List<AlphabetModel> alphabetList;
+    private List<ItemModel> alphabetList;
     private AdapterItemClickListener clickListener;
 
 
 
-    public AlphabetListAdapter(List<AlphabetModel> alphabetList){
+    public AlphabetListAdapter(List<ItemModel> alphabetList){
         this.alphabetList = alphabetList;
     }
 
-    public AlphabetListAdapter(List<AlphabetModel> alphabetList,AdapterItemClickListener clickListener){
+    public AlphabetListAdapter(List<ItemModel> alphabetList,AdapterItemClickListener clickListener){
         this.alphabetList = alphabetList;
         this.clickListener = clickListener;
     }
@@ -48,8 +49,8 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
 
     @Override
     public void onBindViewHolder(AlphabetViewHolder holder, int position) {
-        AlphabetModel alphabetModel = alphabetList.get(position);
-        holder.tvAlphabet.setText(alphabetModel.getAlphabetCaps());
+        ItemModel alphabetModel = alphabetList.get(position);
+        holder.tvAlphabet.setText(alphabetModel.getHeading());
         holder.position = position;
 
         if(position == 0){
@@ -100,7 +101,7 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
         @Override
         public void onClick(View v) {
             if(clickListener != null){
-                AlphabetModel alphabetModel = alphabetList.get(position);
+                ItemModel alphabetModel = alphabetList.get(position);
                 clickListener.onAdapterItemClick(v,position,alphabetModel);
             }
         }

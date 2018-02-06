@@ -1,9 +1,6 @@
 package com.suku.learningkids.features.color;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -16,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
-import com.suku.learningkids.features.alphabet.AlphabetModel;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.List;
 
@@ -28,10 +25,10 @@ public class ColorPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater mLayoutInflater;;
-    private List<AlphabetModel> alphabetModels;
+    private List<ItemModel> alphabetModels;
     private View itemView;
 
-    public ColorPagerAdapter(Context context, List<AlphabetModel> alphabetModels){
+    public ColorPagerAdapter(Context context, List<ItemModel> alphabetModels){
         this.context = context;
         this.alphabetModels = alphabetModels;
         mLayoutInflater = LayoutInflater.from(context);
@@ -57,17 +54,24 @@ public class ColorPagerAdapter extends PagerAdapter {
         TextView tvWord = (TextView) itemView.findViewById(R.id.tv_color);
         ImageView ivImage = (ImageView) itemView.findViewById(R.id.iv_images);
 
-        AlphabetModel alphabetModel = alphabetModels.get(position);
-        tvWord.setText(alphabetModel.getWord());
-        tvWord.setTextColor(context.getResources().getColor(alphabetModel.getImage()));
-        ivImage.setColorFilter(context.getResources().getColor(alphabetModel.getImage()));
-        container.addView(itemView);
-
+        ItemModel alphabetModel = alphabetModels.get(position);
         if(alphabetModel.getImage() == R.color.color_white){
             parent.setBackgroundColor(context.getResources().getColor(R.color.color_12));
         }else{
             parent.setBackgroundColor(context.getResources().getColor(R.color.color_white));
 
+        }
+
+        if(!alphabetModel.isLocked()){
+            tvWord.setText(alphabetModel.getSubheading2());
+            tvWord.setTextColor(context.getResources().getColor(alphabetModel.getImage()));
+            ivImage.setColorFilter(context.getResources().getColor(alphabetModel.getImage()));
+            container.addView(itemView);
+        }else{
+            tvWord.setText("Please Subscribe");
+            tvWord.setTextColor(context.getResources().getColor(R.color.color_red));
+            ivImage.setImageResource(R.drawable.subscribe);
+            container.addView(itemView);
         }
 
         return itemView;

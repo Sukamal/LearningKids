@@ -42,6 +42,8 @@ public class MonthsFragment extends BaseFragment {
     private TextToSpeech textToSpeech;
     private ArrayList<AddManager.AddType> addTypeList;
     private boolean isPaidApp;
+    private int pagerItemPosition;
+
 
     @Nullable
     @Override
@@ -107,10 +109,16 @@ public class MonthsFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
+                pagerItemPosition = position;
+                rvImageList.scrollToPosition(position);
                 pagerAdapter.startAnimation();
                 ItemModel itemModel = itemModelList.get(position);
                 String text = itemModel.getHeading();
-                speakOut(text);
+                if(itemModel.isLocked()){
+                    speakOut("Please Subscribe");
+                }else{
+                    speakOut(text);
+                }
 
             }
 
@@ -133,6 +141,16 @@ public class MonthsFragment extends BaseFragment {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 vpFlower.setCurrentItem(position, true);
+                if(pagerItemPosition == position){
+                    ItemModel itemModel = itemModelList.get(position);
+                    String text = itemModel.getHeading();
+                    if(itemModel.isLocked()){
+                        speakOut("Please Subscribe");
+                    }else{
+                        speakOut(text);
+                    }
+
+                }
             }
         });
 

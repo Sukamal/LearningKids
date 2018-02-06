@@ -14,6 +14,7 @@ import com.suku.learningkids.R;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -43,7 +44,7 @@ public class AlphabetFragment extends BaseFragment {
 
     private AlphabetPagerAdapter pagerAdapter;
     private AlphabetListAdapter listAdapter;
-    private ArrayList<AlphabetModel> alphabetModels;
+    private ArrayList<ItemModel> itemModelList;
     private TextToSpeech textToSpeech;
 
 
@@ -75,91 +76,91 @@ public class AlphabetFragment extends BaseFragment {
 
 
     private void setAlphabets(){
-        alphabetModels = new ArrayList<>();
+        itemModelList = new ArrayList<>();
 
-        AlphabetModel alphabetModel;
+        ItemModel alphabetModel;
 
-        alphabetModel = new AlphabetModel("A","a","APPLE",R.drawable.apple);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("A","a","APPLE",R.drawable.apple,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("B","b","BALL",R.drawable.ball);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("B","b","BALL",R.drawable.ball,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("C","c","CAT",R.drawable.cat);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("C","c","CAT",R.drawable.cat,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("D","d","DOG",R.drawable.dog);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("D","d","DOG",R.drawable.dog,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("E","e","ELEPHANT",R.drawable.elephant);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("E","e","ELEPHANT",R.drawable.elephant,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("F","f","FISH",R.drawable.fish);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("F","f","FISH",R.drawable.fish,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("G","g","GOAT",R.drawable.goat);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("G","g","GOAT",R.drawable.goat,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("H","h","HORSE",R.drawable.horse);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("H","h","HORSE",R.drawable.horse,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("I","i","ICE CREAM",R.drawable.ice_cream);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("I","i","ICE CREAM",R.drawable.ice_cream,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("J","j","JUICE",R.drawable.juice);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("J","j","JUICE",R.drawable.juice,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("K","k","KITE",R.drawable.kite);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("K","k","KITE",R.drawable.kite,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("L","l","LION",R.drawable.lion);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("L","l","LION",R.drawable.lion,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("M","m","MONKEY",R.drawable.monkey);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("M","m","MONKEY",R.drawable.monkey,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("N","n","NEST",R.drawable.nest);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("N","n","NEST",R.drawable.nest,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("O","o","ORANGE",R.drawable.orange);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("O","o","ORANGE",R.drawable.orange,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("P","p","PARROT",R.drawable.parrot);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("P","p","PARROT",R.drawable.parrot,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("Q","q","QUEEN",R.drawable.queen);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("Q","q","QUEEN",R.drawable.queen,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("R","r","RABBIT",R.drawable.rabbit);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("R","r","RABBIT",R.drawable.rabbit,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("S","s","SHIP",R.drawable.ship);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("S","s","SHIP",R.drawable.ship,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("T","t","TIGER",R.drawable.tiger);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("T","t","TIGER",R.drawable.tiger,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("U","u","UMBRELLA",R.drawable.umbrella);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("U","u","UMBRELLA",R.drawable.umbrella,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("V","v","VAN",R.drawable.van);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("V","v","VAN",R.drawable.van,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("W","w","WATCH",R.drawable.watch);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("W","w","WATCH",R.drawable.watch,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("X","x","XYLOPHONE",R.drawable.xylophone);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("X","x","XYLOPHONE",R.drawable.xylophone,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("Y","y","YAK",R.drawable.yak);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("Y","y","YAK",R.drawable.yak,false);
+        itemModelList.add(alphabetModel);
 
-        alphabetModel = new AlphabetModel("Z","z","ZEBRA",R.drawable.zebra);
-        alphabetModels.add(alphabetModel);
+        alphabetModel = new ItemModel("Z","z","ZEBRA",R.drawable.zebra,false);
+        itemModelList.add(alphabetModel);
     }
 
     private void initPager(){
-        pagerAdapter = new AlphabetPagerAdapter(getContext(),alphabetModels);
+        pagerAdapter = new AlphabetPagerAdapter(getContext(),itemModelList);
         vpAlphabetVp.setAdapter(pagerAdapter);
         vpAlphabetVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -169,9 +170,11 @@ public class AlphabetFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
+                pagerItemPosition = position;
+                rvAlphabetList.scrollToPosition(position);
                 pagerAdapter.startAnimation();
-                AlphabetModel alphabetModel = alphabetModels.get(position);
-                String text = alphabetModel.getAlphabetCaps() + " for " + alphabetModel.getWord();
+                ItemModel alphabetModel = itemModelList.get(position);
+                String text = alphabetModel.getHeading() + " for " + alphabetModel.getSubheading2();
                 speakOut(text);
 
             }
@@ -190,10 +193,15 @@ public class AlphabetFragment extends BaseFragment {
         rvAlphabetList.setLayoutManager(layoutManager);
         rvAlphabetList.addItemDecoration(new RecyclerSpacesItemDecoration(0));
 
-        listAdapter = new AlphabetListAdapter(alphabetModels, new AdapterItemClickListener() {
+        listAdapter = new AlphabetListAdapter(itemModelList, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 vpAlphabetVp.setCurrentItem(position,true);
+                if(pagerItemPosition == position){
+                    ItemModel alphabetModel = itemModelList.get(position);
+                    String text = alphabetModel.getHeading() + " for " + alphabetModel.getSubheading2();
+                    speakOut(text);
+                }
             }
         });
 

@@ -34,7 +34,10 @@ public class AppConstant {
 
 
 
-        ACTIONS(25)
+        ACTIONS(25),
+        SAFETY(26),
+        GOODHABIT(27),
+        GOODMANERS(28)
 
         ;
 

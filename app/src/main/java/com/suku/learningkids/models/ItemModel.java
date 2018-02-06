@@ -24,8 +24,16 @@ public class ItemModel {
         this(heading,null,image,imageIcon,isLocked);
     }
 
+    public ItemModel(String heading,String subheading,int image,boolean isLocked){
+        this(heading,subheading,image,0,isLocked);
+    }
+
     public ItemModel(String heading,String subheading,int image,int imageIcon,boolean isLocked){
         this(heading,subheading,null,image,imageIcon,isLocked);
+    }
+
+    public ItemModel(String heading,String subheading,String subheading2,int image,boolean isLocked){
+        this(heading,subheading,subheading2,image,0,isLocked);
     }
 
     public ItemModel(String heading,String subheading,String subheading2,int image,int imageIcon,boolean isLocked){

@@ -21,6 +21,8 @@ public class BaseFragment extends Fragment {
 
     private AddManager addManager;
     private View view;
+    protected boolean isPaidApp;
+    protected int pagerItemPosition;
 
     public void addFragment(Fragment fragment, Bundle bundle){
         if(bundle != null){

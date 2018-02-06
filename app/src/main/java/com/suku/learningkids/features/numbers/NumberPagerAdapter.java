@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.adapter.NumberImageAdapter;
-import com.suku.learningkids.features.alphabet.AlphabetModel;
+import com.suku.learningkids.models.ItemModel;
 
 import java.util.List;
 
@@ -29,10 +29,10 @@ public class NumberPagerAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater mLayoutInflater;;
-    private List<AlphabetModel> alphabetModels;
+    private List<ItemModel> alphabetModels;
     private View itemView;
 
-    public NumberPagerAdapter(Context context, List<AlphabetModel> alphabetModels){
+    public NumberPagerAdapter(Context context, List<ItemModel> alphabetModels){
         this.context = context;
         this.alphabetModels = alphabetModels;
         mLayoutInflater = LayoutInflater.from(context);
@@ -59,8 +59,8 @@ public class NumberPagerAdapter extends PagerAdapter {
         TextView tvWord = (TextView) itemView.findViewById(R.id.tv_word);
         RecyclerView recyclerView = (RecyclerView)  itemView.findViewById(R.id.rv_number_image);
 
-        AlphabetModel alphabetModel = alphabetModels.get(position);
-        tvAlphabetCaps.setText(alphabetModel.getAlphabetCaps());
+        ItemModel alphabetModel = alphabetModels.get(position);
+        tvAlphabetCaps.setText(alphabetModel.getHeading());
 //        tvWord.setText(alphabetModel.getWord());
 
         Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/kid1.ttf");
@@ -68,7 +68,7 @@ public class NumberPagerAdapter extends PagerAdapter {
         tvAlphabetCaps.setTextColor(context.getResources().getColor(R.color.color1));
 
 
-        initImages(recyclerView,Integer.valueOf(alphabetModel.getAlphabetCaps()),alphabetModel.getImage());
+        initImages(recyclerView,Integer.valueOf(alphabetModel.getHeading()),alphabetModel.getImage());
         container.addView(itemView);
 
         return itemView;

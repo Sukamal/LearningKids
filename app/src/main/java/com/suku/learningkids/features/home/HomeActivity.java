@@ -181,16 +181,19 @@ public class HomeActivity extends BaseActivity {
         menuModel = new MenuModel("BODY PARTS",R.drawable.splash,R.color.color3,R.color.color_11);
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("GOOD HABITS",R.drawable.splash,R.color.color2,R.color.color_11);
+        menuModel = new MenuModel("GOOD HABITS",R.drawable.brushteeth,R.color.color2,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.GOODHABIT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("GOOD MANNERS",R.drawable.splash,R.color.color1,R.color.color_11);
+        menuModel = new MenuModel("GOOD MANNERS",R.drawable.excuseme,R.color.color1,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.GOODMANERS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SAFETY",R.drawable.splash,R.color.color9,R.color.color_11);
+        menuModel = new MenuModel("SAFETY",R.drawable.strenger,R.color.color9,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.SAFETY.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("ACTIONS",R.drawable.splash,R.color.color10,R.color.color_11);
+        menuModel = new MenuModel("ACTIONS",R.drawable.crawling,R.color.color10,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.ACTIONS.getEnumValue());
         menuModels.add(menuModel);
 

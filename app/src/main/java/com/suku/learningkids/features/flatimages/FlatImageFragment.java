@@ -45,7 +45,8 @@ public class FlatImageFragment extends BaseFragment {
     private TextToSpeech textToSpeech;
     private int displayCode = -1;
     private ArrayList<AddManager.AddType> addTypeList;
-    private boolean isPaidApp;
+
+
 
     @Nullable
     @Override
@@ -76,6 +77,7 @@ public class FlatImageFragment extends BaseFragment {
     }
 
     private void initFreeVersion(View view) {
+        view.findViewById(R.id.ll_banner).setVisibility(View.VISIBLE);
         getImageSets(false);
         initCommonItems();
         setAddType();
@@ -160,10 +162,17 @@ public class FlatImageFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
+                pagerItemPosition = position;
+                rvImageList.scrollToPosition(position);
                 pagerAdapter.startAnimation();
                 ItemModel itemModel = imageItemList.get(position);
                 String text = itemModel.getHeading();
-                speakOut(text);
+                if(itemModel.isLocked()){
+                    speakOut("Please Subscribe");
+                }else{
+                    speakOut(text);
+                }
+
 
             }
 
@@ -186,6 +195,15 @@ public class FlatImageFragment extends BaseFragment {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 vpFlower.setCurrentItem(position, true);
+                if(pagerItemPosition == position){
+                    ItemModel itemModel = imageItemList.get(position);
+                    String text = itemModel.getHeading();
+                    if(itemModel.isLocked()){
+                        speakOut("Please Subscribe");
+                    }else{
+                        speakOut(text);
+                    }
+                }
             }
         });
 
