@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_add_banner"></include>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_image_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_banner">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rv_image_list"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color1"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="MOUTH"/>
+
+        <ImageView
+            android:id="@+id/iv_parts_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/body1"/>
+
+        <ImageView
+            android:id="@+id/iv_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/body1"
+            android:background="@color/color_body_parts"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

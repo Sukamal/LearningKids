@@ -140,9 +140,9 @@ public class FlatImageFragment extends BaseFragment {
             setMusicalInstrument(isPaid);
         }else if (displayCode == AppConstant.HomeMenu.STATIONARY.getEnumValue()) {
             setStationaryItem(isPaid);
+        }else if (displayCode == AppConstant.HomeMenu.OURHELPERS.getEnumValue()) {
+            setHelpersItem(isPaid);
         }
-
-
         else if (displayCode == AppConstant.HomeMenu.ACTIONS.getEnumValue()) {
             setActions(isPaid);
         }
@@ -1391,6 +1391,60 @@ public class FlatImageFragment extends BaseFragment {
 
         flatImageModel = new ItemModel("WHITEBOARD MARKER", R.drawable.whiteboardmarker, !isPaid);
         imageItemList.add(flatImageModel);
+
+    }
+
+    private void setHelpersItem(boolean isPaid) {
+        imageItemList = new ArrayList<>();
+
+        ItemModel flatImageModel;
+
+        flatImageModel = new ItemModel("NURSE", R.drawable.nurse, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("DOCTOR", R.drawable.doctor, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("TEACHER", R.drawable.teacher, false);
+        imageItemList.add(flatImageModel);
+
+
+        flatImageModel = new ItemModel("POLICE", R.drawable.police, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("SOLDIER", R.drawable.soldier, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("TICKET CHECKER", R.drawable.ticket_checker, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("POST MAN", R.drawable.postman, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("ELECTRICIAN", R.drawable.electrician, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("BARBER", R.drawable.barber, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("PORTER", R.drawable.porter, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("CHEF", R.drawable.chef, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("DRIVER", R.drawable.driver, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("CARPENTER", R.drawable.carpenter, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("DELIVERY BOY", R.drawable.deliveryboy, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("WASHER MAN", R.drawable.washerman, !isPaid);
+        imageItemList.add(flatImageModel);
+
 
     }
 

@@ -179,6 +179,7 @@ public class HomeActivity extends BaseActivity {
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("BODY PARTS",R.drawable.splash,R.color.color3,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.BODYPARTS.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("GOOD HABITS",R.drawable.brushteeth,R.color.color2,R.color.color_11);
@@ -198,6 +199,7 @@ public class HomeActivity extends BaseActivity {
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("OUR HELPERS",R.drawable.splash,R.color.color1,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.OURHELPERS.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("SOURCE OF WATER",R.drawable.splash,R.color.color2,R.color.color_11);

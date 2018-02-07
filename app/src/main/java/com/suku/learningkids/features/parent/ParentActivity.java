@@ -13,6 +13,7 @@ import com.suku.learningkids.addvertise.AddManager;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.features.BaseActivity;
 import com.suku.learningkids.features.alphabet.AlphabetFragment;
+import com.suku.learningkids.features.bodyparts.BodyPartsFragment;
 import com.suku.learningkids.features.color.ColorFragment;
 import com.suku.learningkids.features.flatimages.FlatImageFragment;
 import com.suku.learningkids.features.goodhabit.GoodHabitFragment;
@@ -150,8 +151,16 @@ public class ParentActivity extends BaseActivity {
             fragment = new GoodHabitFragment();
         }else if(menuItem == AppConstant.HomeMenu.GOODMANERS.getEnumValue()){
             fragment = new GoodMannersFragment();
+        }else if(menuItem == AppConstant.HomeMenu.OURHELPERS.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.OURHELPERS.getEnumValue());
+
         }
 
+        else if(menuItem == AppConstant.HomeMenu.BODYPARTS.getEnumValue()){
+            fragment = new BodyPartsFragment();
+        }
 
 
         else if(menuItem == AppConstant.HomeMenu.ACTIONS.getEnumValue()){
