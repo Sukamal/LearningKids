@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_add_banner"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_banner"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_10"
+                android:text="TIME"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/color1"
+                android:background="@color/color_12"
+                android:gravity="center"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v4.view.ViewPager>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_10"
+                android:text="DAYS OF WEEK"
+                android:textSize="25sp"
+                android:textColor="@color/color1"
+                android:background="@color/color_12"
+                android:gravity="center"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_days_week"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+            </android.support.v7.widget.RecyclerView>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_day_week"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_days"
+                android:layout_above="@id/rv_days_week">
+            </android.support.v4.view.ViewPager>
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

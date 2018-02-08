@@ -39,10 +39,6 @@ public class MonthsFragment extends BaseFragment {
     private MonthsPagerAdapter pagerAdapter;
     private ArrayList<ItemModel> itemModelList;
     private ButtomTextAdapter bottomTextAdapter;
-    private TextToSpeech textToSpeech;
-    private ArrayList<AddManager.AddType> addTypeList;
-    private boolean isPaidApp;
-    private int pagerItemPosition;
 
 
     @Nullable
@@ -93,7 +89,6 @@ public class MonthsFragment extends BaseFragment {
     }
 
     private void initCommonItems() {
-        initTextToSpeach();
         initPager();
         initBottomImageRecyclerView();
     }
@@ -140,7 +135,6 @@ public class MonthsFragment extends BaseFragment {
         bottomTextAdapter = new ButtomTextAdapter(itemModelList, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
-                vpFlower.setCurrentItem(position, true);
                 if(pagerItemPosition == position){
                     ItemModel itemModel = itemModelList.get(position);
                     String text = itemModel.getHeading();
@@ -149,30 +143,13 @@ public class MonthsFragment extends BaseFragment {
                     }else{
                         speakOut(text);
                     }
-
                 }
+                vpFlower.setCurrentItem(position, true);
             }
         });
 
         rvImageList.setAdapter(bottomTextAdapter);
     }
-
-
-    private void initTextToSpeach() {
-        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = textToSpeech.setLanguage(Locale.US);
-                }
-            }
-        });
-    }
-
-    private void speakOut(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
 
     private void setMonthsImages(boolean isPaid) {
         itemModelList = new ArrayList<>();

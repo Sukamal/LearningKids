@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="@dimen/margin_5">
+    android:layout_margin="@dimen/margin_10">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/margin_5"
+        android:padding="@dimen/margin_10"
         android:orientation="vertical"
         android:background="#22ff00ff">
 
@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="20sp"
-            android:textColor="@color/color3"/>
+            android:textColor="@color/color3"
+            android:visibility="gone"/>
 
     </LinearLayout>
 
@@ -40,5 +41,15 @@
 
     </android.support.v7.widget.RecyclerView>
 
+    <ImageView
+        android:id="@+id/iv_number_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_5"
+        android:src="@drawable/subscribe"
+        android:visibility="gone">
+
+    </ImageView>
 
 </LinearLayout>

@@ -174,35 +174,31 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue());
         menuModels.add(menuModel);
 
-
-        menuModel = new MenuModel("OPPOSITES",R.drawable.splash,R.color.color4,R.color.color_11);
-        menuModels.add(menuModel);
-
-        menuModel = new MenuModel("BODY PARTS",R.drawable.splash,R.color.color3,R.color.color_11);
+        menuModel = new MenuModel("BODY PARTS",R.drawable.eye_i,R.color.color3,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.BODYPARTS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("GOOD HABITS",R.drawable.brushteeth,R.color.color2,R.color.color_11);
+        menuModel = new MenuModel("GOOD HABITS",R.drawable.toothbrush_i,R.color.color2,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.GOODHABIT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("GOOD MANNERS",R.drawable.excuseme,R.color.color1,R.color.color_11);
+        menuModel = new MenuModel("GOOD MANNERS",R.drawable.manners_i,R.color.color1,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.GOODMANERS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SAFETY",R.drawable.strenger,R.color.color9,R.color.color_11);
+        menuModel = new MenuModel("SAFETY",R.drawable.float_i,R.color.color9,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.SAFETY.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("ACTIONS",R.drawable.crawling,R.color.color10,R.color.color_11);
+        menuModel = new MenuModel("ACTIONS",R.drawable.crawl_i,R.color.color10,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.ACTIONS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("OUR HELPERS",R.drawable.splash,R.color.color1,R.color.color_11);
+        menuModel = new MenuModel("OUR HELPERS",R.drawable.doctor_i,R.color.color1,R.color.color_11);
         menuModel.setActionCode(AppConstant.HomeMenu.OURHELPERS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SOURCE OF WATER",R.drawable.splash,R.color.color2,R.color.color_11);
+        /*menuModel = new MenuModel("SOURCE OF WATER",R.drawable.splash,R.color.color2,R.color.color_11);
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("PLACE OF WORSHIP",R.drawable.splash,R.color.color3,R.color.color_11);
@@ -219,6 +215,9 @@ public class HomeActivity extends BaseActivity {
 
         menuModel = new MenuModel("OUR GREAT LEADER",R.drawable.splash,R.color.color7,R.color.color_11);
         menuModels.add(menuModel);
+
+        menuModel = new MenuModel("OPPOSITES",R.drawable.splash,R.color.color4,R.color.color_11);
+        menuModels.add(menuModel);*/
 
     }
 

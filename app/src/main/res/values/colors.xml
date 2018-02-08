@@ -32,7 +32,7 @@
     <color name="color_orange">#FF8C00</color>
     <color name="color_yellow">#FFFF00</color>
     <color name="color_violet">#9400D3</color>
-    <color name="color_pink">#FF1493</color>
+    <color name="color_pink">#FFC0CB</color>
     <color name="color_purple">#AB82FF</color>
     <color name="color_cream">#FAF0E6</color>
     <color name="color_golden">#FFB90F</color>
@@ -43,6 +43,8 @@
     <color name="color_iris_blue">#03B4CC</color>
     <color name="color_royal_blue">#4169E1</color>
     <color name="color_navy_blue">#23238E</color>
+    <color name="color_maroon">#800000</color>
+
 
     <color name="color_chocolate">#8B4513</color>
     <color name="color_oliv_green">#808000</color>

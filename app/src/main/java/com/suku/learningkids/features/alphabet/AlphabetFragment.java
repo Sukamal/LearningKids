@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.addvertise.AddManager;
+import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
@@ -28,49 +30,62 @@ import butterknife.ButterKnife;
 
 public class AlphabetFragment extends BaseFragment {
 
-//    @BindView(R.id.tv_alphabet_caps)
-//    TextView tvAlphabetCaps;
-//    @BindView(R.id.tv_alphabet_small)
-//    TextView tvAlphabetSmall;
-//    @BindView(R.id.tv_word)
-//    TextView tvWord;
-//    @BindView(R.id.iv_image)
-//    ImageView ivImage;
-
     @BindView(R.id.vp_alphabet_vp)
     ViewPager vpAlphabetVp;
     @BindView(R.id.rv_alphabet_list)
     RecyclerView rvAlphabetList;
-
     private AlphabetPagerAdapter pagerAdapter;
     private AlphabetListAdapter listAdapter;
     private ArrayList<ItemModel> itemModelList;
-    private TextToSpeech textToSpeech;
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_alphabet,container,false);
         ButterKnife.bind(this,view);
-        initItems();
+        checkVersion(view);
         return view;
     }
 
+    private void checkVersion(View view) {
+        isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
+        if (isPaidApp) {
+            initPaidVersion(view);
+        } else {
+            initFreeVersion(view);
+        }
+    }
+
+    private void setAddType() {
+        addTypeList = new ArrayList<>();
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+    }
+
+    private void initFreeVersion(View view) {
+        setAddType();
+        displayAddBasedOnAppType(addTypeList, view);
+        initCommonItems();
+    }
+
+    private void initPaidVersion(View view) {
+        view.findViewById(R.id.ll_banner).setVisibility(View.GONE);
+        initCommonItems();
+    }
+
+    private void initCommonItems(){
+        setAlphabets();
+        initPager();
+        initAlphabetRecyclerView();
+    }
 
     @Override
     public void onResume() {
         super.onResume();
+        isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
+        initTextToSpeach();
 
 //        applyAnimation();
-    }
-
-    private void initItems(){
-        setAlphabets();
-        initTextToSpeach();
-        initPager();
-        initAlphabetRecyclerView();
-
     }
 
 
@@ -196,49 +211,16 @@ public class AlphabetFragment extends BaseFragment {
         listAdapter = new AlphabetListAdapter(itemModelList, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
-                vpAlphabetVp.setCurrentItem(position,true);
                 if(pagerItemPosition == position){
                     ItemModel alphabetModel = itemModelList.get(position);
                     String text = alphabetModel.getHeading() + " for " + alphabetModel.getSubheading2();
                     speakOut(text);
                 }
+                vpAlphabetVp.setCurrentItem(position,true);
             }
         });
 
         rvAlphabetList.setAdapter(listAdapter);
     }
 
-    private void initTextToSpeach(){
-        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = textToSpeech.setLanguage(Locale.US);
-                }
-            }
-        });
-    }
-
-    private void speakOut(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
-
-//    private void applyAnimation(){
-//        new Handler().post(new Runnable() {
-//            @Override
-//            public void run() {
-//                Animation animation = AnimationUtils.loadAnimation(getActivity(),R.anim.zom_in);
-//                tvAlphabetCaps.startAnimation(animation);
-//                tvAlphabetSmall.startAnimation(animation);
-//
-//                Animation animation1 = AnimationUtils.loadAnimation(getActivity(),R.anim.translate_anim_from_left);
-//                tvWord.startAnimation(animation1);
-//
-//                Animation animation2 = AnimationUtils.loadAnimation(getActivity(),R.anim.translate_anim_from_right);
-//                ivImage.startAnimation(animation2);            }
-//        });
-//
-//
-//    }
 }

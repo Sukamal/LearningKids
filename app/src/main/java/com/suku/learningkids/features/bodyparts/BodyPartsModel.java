@@ -14,11 +14,12 @@ public class BodyPartsModel {
     private boolean isLocked;
 
 
-    public BodyPartsModel(String text,int partsImage,Point point,int backImage){
+    public BodyPartsModel(String text,int partsImage,Point point,int backImage,boolean isLocked){
         this.text = text;
         this.partsImage = partsImage;
         this.point = point;
         this.backImage = backImage;
+        this.isLocked = isLocked;
 
     }
 

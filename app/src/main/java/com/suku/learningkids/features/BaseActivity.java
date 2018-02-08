@@ -1,5 +1,6 @@
 package com.suku.learningkids.features;
 
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -38,6 +39,16 @@ public class BaseActivity extends AppCompatActivity {
 
     private void anableAdd(){
         findViewById(R.id.ll_banner).setVisibility(View.VISIBLE);
+    }
+
+    protected void speakOut(String text) {
+        TextToSpeech textToSpeech = ((KidApplication)getApplication()).textToSpeech;
+        if(textToSpeech != null){
+            textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        }else{
+            ((KidApplication)getApplication()).initTextToSpeach();
+            speakOut(text);
+        }
     }
 
 }

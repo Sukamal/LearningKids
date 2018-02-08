@@ -39,10 +39,6 @@ public class ShapeFragment extends BaseFragment {
     private ShapeImageAdapter pagerAdapter;
     private ArrayList<ItemModel> itemModelList;
     private ButtomImageAdapter imageAdapter;
-    private TextToSpeech textToSpeech;
-    private ArrayList<AddManager.AddType> addTypeList;
-    private boolean isPaidApp;
-    private int pagerItemPosition;
 
 
     @Nullable
@@ -71,7 +67,7 @@ public class ShapeFragment extends BaseFragment {
     }
 
     private void initFreeVersion(View view) {
-        setShapeImages(true);
+        setShapeImages(false);
         initCommonItems();
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
@@ -93,7 +89,6 @@ public class ShapeFragment extends BaseFragment {
     }
 
     private void initCommonItems() {
-        initTextToSpeach();
         initPager();
         initBottomImageRecyclerView();
     }
@@ -140,7 +135,6 @@ public class ShapeFragment extends BaseFragment {
         imageAdapter = new ButtomImageAdapter(itemModelList, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
-                vpFlower.setCurrentItem(position, true);
                 if(pagerItemPosition == position){
                     ItemModel itemModel = itemModelList.get(position);
                     String text = itemModel.getHeading();
@@ -150,27 +144,14 @@ public class ShapeFragment extends BaseFragment {
                         speakOut(text);
                     }
                 }
+                vpFlower.setCurrentItem(position, true);
+
             }
         });
 
         rvImageList.setAdapter(imageAdapter);
     }
 
-
-    private void initTextToSpeach() {
-        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = textToSpeech.setLanguage(Locale.US);
-                }
-            }
-        });
-    }
-
-    private void speakOut(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
 
 
     private void setShapeImages(boolean isPaid) {
@@ -193,37 +174,37 @@ public class ShapeFragment extends BaseFragment {
         itemModel = new ItemModel("OVAL", R.drawable.rugby,R.drawable.oval, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("SPHERE",R.drawable.ball, R.drawable.sphere, false);
+        itemModel = new ItemModel("SPHERE",R.drawable.ball, R.drawable.sphere, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("CRESCENT",R.drawable.cashew,R.drawable.crescent,  false);
+        itemModel = new ItemModel("CRESCENT",R.drawable.cashew,R.drawable.crescent,  !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("RECTANGLE",R.drawable.frame, R.drawable.rectangle, false);
+        itemModel = new ItemModel("RECTANGLE",R.drawable.frame, R.drawable.rectangle, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("CUBE",R.drawable.rubikcube, R.drawable.cube, false);
+        itemModel = new ItemModel("CUBE",R.drawable.rubikcube, R.drawable.cube, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("CYLINDER",R.drawable.thermosflusk,R.drawable.cylinder,  false);
+        itemModel = new ItemModel("CYLINDER",R.drawable.thermosflusk,R.drawable.cylinder,  !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("CONE",R.drawable.bdcap, R.drawable.cone, false);
+        itemModel = new ItemModel("CONE",R.drawable.bdcap, R.drawable.cone, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("PYRAMID",R.drawable.pyramidimage,R.drawable.pyramid,  false);
+        itemModel = new ItemModel("PYRAMID",R.drawable.pyramidimage,R.drawable.pyramid,  !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("SPIRAL",R.drawable.spring,R.drawable.spiral,  false);
+        itemModel = new ItemModel("SPIRAL",R.drawable.spring,R.drawable.spiral,  !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("HEXAGON",R.drawable.hexagon_box,R.drawable.hexagon,  false);
+        itemModel = new ItemModel("HEXAGON",R.drawable.hexagon_box,R.drawable.hexagon,  !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("STAR",R.drawable.starfuit,R.drawable.star,  false);
+        itemModel = new ItemModel("STAR",R.drawable.starfuit,R.drawable.star,  !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("HEART",R.drawable.heart_shaped,R.drawable.heart,  false);
+        itemModel = new ItemModel("HEART",R.drawable.heart_shaped,R.drawable.heart,  !isPaid);
         itemModelList.add(itemModel);
 
 

@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
@@ -52,6 +53,11 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
         ItemModel alphabetModel = alphabetList.get(position);
         holder.tvAlphabet.setText(alphabetModel.getHeading());
         holder.position = position;
+        if(alphabetModel.isLocked()){
+            holder.ivImagesLock.setVisibility(View.VISIBLE);
+        }else{
+            holder.ivImagesLock.setVisibility(View.GONE);
+        }
 
         if(position == 0){
             holder.tvAlphabet.setBackgroundResource(R.color.color1);
@@ -90,6 +96,8 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
 
         @BindView(R.id.tv_alphabet)
         TextView tvAlphabet;
+        @BindView(R.id.iv_images_lock)
+        ImageView ivImagesLock;
         int position;
 
         public AlphabetViewHolder(View itemView) {

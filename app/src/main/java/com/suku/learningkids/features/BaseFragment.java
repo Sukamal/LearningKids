@@ -1,6 +1,7 @@
 package com.suku.learningkids.features;
 
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +11,7 @@ import com.suku.learningkids.R;
 import com.suku.learningkids.addvertise.AddManager;
 import com.suku.learningkids.application.KidApplication;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,6 +25,7 @@ public class BaseFragment extends Fragment {
     private View view;
     protected boolean isPaidApp;
     protected int pagerItemPosition;
+    protected ArrayList<AddManager.AddType> addTypeList;
 
     public void addFragment(Fragment fragment, Bundle bundle){
         if(bundle != null){
@@ -87,4 +90,18 @@ public class BaseFragment extends Fragment {
         view.findViewById(R.id.ll_banner).setVisibility(View.VISIBLE);
     }
 
+    protected void speakOut(String text) {
+        TextToSpeech textToSpeech = ((KidApplication)getActivity().getApplication()).textToSpeech;
+        if(textToSpeech != null){
+            textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+        }else{
+            ((KidApplication)getActivity().getApplication()).initTextToSpeach();
+            speakOut(text);
+        }
+    }
+
+
+    protected void initTextToSpeach(){
+        ((KidApplication)getActivity().getApplication()).initTextToSpeach();
+    }
 }

@@ -31,9 +31,6 @@ public class AppConstant {
         MONTHS(22),
         TIMEANDCALENDER(23),
         COMPUTERPARTS(24),
-
-
-
         ACTIONS(25),
         SAFETY(26),
         GOODHABIT(27),

@@ -23,6 +23,7 @@ import com.suku.learningkids.features.numbers.NumberFragment;
 import com.suku.learningkids.features.safety.SafetyFragment;
 import com.suku.learningkids.features.season.SeasonFragment;
 import com.suku.learningkids.features.shape.ShapeFragment;
+import com.suku.learningkids.features.time.TimeCalenderFragment;
 import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
@@ -140,6 +141,10 @@ public class ParentActivity extends BaseActivity {
             bundle = new Bundle();
             bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
             setApplicationMode(AppConstant.AppType.FREE);
+        }else if(menuItem == AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue()){
+            fragment = new FlatImageFragment();
+            bundle = new Bundle();
+            bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue());
         }else if(menuItem == AppConstant.HomeMenu.SEASONS.getEnumValue()){
             fragment = new SeasonFragment();
             setApplicationMode(AppConstant.AppType.PAID);
@@ -155,13 +160,14 @@ public class ParentActivity extends BaseActivity {
             fragment = new FlatImageFragment();
             bundle = new Bundle();
             bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.OURHELPERS.getEnumValue());
-
         }
 
         else if(menuItem == AppConstant.HomeMenu.BODYPARTS.getEnumValue()){
             fragment = new BodyPartsFragment();
         }
-
+        else if(menuItem == AppConstant.HomeMenu.TIMEANDCALENDER.getEnumValue()){
+            fragment = new TimeCalenderFragment();
+        }
 
         else if(menuItem == AppConstant.HomeMenu.ACTIONS.getEnumValue()){
             fragment = new FlatImageFragment();

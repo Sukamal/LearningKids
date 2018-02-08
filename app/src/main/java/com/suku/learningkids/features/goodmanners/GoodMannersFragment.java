@@ -40,10 +40,6 @@ public class GoodMannersFragment extends BaseFragment {
     private GoodHabitPagerAdapter pagerAdapter;
     private ArrayList<ItemModel> itemModelList;
     private ButtomImageAdapter imageAdapter;
-    private TextToSpeech textToSpeech;
-    private ArrayList<AddManager.AddType> addTypeList;
-    private boolean isPaidApp;
-    private int pagerItemPosition;
 
     @Nullable
     @Override
@@ -93,7 +89,6 @@ public class GoodMannersFragment extends BaseFragment {
     }
 
     private void initCommonItems() {
-        initTextToSpeach();
         initPager();
         initBottomImageRecyclerView();
     }
@@ -140,7 +135,7 @@ public class GoodMannersFragment extends BaseFragment {
         imageAdapter = new ButtomImageAdapter(itemModelList, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
-                vpFlower.setCurrentItem(position, true);
+
                 if(pagerItemPosition == position){
                     ItemModel itemModel = itemModelList.get(position);
                     String text = itemModel.getHeading();
@@ -150,27 +145,13 @@ public class GoodMannersFragment extends BaseFragment {
                         speakOut(text);
                     }
                 }
+                vpFlower.setCurrentItem(position, true);
             }
         });
 
         rvImageList.setAdapter(imageAdapter);
     }
 
-
-    private void initTextToSpeach() {
-        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = textToSpeech.setLanguage(Locale.US);
-                }
-            }
-        });
-    }
-
-    private void speakOut(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
 
 
     private void setMannersImages(boolean isPaid) {

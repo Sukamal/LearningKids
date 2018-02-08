@@ -1,50 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/layout_add_banner"></include>
 
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_number"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.85">
-
-    </android.support.v4.view.ViewPager>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_number_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.15">
-
-    </android.support.v7.widget.RecyclerView>
-
-</LinearLayout>
-
-<!--<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    android:layout_above="@id/ll_banner">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_number_list"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.15">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
     </android.support.v7.widget.RecyclerView>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_number"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.85">
+        android:layout_above="@id/rv_number_list">
 
     </android.support.v4.view.ViewPager>
 
-</LinearLayout>-->
+
+
+</RelativeLayout>
+
+</RelativeLayout>

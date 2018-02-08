@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -16,4 +16,27 @@
 
 
 
-</LinearLayout>
+</LinearLayout>-->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="60dp">
+    <TextView
+        android:id="@+id/tv_alphabet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:text="A"/>
+
+    <ImageView
+        android:id="@+id/iv_images_lock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:src="@drawable/lock"
+        android:visibility="gone"/>
+
+</FrameLayout>

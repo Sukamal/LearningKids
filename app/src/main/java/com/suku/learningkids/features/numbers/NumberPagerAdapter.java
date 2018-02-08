@@ -57,18 +57,27 @@ public class NumberPagerAdapter extends PagerAdapter {
         itemView = mLayoutInflater.inflate(R.layout.number_pager_item, container, false);
         TextView tvAlphabetCaps = (TextView) itemView.findViewById(R.id.tv_number);
         TextView tvWord = (TextView) itemView.findViewById(R.id.tv_word);
+        ImageView ivNumberImage = (ImageView) itemView.findViewById(R.id.iv_number_image);
         RecyclerView recyclerView = (RecyclerView)  itemView.findViewById(R.id.rv_number_image);
 
         ItemModel alphabetModel = alphabetModels.get(position);
-        tvAlphabetCaps.setText(alphabetModel.getHeading());
-//        tvWord.setText(alphabetModel.getWord());
 
         Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/kid1.ttf");
         tvAlphabetCaps.setTypeface(custom_font);
         tvAlphabetCaps.setTextColor(context.getResources().getColor(R.color.color1));
 
+        if(!alphabetModel.isLocked()){
+            tvAlphabetCaps.setText(alphabetModel.getHeading());
+            ivNumberImage.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+            initImages(recyclerView,Integer.valueOf(alphabetModel.getHeading()),alphabetModel.getImage());
+        }else{
+            tvAlphabetCaps.setText("Please Subscribe");
+            tvAlphabetCaps.setTextSize(30);
+            ivNumberImage.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        }
 
-        initImages(recyclerView,Integer.valueOf(alphabetModel.getHeading()),alphabetModel.getImage());
         container.addView(itemView);
 
         return itemView;

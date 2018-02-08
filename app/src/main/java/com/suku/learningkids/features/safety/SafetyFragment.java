@@ -40,10 +40,6 @@ public class SafetyFragment extends BaseFragment {
     private SafetyPagerAdapter pagerAdapter;
     private ArrayList<ItemModel> itemModelList;
     private ButtomImageAdapter imageAdapter;
-    private TextToSpeech textToSpeech;
-    private ArrayList<AddManager.AddType> addTypeList;
-    private boolean isPaidApp;
-    private int pagerItemPosition;
 
 
     @Nullable
@@ -72,7 +68,7 @@ public class SafetyFragment extends BaseFragment {
     }
 
     private void initFreeVersion(View view) {
-        setSeasonImages(true);
+        setSeasonImages(false);
         initCommonItems();
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
@@ -94,7 +90,6 @@ public class SafetyFragment extends BaseFragment {
     }
 
     private void initCommonItems() {
-        initTextToSpeach();
         initPager();
         initBottomImageRecyclerView();
     }
@@ -141,7 +136,6 @@ public class SafetyFragment extends BaseFragment {
         imageAdapter = new ButtomImageAdapter(itemModelList, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
-                vpFlower.setCurrentItem(position, true);
                 if(pagerItemPosition == position){
                     ItemModel itemModel = itemModelList.get(position);
                     String text = itemModel.getHeading();
@@ -151,26 +145,12 @@ public class SafetyFragment extends BaseFragment {
                         speakOut(text);
                     }
                 }
+                vpFlower.setCurrentItem(position, true);
+
             }
         });
 
         rvImageList.setAdapter(imageAdapter);
-    }
-
-
-    private void initTextToSpeach() {
-        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = textToSpeech.setLanguage(Locale.US);
-                }
-            }
-        });
-    }
-
-    private void speakOut(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
 
@@ -194,40 +174,38 @@ public class SafetyFragment extends BaseFragment {
         itemModel = new ItemModel("Do not touch any hot surface","dont",R.drawable.hot_surface, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Watch TV from a safe distance","do",R.drawable.watchtv, false);
+        itemModel = new ItemModel("Watch TV from a safe distance","do",R.drawable.watchtv, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not play with gas burner","dont",R.drawable.gasburner_dont, false);
+        itemModel = new ItemModel("Do not play with gas burner","dont",R.drawable.gasburner_dont, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not touch electric iron","dont",R.drawable.touch_iron, false);
+        itemModel = new ItemModel("Do not touch electric iron","dont",R.drawable.touch_iron, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Always use seat belt while traveling with car","do",R.drawable.wear_seatbelt, false);
+        itemModel = new ItemModel("Always use seat belt while traveling with car","do",R.drawable.wear_seatbelt, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not play on the road","dont",R.drawable.playing_onroad, false);
+        itemModel = new ItemModel("Do not play on the road","dont",R.drawable.playing_onroad, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not play with sharp items like knife, scissor","dont",R.drawable.sharp_item, false);
+        itemModel = new ItemModel("Do not play with sharp items like knife, scissor","dont",R.drawable.sharp_item, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Keep distance while bursting fire crackers","do",R.drawable.crackers_distance, false);
+        itemModel = new ItemModel("Keep distance while bursting fire crackers","do",R.drawable.crackers_distance, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not come close to fire","dont",R.drawable.stay_from_fire, false);
+        itemModel = new ItemModel("Do not come close to fire","dont",R.drawable.stay_from_fire, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not accept anything from strangers","dont",R.drawable.strenger, false);
+        itemModel = new ItemModel("Do not accept anything from strangers","dont",R.drawable.strenger, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Always use float while swimming","do",R.drawable.swimming_tered, false);
+        itemModel = new ItemModel("Always use float while swimming","do",R.drawable.swimming_tered, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not use phone while walking","dont",R.drawable.walk_mobile, false);
+        itemModel = new ItemModel("Do not use phone while walking","dont",R.drawable.walk_mobile, !isPaid);
         itemModelList.add(itemModel);
-
-
 
     }
 

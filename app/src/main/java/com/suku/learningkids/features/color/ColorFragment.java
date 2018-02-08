@@ -33,13 +33,9 @@ public class ColorFragment extends BaseFragment {
     ViewPager vpColor;
     @BindView(R.id.rv_color_list)
     RecyclerView rvColorList;
-
     private ColorPagerAdapter pagerAdapter;
     private ColorListAdapter listAdapter;
     private ArrayList<ItemModel> alphabetModels;
-    private TextToSpeech textToSpeech;
-    private int pagerItemPosition;
-
 
 
     @Nullable
@@ -79,7 +75,6 @@ public class ColorFragment extends BaseFragment {
     }
 
     private void initCommonItems(){
-        initTextToSpeach();
         initPager();
         initAlphabetRecyclerView();
 
@@ -115,7 +110,7 @@ public class ColorFragment extends BaseFragment {
         alphabetModel = new ItemModel("","","BROWN",R.color.color_brown,false);
         alphabetModels.add(alphabetModel);
 
-        alphabetModel = new ItemModel("","","ORANGE",R.color.color_orange,!isPaid);
+        alphabetModel = new ItemModel("","","ORANGE",R.color.color_orange,false);
         alphabetModels.add(alphabetModel);
 
         alphabetModel = new ItemModel("","","YELLOW",R.color.color_yellow,!isPaid);
@@ -140,6 +135,9 @@ public class ColorFragment extends BaseFragment {
         alphabetModels.add(alphabetModel);
 
         alphabetModel = new ItemModel("","","LIGHT BLUE",R.color.color_light_blue,!isPaid);
+        alphabetModels.add(alphabetModel);
+
+        alphabetModel = new ItemModel("","","MAROON",R.color.color_maroon,!isPaid);
         alphabetModels.add(alphabetModel);
 
         alphabetModel = new ItemModel("","","SKY BLUE",R.color.color_sky_blue,!isPaid);
@@ -203,49 +201,16 @@ public class ColorFragment extends BaseFragment {
         listAdapter = new ColorListAdapter(alphabetModels, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
-                vpColor.setCurrentItem(position,true);
                 if(pagerItemPosition == position){
                     ItemModel alphabetModel = alphabetModels.get(position);
                     String text = alphabetModel.getSubheading2() + " color";
                     speakOut(text);
                 }
+                vpColor.setCurrentItem(position,true);
             }
         });
 
         rvColorList.setAdapter(listAdapter);
     }
 
-    private void initTextToSpeach(){
-        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = textToSpeech.setLanguage(Locale.US);
-                }
-            }
-        });
-    }
-
-    private void speakOut(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
-
-//    private void applyAnimation(){
-//        new Handler().post(new Runnable() {
-//            @Override
-//            public void run() {
-//                Animation animation = AnimationUtils.loadAnimation(getActivity(),R.anim.zom_in);
-//                tvAlphabetCaps.startAnimation(animation);
-//                tvAlphabetSmall.startAnimation(animation);
-//
-//                Animation animation1 = AnimationUtils.loadAnimation(getActivity(),R.anim.translate_anim_from_left);
-//                tvWord.startAnimation(animation1);
-//
-//                Animation animation2 = AnimationUtils.loadAnimation(getActivity(),R.anim.translate_anim_from_right);
-//                ivImage.startAnimation(animation2);            }
-//        });
-//
-//
-//    }
 }

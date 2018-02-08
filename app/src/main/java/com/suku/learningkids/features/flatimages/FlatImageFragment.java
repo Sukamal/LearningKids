@@ -37,14 +37,10 @@ public class FlatImageFragment extends BaseFragment {
     ViewPager vpFlower;
     @BindView(R.id.rv_image_list)
     RecyclerView rvImageList;
-
-
     private ImageItemPagerAdapter pagerAdapter;
     private ArrayList<ItemModel> imageItemList;
     private ButtomImageAdapter imageAdapter;
-    private TextToSpeech textToSpeech;
     private int displayCode = -1;
-    private ArrayList<AddManager.AddType> addTypeList;
 
 
 
@@ -100,7 +96,6 @@ public class FlatImageFragment extends BaseFragment {
     }
 
     private void initCommonItems() {
-        initTextToSpeach();
         initPager();
         initBottomImageRecyclerView();
     }
@@ -132,9 +127,7 @@ public class FlatImageFragment extends BaseFragment {
             setBathroom(isPaid);
         }else if (displayCode == AppConstant.HomeMenu.BEDROOM.getEnumValue()) {
             setBedroom(isPaid);
-        }
-
-        else if (displayCode == AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue()) {
+        }else if (displayCode == AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue()) {
             setSportsEquipment(isPaid);
         }else if (displayCode == AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue()) {
             setMusicalInstrument(isPaid);
@@ -142,9 +135,10 @@ public class FlatImageFragment extends BaseFragment {
             setStationaryItem(isPaid);
         }else if (displayCode == AppConstant.HomeMenu.OURHELPERS.getEnumValue()) {
             setHelpersItem(isPaid);
-        }
-        else if (displayCode == AppConstant.HomeMenu.ACTIONS.getEnumValue()) {
+        }else if (displayCode == AppConstant.HomeMenu.ACTIONS.getEnumValue()) {
             setActions(isPaid);
+        }else if (displayCode == AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue()) {
+            setComputerItem(isPaid);
         }
 
     }
@@ -181,7 +175,6 @@ public class FlatImageFragment extends BaseFragment {
 
             }
         });
-
     }
 
 
@@ -194,7 +187,6 @@ public class FlatImageFragment extends BaseFragment {
         imageAdapter = new ButtomImageAdapter(imageItemList, new AdapterItemClickListener() {
             @Override
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
-                vpFlower.setCurrentItem(position, true);
                 if(pagerItemPosition == position){
                     ItemModel itemModel = imageItemList.get(position);
                     String text = itemModel.getHeading();
@@ -204,27 +196,13 @@ public class FlatImageFragment extends BaseFragment {
                         speakOut(text);
                     }
                 }
+                vpFlower.setCurrentItem(position, true);
             }
         });
 
         rvImageList.setAdapter(imageAdapter);
     }
 
-
-    private void initTextToSpeach() {
-        textToSpeech = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = textToSpeech.setLanguage(Locale.US);
-                }
-            }
-        });
-    }
-
-    private void speakOut(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
 
 
     private void setFlowerImages(boolean isPaid) {
@@ -1444,6 +1422,81 @@ public class FlatImageFragment extends BaseFragment {
 
         flatImageModel = new ItemModel("WASHER MAN", R.drawable.washerman, !isPaid);
         imageItemList.add(flatImageModel);
+
+
+    }
+
+    private void setComputerItem(boolean isPaid) {
+        imageItemList = new ArrayList<>();
+
+        ItemModel flatImageModel;
+
+        flatImageModel = new ItemModel("DESKTOP", R.drawable.desktop, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("LAPTOP", R.drawable.laptop, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("C.P.U", R.drawable.cpu, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("MONITOR", R.drawable.monitor, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("C.D", R.drawable.compact_disc, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("U.P.S", R.drawable.ups, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("MOTHERBOARD", R.drawable.motherboard, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("KEYBOARD", R.drawable.keyboard, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("MOUSE", R.drawable.mouse, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("SCANNER", R.drawable.scanner, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("PRINTER", R.drawable.laserprinter, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("WEB CAMERA", R.drawable.web_camera, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("SPEAKER", R.drawable.speakers, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("HARD DISK", R.drawable.hard_disc, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("RANDOM ACCESS MEMMORY", R.drawable.ram, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("GRAPHICS CARD", R.drawable.graficscard, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("WIRELESS MODEM", R.drawable.wireless_modem, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("PEN DRIVE", R.drawable.pendrive, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("C.D DRIVE", R.drawable.dvddrive, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("PROCESSOR", R.drawable.processor, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("S.M.P.S", R.drawable.smps, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("C.P.U COOLING FAN", R.drawable.cpu_heatsink_fan, !isPaid);
+        imageItemList.add(flatImageModel);
+
 
 
     }
