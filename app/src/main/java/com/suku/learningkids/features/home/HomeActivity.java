@@ -9,9 +9,12 @@ import android.widget.Toast;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.addvertise.AddManager;
+import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.features.BaseActivity;
 import com.suku.learningkids.features.parent.ParentActivity;
 import com.suku.learningkids.util.AppConstant;
+import com.suku.learningkids.util.AppDialog;
+import com.suku.learningkids.util.UtilClass;
 
 import java.util.ArrayList;
 
@@ -26,14 +29,33 @@ public class HomeActivity extends BaseActivity {
     private HomeMenuAdapter menuAdapter;
     private  ArrayList<MenuModel> menuModels;
     private ArrayList<AddManager.AddType> addTypeList;
+    private boolean isPaidApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+        checkVersion();
+    }
+
+    private void checkVersion() {
+        isPaidApp = ((KidApplication)getApplication()).mAppPreference.isPaidVersion();
+        if (isPaidApp) {
+            initPaidVersion();
+        } else {
+            initFreeVersion();
+        }
+    }
+
+    private void initPaidVersion(){
         initRecyclerView();
     }
+
+    private void initFreeVersion(){
+        initRecyclerView();
+    }
+
 
     private void setAddType(){
         addTypeList = new ArrayList<>();
@@ -60,7 +82,6 @@ public class HomeActivity extends BaseActivity {
                 @Override
                 public void onAdapterItemClick(View view, int position, Object selectedItem) {
                     int actionCode = ((MenuModel)selectedItem).getActionCode();
-                    Toast.makeText(HomeActivity.this,((MenuModel)selectedItem).getMenuTitle(),Toast.LENGTH_SHORT).show();
                     gotoNextScreen(actionCode);
                 }
             });
@@ -71,7 +92,19 @@ public class HomeActivity extends BaseActivity {
     private void gotoNextScreen(int actionCode){
         Intent intent = new Intent(HomeActivity.this, ParentActivity.class);
         intent.putExtra(AppConstant.ExtraTag.HOME_MENU_ACTION.name(),actionCode);
-        startActivity(intent);
+        if(isPaidApp){
+            startActivity(intent);
+        }else{
+            if(UtilClass.isNetworkAvailable(this)){
+                startActivity(intent);
+            }else{
+                AppDialog appDialog = new AppDialog();
+                appDialog.showErrorDialog(HomeActivity.this,"Check your network connection. For offline mode please subscribe");
+            }
+        }
+
+
+
     }
 
     private void setHomeMenu(){

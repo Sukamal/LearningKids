@@ -67,7 +67,7 @@ public class GoodMannersFragment extends BaseFragment {
     }
 
     private void initFreeVersion(View view) {
-        setMannersImages(true);
+        setMannersImages(false);
         initCommonItems();
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
@@ -165,37 +165,37 @@ public class GoodMannersFragment extends BaseFragment {
         itemModel = new ItemModel("Greed the elders properly",R.drawable.greed_politely, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Behave people very politely ",R.drawable.politeeee, false);
+        itemModel = new ItemModel("Behave people very politely ",R.drawable.politeeee, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Stand in a queue to get your turn",R.drawable.standinque, false);
+        itemModel = new ItemModel("Stand in a queue to get your turn",R.drawable.standinque, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Respect your elders",R.drawable.respectelder, false);
+        itemModel = new ItemModel("Respect your elders",R.drawable.respectelder, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Respect your teacher",R.drawable.respect_teacher, false);
+        itemModel = new ItemModel("Respect your teacher",R.drawable.respect_teacher, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Always help other people",R.drawable.helppeople, false);
+        itemModel = new ItemModel("Always help other people",R.drawable.helppeople, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Raise your hand to say something in class",R.drawable.raisehand, false);
+        itemModel = new ItemModel("Raise your hand to say something in class",R.drawable.raisehand, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Say sorry when you commit a mistake",R.drawable.drinkwater, false);
+        itemModel = new ItemModel("Say sorry when you commit a mistake",R.drawable.drinkwater, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Say Goodbye when you leaving someone",R.drawable.saygoodbye, false);
+        itemModel = new ItemModel("Say Goodbye when you leaving someone",R.drawable.saygoodbye, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Say Thanks to the person who helps you",R.drawable.thankyou, false);
+        itemModel = new ItemModel("Say Thanks to the person who helps you",R.drawable.thankyou, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Say Excuse me when you disturb someone",R.drawable.excuseme, false);
+        itemModel = new ItemModel("Say Excuse me when you disturb someone",R.drawable.excuseme, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Always share things with others",R.drawable.sharetoyes, false);
+        itemModel = new ItemModel("Always share things with others",R.drawable.sharetoyes, !isPaid);
         itemModelList.add(itemModel);
 
     }
