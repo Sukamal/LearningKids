@@ -36,7 +36,8 @@ public class AppConstant {
         GOODHABIT(27),
         GOODMANERS(28),
         BODYPARTS(29),
-        OURHELPERS(30)
+        OURHELPERS(30),
+        PROMOTE(31)
 
         ;
 

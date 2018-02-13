@@ -231,6 +231,10 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.OURHELPERS.getEnumValue());
         menuModels.add(menuModel);
 
+        menuModel = new MenuModel("PROMOTE APP",R.drawable.megaphone,R.color.color2,R.color.color_11);
+        menuModel.setActionCode(AppConstant.HomeMenu.PROMOTE.getEnumValue());
+        menuModels.add(menuModel);
+
         /*menuModel = new MenuModel("SOURCE OF WATER",R.drawable.splash,R.color.color2,R.color.color_11);
         menuModels.add(menuModel);
 
