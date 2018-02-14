@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.color;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class ColorListAdapter extends RecyclerView.Adapter<ColorListAdapter.Alph
 
     private List<ItemModel> alphabetList;
     private AdapterItemClickListener clickListener;
+    private Context context;
 
     public interface ClickListener {
         void onAdapterItemClick(View view, int position, Object selectedItem);
@@ -44,6 +46,7 @@ public class ColorListAdapter extends RecyclerView.Adapter<ColorListAdapter.Alph
 
     @Override
     public AlphabetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        context = parent.getContext();
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.color_list_item, parent, false);
         AlphabetViewHolder holder = new AlphabetViewHolder(view);
@@ -55,16 +58,15 @@ public class ColorListAdapter extends RecyclerView.Adapter<ColorListAdapter.Alph
     public void onBindViewHolder(AlphabetViewHolder holder, int position) {
         ItemModel itemModel = alphabetList.get(position);
         holder.tvColor.setText(itemModel.getSubheading2());
+        holder.tvColor.setTextColor(context.getResources().getColor(itemModel.getTextColor()));
         holder.position = position;
 
         if(itemModel.isLocked()){
             holder.ivImagesLock.setVisibility(View.VISIBLE);
             holder.tvColor.setBackgroundResource(R.color.color_white);
-            holder.tvColor.setTextColor(itemModel.getTextColor());
         }else{
             holder.ivImagesLock.setVisibility(View.GONE);
             holder.tvColor.setBackgroundResource(itemModel.getImage());
-            holder.tvColor.setTextColor(itemModel.getTextColor());
         }
 
     }

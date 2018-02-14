@@ -56,7 +56,7 @@ public class ColorPagerAdapter extends PagerAdapter {
 
         ItemModel alphabetModel = alphabetModels.get(position);
         if(alphabetModel.getImage() == R.color.color_white){
-            parent.setBackgroundColor(context.getResources().getColor(R.color.color_12));
+            parent.setBackgroundColor(context.getResources().getColor(R.color.color12));
         }else{
             parent.setBackgroundColor(context.getResources().getColor(R.color.color_white));
 

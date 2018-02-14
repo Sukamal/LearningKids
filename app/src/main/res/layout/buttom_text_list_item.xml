@@ -15,7 +15,7 @@
         android:text="JAN"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:textColor="@color/color_12"
+        android:textColor="@color/color12"
         android:src="@drawable/apple"/>
     <ImageView
         android:id="@+id/iv_images_lock"

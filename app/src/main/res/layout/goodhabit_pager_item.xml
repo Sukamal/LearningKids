@@ -19,7 +19,7 @@
             android:padding="@dimen/margin_10"
             android:text="DELIVERY VAN"
             android:textColor="@color/color2"
-            android:background="@color/color_12"
+            android:background="@color/color12"
             android:textSize="35sp" />
 
         <ImageView

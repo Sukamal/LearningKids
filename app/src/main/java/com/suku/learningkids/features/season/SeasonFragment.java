@@ -86,7 +86,7 @@ public class SeasonFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
-
+        initTextToSpeach();
     }
 
     private void initCommonItems() {

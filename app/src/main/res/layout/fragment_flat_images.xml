@@ -7,28 +7,27 @@
 
     <include layout="@layout/layout_add_banner"></include>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/ll_banner"
-        android:orientation="vertical">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp_flower"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.85"
-            android:layout_below="@id/rv_alphabet_list">
-        </android.support.v4.view.ViewPager>
+        android:layout_above="@id/ll_banner">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_image_list"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.15">
-
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
         </android.support.v7.widget.RecyclerView>
-    </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_flower"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rv_image_list">
+        </android.support.v4.view.ViewPager>
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

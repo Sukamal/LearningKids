@@ -2,6 +2,8 @@ package com.suku.learningkids.models;
 
 import android.graphics.Color;
 
+import com.suku.learningkids.R;
+
 /**
  * Created by SukamalD on 05-02-2018.
  */
@@ -13,7 +15,7 @@ public class ItemModel {
     private String subheading2;
     private int image;
     private int imageIcon;
-    private int textColor = Color.BLACK;
+    private int textColor = R.color.color_black;
     private boolean isLocked = false;
 
     public ItemModel(String heading,int image,boolean isLocked){

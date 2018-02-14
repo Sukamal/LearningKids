@@ -27,13 +27,14 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="@color/color1"
-                android:background="@color/color_12"
+                android:background="@color/color12"
                 android:gravity="center"/>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/vp_time"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_10">
             </android.support.v4.view.ViewPager>
 
         </LinearLayout>
@@ -51,7 +52,7 @@
                 android:text="DAYS OF WEEK"
                 android:textSize="25sp"
                 android:textColor="@color/color1"
-                android:background="@color/color_12"
+                android:background="@color/color12"
                 android:gravity="center"/>
 
             <android.support.v7.widget.RecyclerView
@@ -66,7 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/tv_days"
-                android:layout_above="@id/rv_days_week">
+                android:layout_above="@id/rv_days_week"
+                android:padding="@dimen/margin_10">
             </android.support.v4.view.ViewPager>
 
         </RelativeLayout>

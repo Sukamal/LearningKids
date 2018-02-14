@@ -141,14 +141,12 @@ public class ParentActivity extends BaseActivity {
             fragment = new FlatImageFragment();
             bundle = new Bundle();
             bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
-            setApplicationMode(AppConstant.AppType.FREE);
         }else if(menuItem == AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue()){
             fragment = new FlatImageFragment();
             bundle = new Bundle();
             bundle.putInt(AppConstant.ExtraTag.FLAT_IMAGE_DISPLAY_CODE.name(),AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue());
         }else if(menuItem == AppConstant.HomeMenu.SEASONS.getEnumValue()){
             fragment = new SeasonFragment();
-            setApplicationMode(AppConstant.AppType.PAID);
         }else if(menuItem == AppConstant.HomeMenu.MONTHS.getEnumValue()){
             fragment = new MonthsFragment();
         }else if(menuItem == AppConstant.HomeMenu.SAFETY.getEnumValue()){
@@ -198,10 +196,6 @@ public class ParentActivity extends BaseActivity {
                 fragmentTransaction.commit();
             }
         });
-    }
-
-    private void setApplicationMode(AppConstant.AppType mode){
-        ((KidApplication)getApplication()).mAppPreference.setAppType(mode);
     }
 
 }

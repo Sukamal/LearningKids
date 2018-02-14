@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.addvertise.AddManager;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
@@ -47,6 +48,12 @@ public class ColorFragment extends BaseFragment {
         return view;
     }
 
+    private void setAddType() {
+        addTypeList = new ArrayList<>();
+        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+        addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+    }
+
     private void checkVersion(View view) {
         isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
         if (isPaidApp) {
@@ -59,6 +66,8 @@ public class ColorFragment extends BaseFragment {
     private void initFreeVersion(View view) {
         setAlphabets(false);
         initCommonItems();
+        setAddType();
+        displayAddBasedOnAppType(addTypeList, view);
 
     }
 
@@ -71,6 +80,7 @@ public class ColorFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
+        initTextToSpeach();
 //        applyAnimation();
     }
 

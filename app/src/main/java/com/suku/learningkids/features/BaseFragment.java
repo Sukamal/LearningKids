@@ -10,6 +10,7 @@ import android.view.View;
 import com.suku.learningkids.R;
 import com.suku.learningkids.addvertise.AddManager;
 import com.suku.learningkids.application.KidApplication;
+import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,5 +104,9 @@ public class BaseFragment extends Fragment {
 
     protected void initTextToSpeach(){
         ((KidApplication)getActivity().getApplication()).initTextToSpeach();
+    }
+
+    protected void setApplicationMode(AppConstant.AppType mode){
+        ((KidApplication)getActivity().getApplication()).mAppPreference.setAppType(mode);
     }
 }

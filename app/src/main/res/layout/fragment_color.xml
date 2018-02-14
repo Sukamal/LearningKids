@@ -1,48 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_color"
+    <include layout="@layout/layout_add_banner"></include>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5">
-
-    </android.support.v4.view.ViewPager>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_color_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5">
-
-    </android.support.v7.widget.RecyclerView>
-
-</LinearLayout>
-
-<!--<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_number_list"
-        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.15">
+        android:orientation="vertical"
+        android:layout_above="@id/ll_banner">
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_color"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.45">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_number"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.85">
+        </android.support.v4.view.ViewPager>
 
-    </android.support.v4.view.ViewPager>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_color_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.65">
 
-</LinearLayout>-->
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+

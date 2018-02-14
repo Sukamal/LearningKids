@@ -76,6 +76,7 @@ public class BodyPartsFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
+        initTextToSpeach();
 
     }
 

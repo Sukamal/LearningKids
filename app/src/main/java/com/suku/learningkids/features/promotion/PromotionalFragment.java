@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -20,6 +21,7 @@ import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 import com.suku.learningkids.features.season.SeasonsPagerAdapter;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,8 @@ public class PromotionalFragment extends BaseFragment {
     ViewPager vpPromotion;
     @BindView(R.id.ll_indicator)
     LinearLayout llIndicator;
+    @BindView(R.id.btn_submit)
+    Button btnSubmit;
 
 
     private PromotionPagerAdapter pagerAdapter;
@@ -94,6 +98,20 @@ public class PromotionalFragment extends BaseFragment {
         initPager();
         initIndicator();
         setIndicator(0);
+        initClickListner();
+    }
+
+    private void initClickListner(){
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion()){
+                    setApplicationMode(AppConstant.AppType.FREE);
+                }else{
+                    setApplicationMode(AppConstant.AppType.PAID);
+                }
+            }
+        });
     }
 
     private void initPager() {

@@ -1,6 +1,7 @@
 package com.suku.learningkids.features.splash;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +42,8 @@ public class SplashActivity extends AppCompatActivity {
 
     private void settext(final String s){
         final TextView textView1 = findViewById(R.id.tv_text1);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/kid1.ttf");
+        textView1.setTypeface(custom_font);
         final int[] i = new int[1];
         i[0] = 0;
         final int length = s.length();
