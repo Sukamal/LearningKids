@@ -54,7 +54,8 @@ public class SafetyFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
     }
 

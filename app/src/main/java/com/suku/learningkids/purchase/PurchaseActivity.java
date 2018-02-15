@@ -28,7 +28,11 @@ public class PurchaseActivity extends AppCompatActivity {
 
             }
         });
+    }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        inAppPurchaseManager.unregisterService();
     }
 }

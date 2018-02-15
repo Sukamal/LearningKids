@@ -38,6 +38,19 @@ public class InAppPurchaseManager {
             @Override
             public void onPurchasesUpdated(int responseCode, @Nullable List<Purchase> purchases) {
 
+                if (responseCode == BillingClient.BillingResponse.OK
+                        && purchases != null) {
+                    for (Purchase purchase : purchases) {
+//                        handlePurchase(purchase);
+                    }
+                } else if (responseCode == BillingClient.BillingResponse.USER_CANCELED) {
+                    // Handle an error caused by a user canceling the purchase flow.
+                } else {
+                    // Handle any other error codes.
+
+
+                }
+
             }
         }).build();
 

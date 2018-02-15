@@ -12,10 +12,18 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '26.0.2'
+
+
+   /* sourceSets {
+        main {
+            aidl.srcDirs = ["src/main/aidl"]
+        }
+    }*/
 }
 
 dependencies {

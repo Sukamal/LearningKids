@@ -2,8 +2,17 @@
     <string name="app_name">LearningBubu</string>
 
     <string name="google_add_app_id">ca-app-pub-7080915292810431~5957117468</string>
-    <string name="google_add_banner_id">ca-app-pub-7080915292810431/2969181418</string>
-    <string name="google_add_interstitial_id">ca-app-pub-7080915292810431/3735160685</string>
+
+
+    <!--Production Id-->
+    <!--<string name="google_add_banner_id">ca-app-pub-7080915292810431/2969181418</string>
+    <string name="google_add_interstitial_id">ca-app-pub-7080915292810431/3735160685</string>-->
+
+    <!--Test Account-->
+    <string name="google_add_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="google_add_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+
+
 
     <string name="startapp_add_app_id">201528678</string>
     <string name="banner_id">123456</string>

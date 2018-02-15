@@ -30,7 +30,12 @@ public class GoogleAdd {
         final InterstitialAd mInterstitialAd;
         mInterstitialAd = new InterstitialAd(context);
         mInterstitialAd.setAdUnitId(context.getResources().getString(R.string.google_add_interstitial_id));
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("D463C1CED27146A7809AA8C59A1E5E8B")
+                .addTestDevice("34BED8A5AA68EBF2EC529B13620F256D")
+                .addTestDevice("")
+                .build();
+
         mInterstitialAd.loadAd(adRequest);
         mInterstitialAd.setAdListener(new AdListener() {
             public void onAdLoaded() {
@@ -77,6 +82,8 @@ public class GoogleAdd {
 //                .build();
 
         AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("D463C1CED27146A7809AA8C59A1E5E8B")
+                .addTestDevice("34BED8A5AA68EBF2EC529B13620F256D")
                 .build();
 
         googleAdd.setAdListener(new AdListener() {
