@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.safety;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class SafetyPagerAdapter extends ImageItemPagerAdapter {
 
-    public SafetyPagerAdapter(Context context, List<ItemModel> flatImageModels) {
+    public SafetyPagerAdapter(Activity context, List<ItemModel> flatImageModels) {
         super(context, flatImageModels);
     }
 
@@ -60,6 +61,9 @@ public class SafetyPagerAdapter extends ImageItemPagerAdapter {
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(flatImageModel.isLocked()){
+                    showPurchaseDialog();
+                }
             }
         });
 

@@ -68,7 +68,7 @@ public class MonthsFragment extends BaseFragment {
     }
 
     private void initFreeVersion(View view) {
-        setMonthsImages(true);
+        setMonthsImages(false);
         initCommonItems();
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
@@ -95,7 +95,7 @@ public class MonthsFragment extends BaseFragment {
     }
 
     private void initPager() {
-        pagerAdapter = new MonthsPagerAdapter(getContext(), itemModelList);
+        pagerAdapter = new MonthsPagerAdapter(getActivity(), itemModelList);
         vpFlower.setAdapter(pagerAdapter);
         vpFlower.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -172,25 +172,25 @@ public class MonthsFragment extends BaseFragment {
         itemModel = new ItemModel("MAY", "30 Days","Summer",R.drawable.summer_s,R.drawable.winter_i, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("JUNE", "31 Days","Summer",R.drawable.summer_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("JUNE", "31 Days","Summer",R.drawable.summer_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("JULY", "31 Days","Monsoon",R.drawable.monsoon_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("JULY", "31 Days","Monsoon",R.drawable.monsoon_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("AUGUST", "31 Days","Monsoon",R.drawable.monsoon_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("AUGUST", "31 Days","Monsoon",R.drawable.monsoon_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("SEPTEMBER", "30 Days","Autumn",R.drawable.autumn_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("SEPTEMBER", "30 Days","Autumn",R.drawable.autumn_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("OCTOBER", "31 Days","Autumn",R.drawable.autumn_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("OCTOBER", "31 Days","Autumn",R.drawable.autumn_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("NOVEMBER", "30 Days","Pre-Winter",R.drawable.prewinter_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("NOVEMBER", "30 Days","Pre-Winter",R.drawable.prewinter_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("DECEMBER", "31 Days","Pre-Winter",R.drawable.prewinter_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("DECEMBER", "31 Days","Pre-Winter",R.drawable.prewinter_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
 

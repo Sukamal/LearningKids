@@ -118,7 +118,21 @@ public class HomeActivity extends BaseActivity {
                 startActivity(intent);
             }else{
                 AppDialog appDialog = new AppDialog();
-                appDialog.showErrorDialog(HomeActivity.this,"Check your network connection. For offline mode please subscribe");
+                appDialog.showErrorDialog(HomeActivity.this, "Network Error", "Check your network connection. For offline mode please subscribe", new AppDialog.DialogListener() {
+
+                    @Override
+                    public void OnPositivePress(Object val) {
+                        if(val != null){
+
+                        }
+                    }
+
+                    @Override
+                    public void OnNegativePress() {
+
+                    }
+
+                });
             }
         }
 

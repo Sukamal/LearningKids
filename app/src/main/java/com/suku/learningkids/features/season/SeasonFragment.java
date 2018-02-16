@@ -96,7 +96,7 @@ public class SeasonFragment extends BaseFragment {
     }
 
     private void initPager() {
-        pagerAdapter = new SeasonsPagerAdapter(getContext(), itemModelList);
+        pagerAdapter = new SeasonsPagerAdapter(getActivity(), itemModelList);
         vpFlower.setAdapter(pagerAdapter);
         vpFlower.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

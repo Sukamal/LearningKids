@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
@@ -30,6 +31,8 @@ import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.util.AppDialog;
+import com.suku.learningkids.util.UtilClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +55,11 @@ public class BodyPartsFragment extends BaseFragment {
     RecyclerView rvImageList;
     @BindView(R.id.tv_text)
     TextView tvText;
+    @BindView(R.id.ll_body)
+    LinearLayout llBody;
+    @BindView(R.id.iv_subscribe)
+    ImageView ivSubscribe;
+
 
     private BodyImageAdapter imageAdapter;
     private List<BodyPartsModel> bodyPartsList;
@@ -107,7 +115,7 @@ public class BodyPartsFragment extends BaseFragment {
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
         initCommonItems();
-
+        initClickListner();
     }
 
     private void initPaidVersion(View view) {
@@ -116,6 +124,15 @@ public class BodyPartsFragment extends BaseFragment {
         initCommonItems();
     }
 
+    private void initClickListner(){
+        ivSubscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppDialog appDialog = new AppDialog();
+                appDialog.showPurchaseDialog(getActivity(),"Purchase", "To access please purchase");
+            }
+        });
+    }
 
 
     private void setBodyParts(boolean isPaid){
@@ -226,11 +243,18 @@ public class BodyPartsFragment extends BaseFragment {
             public void onAdapterItemClick(View view, int position, Object selectedItem) {
                 BodyPartsModel partsModel = bodyPartsList.get(position);
                 if(partsModel.getIsLocked()){
+                    llBody.setVisibility(View.GONE);
+                    ivSubscribe.setVisibility(View.VISIBLE);
                     speakOut("Please Subscribe");
+                    initBitmap(R.drawable.subscribe);
                 }else{
+                    llBody.setVisibility(View.VISIBLE);
+                    ivSubscribe.setVisibility(View.GONE);
                     speakOut(partsModel.getText());
                     if(backImage != partsModel.getBackImage()){
                         initBitmap(partsModel.getBackImage());
+                    }else{
+                        initBitmap(R.drawable.body1);
                     }
                     tvText.setText(partsModel.getText());
                     displayBodyParts(partsModel);

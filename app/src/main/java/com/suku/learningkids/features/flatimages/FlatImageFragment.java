@@ -147,7 +147,7 @@ public class FlatImageFragment extends BaseFragment {
 
 
     private void initPager() {
-        pagerAdapter = new ImageItemPagerAdapter(getContext(), imageItemList);
+        pagerAdapter = new ImageItemPagerAdapter(getActivity(), imageItemList);
         vpFlower.setAdapter(pagerAdapter);
         vpFlower.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -808,9 +808,6 @@ public class FlatImageFragment extends BaseFragment {
 
         ItemModel flatImageModel;
 
-        flatImageModel = new ItemModel("PERAMBULATOR", R.drawable.parambulator, false);
-        imageItemList.add(flatImageModel);
-
         flatImageModel = new ItemModel("TRICYCLE", R.drawable.trycycle, false);
         imageItemList.add(flatImageModel);
 
@@ -825,6 +822,9 @@ public class FlatImageFragment extends BaseFragment {
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("JEEP", R.drawable.jeep, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("AUTO RICKSHAW", R.drawable.autorik, false);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("MOTORCYCLE", R.drawable.motorcycle, !isPaid);

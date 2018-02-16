@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.promotion;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class PromotionPagerAdapter extends ImageItemPagerAdapter {
 
-    public PromotionPagerAdapter(Context context, List<ItemModel> flatImageModels) {
+    public PromotionPagerAdapter(Activity context, List<ItemModel> flatImageModels) {
         super(context, flatImageModels);
     }
 

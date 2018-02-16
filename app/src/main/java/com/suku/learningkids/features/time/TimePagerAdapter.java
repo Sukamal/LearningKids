@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.time;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class TimePagerAdapter extends ImageItemPagerAdapter {
 
-    public TimePagerAdapter(Context context, List<ItemModel> flatImageModels) {
+    public TimePagerAdapter(Activity context, List<ItemModel> flatImageModels) {
         super(context, flatImageModels);
     }
 

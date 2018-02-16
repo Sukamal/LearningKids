@@ -2,6 +2,7 @@ package com.suku.learningkids.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -12,6 +13,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.suku.learningkids.application.KidApplication;
+import com.suku.learningkids.features.home.HomeActivity;
 
 /**
  * Created by SukamalD on 09-02-2018.
@@ -64,6 +66,13 @@ public class UtilClass {
 
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+    }
+
+    public static void setConfigAfterPurchage(Activity activity){
+        ((KidApplication)activity.getApplication()).mAppPreference.setAppType(AppConstant.AppType.PAID);
+        Intent intent = new Intent(activity,HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | intent.FLAG_ACTIVITY_SINGLE_TOP );
+        activity.startActivity(intent);
     }
 
 }

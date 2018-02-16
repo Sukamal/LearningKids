@@ -111,7 +111,7 @@ public class NumberFragment extends BaseFragment {
     }
 
     private void initPager(){
-        pagerAdapter = new NumberPagerAdapter(getContext(),alphabetModels);
+        pagerAdapter = new NumberPagerAdapter(getActivity(),alphabetModels);
         vpNumber.setAdapter(pagerAdapter);
         vpNumber.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

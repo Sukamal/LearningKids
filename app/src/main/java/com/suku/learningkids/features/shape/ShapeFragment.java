@@ -95,7 +95,7 @@ public class ShapeFragment extends BaseFragment {
     }
 
     private void initPager() {
-        pagerAdapter = new ShapeImageAdapter(getContext(), itemModelList);
+        pagerAdapter = new ShapeImageAdapter(getActivity(), itemModelList);
         vpFlower.setAdapter(pagerAdapter);
         vpFlower.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

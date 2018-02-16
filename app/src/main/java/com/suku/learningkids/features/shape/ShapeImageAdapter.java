@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.shape;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class ShapeImageAdapter extends ImageItemPagerAdapter {
 
-    public ShapeImageAdapter(Context context, List<ItemModel> flatImageModels) {
+    public ShapeImageAdapter(Activity context, List<ItemModel> flatImageModels) {
         super(context, flatImageModels);
     }
 
@@ -37,16 +38,22 @@ public class ShapeImageAdapter extends ImageItemPagerAdapter {
             tvTitle.setText(flatImageModel.getHeading());
             ivImage.setImageResource(flatImageModel.getImage());
             ivShape.setImageResource(flatImageModel.getImageIcon());
+            ivShape.setVisibility(View.VISIBLE);
             container.addView(itemView);
         }else{
+            ivShape.setVisibility(View.GONE);
             tvTitle.setText("Please Subscribe");
             ivImage.setImageResource(R.drawable.subscribe);
             container.addView(itemView);
+
         }
 
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(flatImageModel.isLocked()){
+                    showPurchaseDialog();
+                }
             }
         });
 

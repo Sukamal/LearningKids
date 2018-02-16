@@ -96,7 +96,7 @@ public class SafetyFragment extends BaseFragment {
     }
 
     private void initPager() {
-        pagerAdapter = new SafetyPagerAdapter(getContext(), itemModelList);
+        pagerAdapter = new SafetyPagerAdapter(getActivity(), itemModelList);
         vpFlower.setAdapter(pagerAdapter);
         vpFlower.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

@@ -68,7 +68,7 @@ public class GoodHabitFragment extends BaseFragment {
 
     private void initFreeVersion(View view) {
         view.findViewById(R.id.ll_banner).setVisibility(View.VISIBLE);
-        setHabitsImages(true);
+        setHabitsImages(false);
         initCommonItems();
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
@@ -95,7 +95,7 @@ public class GoodHabitFragment extends BaseFragment {
     }
 
     private void initPager() {
-        pagerAdapter = new GoodHabitPagerAdapter(getContext(), itemModelList);
+        pagerAdapter = new GoodHabitPagerAdapter(getActivity(), itemModelList);
         vpFlower.setAdapter(pagerAdapter);
         vpFlower.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

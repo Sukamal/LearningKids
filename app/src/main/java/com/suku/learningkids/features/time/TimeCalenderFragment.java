@@ -104,7 +104,7 @@ public class TimeCalenderFragment extends BaseFragment {
     }
 
     private void initTimePager() {
-        timePagerAdapter = new TimePagerAdapter(getContext(), timeItemModelList);
+        timePagerAdapter = new TimePagerAdapter(getActivity(), timeItemModelList);
         vpTime.setAdapter(timePagerAdapter);
         vpTime.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -134,7 +134,7 @@ public class TimeCalenderFragment extends BaseFragment {
     }
 
     private void initDayPager() {
-        dayWeekPagerAdapter = new DayWeekPagerAdapter(getContext(), dayItemModelList);
+        dayWeekPagerAdapter = new DayWeekPagerAdapter(getActivity(), dayItemModelList);
         vpDayWeek.setAdapter(dayWeekPagerAdapter);
         vpDayWeek.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

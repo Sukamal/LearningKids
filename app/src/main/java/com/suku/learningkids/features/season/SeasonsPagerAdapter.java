@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.season;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class SeasonsPagerAdapter extends ImageItemPagerAdapter {
 
-    public SeasonsPagerAdapter(Context context, List<ItemModel> flatImageModels) {
+    public SeasonsPagerAdapter(Activity context, List<ItemModel> flatImageModels) {
         super(context, flatImageModels);
     }
 
@@ -47,6 +48,9 @@ public class SeasonsPagerAdapter extends ImageItemPagerAdapter {
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(flatImageModel.isLocked()){
+                    showPurchaseDialog();
+                }
             }
         });
 

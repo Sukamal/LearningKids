@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.time;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class DayWeekPagerAdapter extends ImageItemPagerAdapter {
 
-    public DayWeekPagerAdapter(Context context, List<ItemModel> flatImageModels) {
+    public DayWeekPagerAdapter(Activity context, List<ItemModel> flatImageModels) {
         super(context, flatImageModels);
     }
 

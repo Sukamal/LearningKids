@@ -95,7 +95,7 @@ public class GoodMannersFragment extends BaseFragment {
     }
 
     private void initPager() {
-        pagerAdapter = new GoodHabitPagerAdapter(getContext(), itemModelList);
+        pagerAdapter = new GoodHabitPagerAdapter(getActivity(), itemModelList);
         vpFlower.setAdapter(pagerAdapter);
         vpFlower.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

@@ -116,7 +116,7 @@ public class PromotionalFragment extends BaseFragment {
     }
 
     private void initPager() {
-        pagerAdapter = new PromotionPagerAdapter(getContext(), itemModelList);
+        pagerAdapter = new PromotionPagerAdapter(getActivity(), itemModelList);
         vpPromotion.setAdapter(pagerAdapter);
         vpPromotion.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

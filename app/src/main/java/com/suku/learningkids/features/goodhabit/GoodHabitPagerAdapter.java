@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.goodhabit;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class GoodHabitPagerAdapter extends ImageItemPagerAdapter {
 
-    public GoodHabitPagerAdapter(Context context, List<ItemModel> flatImageModels) {
+    public GoodHabitPagerAdapter(Activity context, List<ItemModel> flatImageModels) {
         super(context, flatImageModels);
     }
 
@@ -47,6 +48,9 @@ public class GoodHabitPagerAdapter extends ImageItemPagerAdapter {
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(flatImageModel.isLocked()){
+                    showPurchaseDialog();
+                }
             }
         });
 

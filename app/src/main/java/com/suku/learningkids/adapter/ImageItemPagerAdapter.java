@@ -1,6 +1,8 @@
 package com.suku.learningkids.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
@@ -15,8 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
+import com.suku.learningkids.features.home.HomeActivity;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.util.AppConstant;
+import com.suku.learningkids.util.AppDialog;
 
 import java.util.List;
 
@@ -26,7 +32,7 @@ import java.util.List;
 
 public class ImageItemPagerAdapter extends PagerAdapter {
 
-    protected Context context;
+    protected Activity context;
     protected LayoutInflater mLayoutInflater;;
     protected List<ItemModel> flatImageModels;
     protected View itemView;
@@ -36,7 +42,7 @@ public class ImageItemPagerAdapter extends PagerAdapter {
         this.clickListener = clickListener;
     }
 
-    public ImageItemPagerAdapter(Context context, List<ItemModel> flatImageModels){
+    public ImageItemPagerAdapter(Activity context, List<ItemModel> flatImageModels){
         this.context = context;
         this.flatImageModels = flatImageModels;
         mLayoutInflater = LayoutInflater.from(context);
@@ -78,6 +84,9 @@ public class ImageItemPagerAdapter extends PagerAdapter {
         ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(flatImageModel.isLocked()){
+                    showPurchaseDialog();
+                }
             }
         });
 
@@ -107,5 +116,11 @@ public class ImageItemPagerAdapter extends PagerAdapter {
                 ivImage.startAnimation(animation2);
             }
         });
+    }
+
+    protected void showPurchaseDialog(){
+        AppDialog appDialog = new AppDialog();
+        appDialog.showPurchaseDialog(context,"Purchase", "To access please purchase");
+
     }
 }

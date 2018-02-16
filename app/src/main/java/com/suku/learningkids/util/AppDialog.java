@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
@@ -16,8 +17,11 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.suku.learningkids.R;
+import com.suku.learningkids.application.KidApplication;
+import com.suku.learningkids.features.home.HomeActivity;
 
 /**
  * Created by SukamalD on 09-02-2018.
@@ -27,6 +31,8 @@ public class AppDialog {
 
     private Dialog dialog;
     private ProgressDialog mProgressDialog;
+    private DialogListener dialogListener;
+
     public interface DialogListener {
 
         /**  On yes key  */
@@ -73,7 +79,7 @@ public class AppDialog {
         mProgressDialog.setContentView( R.layout.progress_bar );
     }
 
-    public void showErrorDialog(final Activity context, String msg) {
+    public void showErrorDialog(final Activity context, String title,String msg,final DialogListener listener) {
         if (!((Activity) context).isFinishing()) {
 //            dialog = new Dialog(context, R.style.ThemeDialogCustom);
             dialog = new Dialog(context);
@@ -83,6 +89,9 @@ public class AppDialog {
 
             int diveWidth = UtilClass.getDeviceWidthHeight(context).x;
             dialog.getWindow().setLayout((6 * diveWidth)/7, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            TextView TV_title = (TextView) dialog.findViewById(R.id.TV_title);
+            TV_title.setText(title);
 
             TextView TV_errors = (TextView) dialog.findViewById(R.id.TV_errors);
             TV_errors.setText(msg);
@@ -95,6 +104,9 @@ public class AppDialog {
                 @Override
                 public void onClick(View v) {
                     dismissDialog(context);
+                    if(listener != null){
+                        listener.OnPositivePress(null);
+                    }
 
                 }
             });
@@ -105,6 +117,9 @@ public class AppDialog {
                 @Override
                 public void onClick(View v) {
                     dismissDialog(context);
+                    if(listener != null){
+                        listener.OnNegativePress();
+                    }
 
                 }
             });
@@ -112,4 +127,21 @@ public class AppDialog {
         }
 
     }
+
+    public void showPurchaseDialog(final Activity context, String title,String msg){
+        showErrorDialog(context, title, msg, new AppDialog.DialogListener() {
+            @Override
+            public void OnPositivePress(Object val) {
+                Toast.makeText(context,"InAppPurchased",Toast.LENGTH_SHORT).show();
+                UtilClass.setConfigAfterPurchage(context);
+            }
+
+            @Override
+            public void OnNegativePress() {
+
+            }
+        });
+    }
+
+
 }

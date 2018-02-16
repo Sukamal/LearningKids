@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.color;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.util.AppDialog;
 
 import java.util.List;
 
@@ -23,12 +25,12 @@ import java.util.List;
 
 public class ColorPagerAdapter extends PagerAdapter {
 
-    private Context context;
+    private Activity context;
     private LayoutInflater mLayoutInflater;;
     private List<ItemModel> alphabetModels;
     private View itemView;
 
-    public ColorPagerAdapter(Context context, List<ItemModel> alphabetModels){
+    public ColorPagerAdapter(Activity context, List<ItemModel> alphabetModels){
         this.context = context;
         this.alphabetModels = alphabetModels;
         mLayoutInflater = LayoutInflater.from(context);
@@ -72,6 +74,13 @@ public class ColorPagerAdapter extends PagerAdapter {
             tvWord.setTextColor(context.getResources().getColor(R.color.color_red));
             ivImage.setImageResource(R.drawable.subscribe);
             container.addView(itemView);
+            ivImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppDialog appDialog = new AppDialog();
+                    appDialog.showPurchaseDialog(context,"Purchase", "To access please purchase");
+                }
+            });
         }
 
         return itemView;

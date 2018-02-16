@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">LearningBubu</string>
 
-    <string name="google_add_app_id">ca-app-pub-7080915292810431~5957117468</string>
+    <string name="google_add_app_id">ca-app-pub-7030400816232226~1130181631</string>
 
 
-    <!--Production Id-->
-    <!--<string name="google_add_banner_id">ca-app-pub-7080915292810431/2969181418</string>
-    <string name="google_add_interstitial_id">ca-app-pub-7080915292810431/3735160685</string>-->
+    <!--&lt;!&ndash;Production Id&ndash;&gt;-->
+    <!--&lt;!&ndash;<string name="google_add_banner_id">ca-app-pub-7030400816232226/8214464736</string>-->
+    <!--<string name="google_add_interstitial_id">ca-app-pub-7030400816232226/2311756586</string>&ndash;&gt;-->
 
-    <!--Test Account-->
-    <string name="google_add_banner_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="google_add_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <!--&lt;!&ndash;Test Account&ndash;&gt;-->
+    <!--<string name="google_add_banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--<string name="google_add_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
 
 
 

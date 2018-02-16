@@ -177,7 +177,7 @@ public class ColorFragment extends BaseFragment {
     }
 
     private void initPager(){
-        pagerAdapter = new ColorPagerAdapter(getContext(),alphabetModels);
+        pagerAdapter = new ColorPagerAdapter(getActivity(),alphabetModels);
         vpColor.setAdapter(pagerAdapter);
         vpColor.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

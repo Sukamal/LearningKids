@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.numbers;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import com.suku.learningkids.R;
 import com.suku.learningkids.adapter.NumberImageAdapter;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.util.AppDialog;
 
 import java.util.List;
 
@@ -27,12 +29,12 @@ import java.util.List;
 
 public class NumberPagerAdapter extends PagerAdapter {
 
-    private Context context;
+    private Activity context;
     private LayoutInflater mLayoutInflater;;
     private List<ItemModel> alphabetModels;
     private View itemView;
 
-    public NumberPagerAdapter(Context context, List<ItemModel> alphabetModels){
+    public NumberPagerAdapter(Activity context, List<ItemModel> alphabetModels){
         this.context = context;
         this.alphabetModels = alphabetModels;
         mLayoutInflater = LayoutInflater.from(context);
@@ -76,6 +78,13 @@ public class NumberPagerAdapter extends PagerAdapter {
             tvAlphabetCaps.setTextSize(30);
             ivNumberImage.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
+            ivNumberImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AppDialog appDialog = new AppDialog();
+                    appDialog.showPurchaseDialog(context,"Purchase", "To access please purchase");
+                }
+            });
         }
 
         container.addView(itemView);

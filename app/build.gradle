@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    flavorDimensions "free"
+
     defaultConfig {
         applicationId "com.suku.learningkids"
         minSdkVersion 15
@@ -10,20 +13,63 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        prod {
+            keyAlias 'learningbubu'
+            keyPassword '#abcd123'
+            storeFile file('D:/MyProjects/AndroidProject/LearningKids/LearningBubu.jks')
+            storePassword '#abcd123'
+        }
+    }
+
+    productFlavors {
+        production {
+            minSdkVersion 15
+            applicationId 'com.suku.learningkids'
+            signingConfig signingConfigs.prod
+            targetSdkVersion 26
+            testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+            dimension "free"
+            versionCode 1
+            versionName '1.0'
+            proguardFile 'D:/MyProjects/AndroidProject/LearningKids/app/proguard-rules.pro'
+        }
+        devolepment {
+            minSdkVersion 15
+            applicationId 'com.suku.learningkids'
+            proguardFile 'D:/MyProjects/AndroidProject/LearningKids/app/proguard-rules.pro'
+            targetSdkVersion 26
+            dimension "free"
+            testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+            versionCode 1
+            versionName '1.0'
+        }
+    }
+
+
     buildTypes {
+        debug {
+            resValue 'string', 'google_add_banner_id', 'ca-app-pub-3940256099942544/6300978111'
+            resValue 'string', 'google_add_interstitial_id', 'ca-app-pub-3940256099942544/1033173712'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue 'string', 'google_add_banner_id','ca-app-pub-7030400816232226/8214464736'
+            resValue 'string', 'google_add_interstitial_id','ca-app-pub-7030400816232226/2311756586'
+            signingConfig signingConfigs.prod
+            debuggable false
+            jniDebuggable false
         }
     }
-    buildToolsVersion '26.0.2'
+    /* sourceSets {
+         main {
+             aidl.srcDirs = ["src/main/aidl"]
+         }
+     }*/
 
-
-   /* sourceSets {
-        main {
-            aidl.srcDirs = ["src/main/aidl"]
-        }
-    }*/
 }
 
 dependencies {
