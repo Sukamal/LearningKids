@@ -1,7 +1,6 @@
 package com.suku.learningkids.features.flatimages;
 
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,7 +21,6 @@ import com.suku.learningkids.models.ItemModel;
 import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

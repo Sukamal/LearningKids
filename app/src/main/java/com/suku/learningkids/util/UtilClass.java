@@ -7,6 +7,7 @@ import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
@@ -74,5 +75,25 @@ public class UtilClass {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | intent.FLAG_ACTIVITY_SINGLE_TOP );
         activity.startActivity(intent);
     }
+
+    public static String getDeviceId(Context context) {
+
+        String android_device_id = "";
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        android_device_id = telephonyManager.getDeviceId();
+        return android_device_id;
+
+
+    }
+
+    /**
+     * get the android id and save it into shared preference
+     */
+    public static String getAndroidId(Context context) {
+        String androidId = "";
+        androidId = "" + android.provider.Settings.Secure.getString(context.getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
+        return androidId;
+    }
+
 
 }

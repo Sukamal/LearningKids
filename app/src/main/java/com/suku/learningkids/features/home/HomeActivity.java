@@ -1,7 +1,6 @@
 package com.suku.learningkids.features.home;
 
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.GridLayoutManager;
@@ -220,7 +219,7 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SPORTS EQUIPMENTS",R.drawable.football,R.color.color10,R.color.colorPrimary);
+        menuModel = new MenuModel("SPORTS EQUIPMENTS",R.drawable.football_i,R.color.color10,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
         menuModels.add(menuModel);
 

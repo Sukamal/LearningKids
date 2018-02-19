@@ -50,7 +50,7 @@ public class AppPreference {
 
     public String getStringPref(String Key) {
 
-        return preferences.getString(Key, "");
+        return preferences.getString(Key, null);
     }
 
     public void saveIntPref(String key, int value) {
@@ -78,6 +78,22 @@ public class AppPreference {
     public void setAppType(AppConstant.AppType appType) {
         appEditor.putInt(AppConstant.Preferences.APPLICATION_TYPE.name(), appType.getEnumValue());
         appEditor.commit();
+    }
+
+    private String getAppRefId() {
+        return preferences.getString(AppConstant.Preferences.DEVICE_REGISTERED_KEY.name(), null);
+    }
+    public void setAppRefId(String appRefId) {
+        appEditor.putString(AppConstant.Preferences.DEVICE_REGISTERED_KEY.name(), appRefId);
+        appEditor.commit();
+    }
+
+    public boolean isAppRegistered(){
+        if(getAppRefId() == null){
+            return false;
+        }else{
+            return true;
+        }
     }
 
 }

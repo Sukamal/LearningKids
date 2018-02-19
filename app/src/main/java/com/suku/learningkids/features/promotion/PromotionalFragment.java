@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.adapter.ButtomImageAdapter;
@@ -20,7 +21,9 @@ import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 import com.suku.learningkids.features.season.SeasonsPagerAdapter;
+import com.suku.learningkids.models.AppInfo;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.storage.AppPreference;
 import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
@@ -40,11 +43,15 @@ public class PromotionalFragment extends BaseFragment {
     LinearLayout llIndicator;
     @BindView(R.id.btn_submit)
     Button btnSubmit;
+    @BindView(R.id.tv_reference)
+    TextView tvReference;
+
 
 
     private PromotionPagerAdapter pagerAdapter;
     private ArrayList<ItemModel> itemModelList;
     private ButtomImageAdapter imageAdapter;
+    private AppInfo appInfo;
 
 
     @Nullable
@@ -53,6 +60,7 @@ public class PromotionalFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_promossion, container, false);
         ButterKnife.bind(this, view);
         Bundle bundle = getArguments();
+        getAppInfo();
         checkVersion(view);
         return view;
     }
@@ -176,6 +184,19 @@ public class PromotionalFragment extends BaseFragment {
             if(i==position)
                 ((ImageView)llIndicator.getChildAt(i)).setImageResource(R.drawable.circle_dot_fill);
         }
+    }
+
+    private void getAppInfo(){
+        AppPreference appPreference = ((KidApplication) getActivity().getApplication()).mAppPreference;
+        appInfo = new AppInfo();
+        appInfo.setAppRefNum(appPreference.getStringPref(AppConstant.Preferences.DEVICE_REGISTERED_KEY.name()));
+        appInfo.setDeviceId(appPreference.getStringPref(AppConstant.Preferences.DEVICE_ID.name()));
+        appInfo.setIspaid(appPreference.isPaidVersion());
+        setAppInfo();
+    }
+
+    private void setAppInfo(){
+        tvReference.setText(appInfo.getAppRefNum() + " / "+ appInfo.getDeviceId() + " / " + String.valueOf(appInfo.isIspaid()));
     }
 
 }

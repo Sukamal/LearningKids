@@ -69,7 +69,9 @@ public class AppConstant {
     }
 
     public enum Preferences {
-        APPLICATION_TYPE
+        APPLICATION_TYPE,
+        DEVICE_ID,
+        DEVICE_REGISTERED_KEY
     }
 
     public static enum ExtraTag{
