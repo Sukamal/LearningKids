@@ -12,6 +12,7 @@ import com.suku.learningkids.addvertise.AddManager;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.features.BaseActivity;
 import com.suku.learningkids.features.parent.ParentActivity;
+import com.suku.learningkids.purchase.PurchaseActivity;
 import com.suku.learningkids.util.AppConstant;
 import com.suku.learningkids.util.AppDialog;
 import com.suku.learningkids.util.UtilClass;
@@ -69,6 +70,7 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 gotoNextScreen(AppConstant.HomeMenu.PROMOTE.getEnumValue());
+//                startActivity(new Intent(HomeActivity.this, PurchaseActivity.class));
             }
         });
     }

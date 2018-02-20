@@ -8,5 +8,10 @@
     <dimen name="margin_30">30dp</dimen>
     <dimen name="card_height">150dp</dimen>
 
+    <dimen name="sku_details_row_height">216dp</dimen>
+    <dimen name="button_width">150dp</dimen>
+    <dimen name="button_height">50dp</dimen>
+
+
 
 </resources>

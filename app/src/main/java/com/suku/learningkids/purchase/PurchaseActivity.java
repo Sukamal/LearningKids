@@ -18,13 +18,11 @@ public class PurchaseActivity extends AppCompatActivity {
         inAppPurchaseManager= new InAppPurchaseManager(this);
 
 
-        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.state_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent serviceIntent =
-                        new Intent("com.android.vending.billing.InAppBillingService.BIND");
-                serviceIntent.setPackage("com.android.vending");
-                bindService(serviceIntent, inAppPurchaseManager.mServiceConn, Context.BIND_AUTO_CREATE);
+
+//                inAppPurchaseManager.
 
             }
         });
@@ -33,6 +31,5 @@ public class PurchaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        inAppPurchaseManager.unregisterService();
     }
 }

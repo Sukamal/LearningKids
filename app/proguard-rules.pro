@@ -25,7 +25,7 @@
       *;
 }
 
--keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile,
-LineNumberTable, *Annotation*, EnclosingMethod
+-keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile,LineNumberTable, *Annotation*, EnclosingMethod
+-ignorewarnings
 -dontwarn android.webkit.JavascriptInterface
 -dontwarn com.startapp.**

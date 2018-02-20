@@ -85,7 +85,8 @@ public class GoogleAdd {
                 .addTestDevice("D463C1CED27146A7809AA8C59A1E5E8B")
                 .addTestDevice("34BED8A5AA68EBF2EC529B13620F256D")
                 .addTestDevice("8468887C6E2CC15ECCA22E9A5B75D7B6")
-
+//                .setIsDesignedForFamilies(true)
+//                .tagForChildDirectedTreatment(true)
                 .build();
 
         googleAdd.setAdListener(new AdListener() {

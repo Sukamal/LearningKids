@@ -84,7 +84,7 @@ public class SplashActivity extends AppCompatActivity {
     private void checkDeviceRegistration(){
         AppPreference appPreference = ((KidApplication)getApplication()).mAppPreference;
         if(appPreference.getStringPref(AppConstant.Preferences.DEVICE_ID.name()) == null){
-            appPreference.saveStringPref(AppConstant.Preferences.DEVICE_ID.name(), UtilClass.getDeviceId(SplashActivity.this));
+            appPreference.saveStringPref(AppConstant.Preferences.DEVICE_ID.name(), UtilClass.getAndroidId(SplashActivity.this));
         }
         isAppRegistered = appPreference.isAppRegistered();
 
@@ -112,10 +112,19 @@ public class SplashActivity extends AppCompatActivity {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 if(msg.what == MSG_DISPLAY_NEXT_CHARACTER){
-                    char c= s.charAt(i[0]);
-                    Log.d("Strange",""+c);
-                    textView1.append(String.valueOf(c));
-                    i[0]++;
+
+                    if(i[0] < s.length() ){
+
+                        try {
+                            char c= s.charAt(i[0]);
+                            Log.d("Strange",""+c);
+                            textView1.append(String.valueOf(c));
+                            i[0]++;
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
                 }else if(msg.what == MSG_DISPLAY_NEXT_SCREEN){
                     if(isAppRegistered){
                         startActivity(new Intent(SplashActivity.this, HomeActivity.class));
@@ -130,8 +139,10 @@ public class SplashActivity extends AppCompatActivity {
         TimerTask taskEverySplitSecond = new TimerTask() {
             @Override
             public void run() {
-                handler.sendEmptyMessage(MSG_DISPLAY_NEXT_CHARACTER);
-                if (i[0] == length - 1) {
+
+                if (i[0] < length ) {
+                    handler.sendEmptyMessage(MSG_DISPLAY_NEXT_CHARACTER);
+                }else{
                     handler.sendEmptyMessage(MSG_DISPLAY_NEXT_SCREEN);
                     timer.cancel();
                 }
