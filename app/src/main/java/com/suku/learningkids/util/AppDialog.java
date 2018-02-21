@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.suku.learningkids.R;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.features.home.HomeActivity;
+import com.suku.learningkids.purchase.PurchaseActivity;
 
 /**
  * Created by SukamalD on 09-02-2018.
@@ -132,8 +133,9 @@ public class AppDialog {
         showErrorDialog(context, title, msg, new AppDialog.DialogListener() {
             @Override
             public void OnPositivePress(Object val) {
-                Toast.makeText(context,"InAppPurchased",Toast.LENGTH_SHORT).show();
-                UtilClass.setConfigAfterPurchage(context);
+                Toast.makeText(context,"InAppPurchase",Toast.LENGTH_SHORT).show();
+//                UtilClass.setConfigAfterPurchage(context);
+                context.startActivity(new Intent(context,PurchaseActivity.class));
             }
 
             @Override

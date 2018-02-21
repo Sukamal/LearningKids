@@ -8,12 +8,22 @@
 
     <include layout="@layout/layout_add_banner"></include>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/colorAccent"
+        android:text="Under Development"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:visibility="visible"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/ll_banner"
         android:orientation="vertical"
-        android:padding="@dimen/margin_10">
+        android:padding="@dimen/margin_10"
+        android:visibility="gone">
 
         <FrameLayout
             android:layout_width="match_parent"

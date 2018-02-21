@@ -15,6 +15,12 @@ android {
     }
 
     signingConfigs {
+        debug {
+            keyAlias 'learningbubu'
+            keyPassword '#abcd123'
+            storeFile file('D:/MyProjects/AndroidProject/LearningKids/LearningBubu.jks')
+            storePassword '#abcd123'
+        }
         prod {
             keyAlias 'learningbubu'
             keyPassword '#abcd123'
@@ -23,7 +29,7 @@ android {
         }
     }
 
-    productFlavors {
+    /*productFlavors {
         production {
             minSdkVersion 15
             applicationId 'com.suku.learningkids'
@@ -45,7 +51,7 @@ android {
             versionCode 1
             versionName '1.0'
         }
-    }
+    }*/
 
 
     buildTypes {
@@ -53,6 +59,7 @@ android {
             resValue 'string', 'google_add_banner_id', 'ca-app-pub-3940256099942544/6300978111'
             resValue 'string', 'google_add_interstitial_id', 'ca-app-pub-3940256099942544/1033173712'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
         release {
             minifyEnabled true

@@ -30,17 +30,14 @@
             </intent-filter>
         </activity>
 
-
-        <!--<activity
-            android:name=".purchase.PurchaseActivity"
-            android:noHistory="true"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>-->
-
         <activity
             android:name=".features.home.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".features.parent.ParentActivity" />
+
+        <activity
+            android:name=".purchase.PurchaseActivity">
+        </activity>
 
         <!-- FOR STARTAPP ADDVERTIZE -->
 
