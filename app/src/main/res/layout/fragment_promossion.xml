@@ -15,7 +15,7 @@
         android:text="Under Development"
         android:gravity="center"
         android:textSize="20sp"
-        android:visibility="visible"/>
+        android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         android:layout_above="@id/ll_banner"
         android:orientation="vertical"
         android:padding="@dimen/margin_10"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <FrameLayout
             android:layout_width="match_parent"

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
@@ -39,7 +40,7 @@ public class NumberImageAdapter extends RecyclerView.Adapter<NumberImageAdapter.
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.image_list_item, parent, false);
+                .inflate(R.layout.number_image_list_item, parent, false);
         NumberImageAdapter.ImageViewHolder holder = new NumberImageAdapter.ImageViewHolder(view);
         return holder;
     }
@@ -48,6 +49,8 @@ public class NumberImageAdapter extends RecyclerView.Adapter<NumberImageAdapter.
     public void onBindViewHolder(ImageViewHolder holder, int position) {
 
         holder.ivImages.setImageResource(image);
+        holder.tvImagecount.setText(String.valueOf(position+1));
+
     }
 
     @Override
@@ -59,6 +62,10 @@ public class NumberImageAdapter extends RecyclerView.Adapter<NumberImageAdapter.
 
         @BindView(R.id.iv_images)
         ImageView ivImages;
+        @BindView(R.id.tv_imagecount)
+        TextView tvImagecount;
+
+
         int position;
 
         public ImageViewHolder(View itemView) {

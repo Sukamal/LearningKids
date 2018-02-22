@@ -64,8 +64,8 @@ public class NumberPagerAdapter extends PagerAdapter {
 
         ItemModel alphabetModel = alphabetModels.get(position);
 
-        Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/kid1.ttf");
-        tvAlphabetCaps.setTypeface(custom_font);
+//        Typeface custom_font = Typeface.createFromAsset(context.getAssets(), "fonts/kid1.ttf");
+//        tvAlphabetCaps.setTypeface(custom_font);
         tvAlphabetCaps.setTextColor(context.getResources().getColor(R.color.color1));
 
         if(!alphabetModel.isLocked()){

@@ -50,9 +50,9 @@ public class ColorFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void checkVersion(View view) {
@@ -191,8 +191,12 @@ public class ColorFragment extends BaseFragment {
                 rvColorList.scrollToPosition(position);
                 pagerAdapter.startAnimation();
                 ItemModel alphabetModel = alphabetModels.get(position);
-                String text = alphabetModel.getSubheading2() + " color";
-                speakOut(text);
+                if(alphabetModel.isLocked()){
+                    speakOut("Please Subscribe");
+                }else{
+                    String text = alphabetModel.getSubheading2() + " color";
+                    speakOut(text);
+                }
 
             }
 

@@ -225,6 +225,18 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
         menuModels.add(menuModel);
 
+        menuModel = new MenuModel("COMPUTER PARTS & PERIPHERALS",R.drawable.computer,R.color.color5,R.color.colorPrimary);
+        menuModel.setActionCode(AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue());
+        menuModels.add(menuModel);
+
+        menuModel = new MenuModel("BODY PARTS",R.drawable.eye_i,R.color.color3,R.color.colorPrimary);
+        menuModel.setActionCode(AppConstant.HomeMenu.BODYPARTS.getEnumValue());
+        menuModels.add(menuModel);
+
+        menuModel = new MenuModel("ACTIONS",R.drawable.crawl_i,R.color.color10,R.color.colorPrimary);
+        menuModel.setActionCode(AppConstant.HomeMenu.ACTIONS.getEnumValue());
+        menuModels.add(menuModel);
+
         menuModel = new MenuModel("SEASONS",R.drawable.summer,R.color.color8,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SEASONS.getEnumValue());
         menuModels.add(menuModel);
@@ -237,14 +249,6 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.TIMEANDCALENDER.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("COMPUTER PARTS & PERIPHERALS",R.drawable.computer,R.color.color5,R.color.colorPrimary);
-        menuModel.setActionCode(AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue());
-        menuModels.add(menuModel);
-
-        menuModel = new MenuModel("BODY PARTS",R.drawable.eye_i,R.color.color3,R.color.colorPrimary);
-        menuModel.setActionCode(AppConstant.HomeMenu.BODYPARTS.getEnumValue());
-        menuModels.add(menuModel);
-
         menuModel = new MenuModel("GOOD HABITS",R.drawable.toothbrush_i,R.color.color2,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.GOODHABIT.getEnumValue());
         menuModels.add(menuModel);
@@ -255,10 +259,6 @@ public class HomeActivity extends BaseActivity {
 
         menuModel = new MenuModel("SAFETY",R.drawable.float_i,R.color.color9,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SAFETY.getEnumValue());
-        menuModels.add(menuModel);
-
-        menuModel = new MenuModel("ACTIONS",R.drawable.crawl_i,R.color.color10,R.color.colorPrimary);
-        menuModel.setActionCode(AppConstant.HomeMenu.ACTIONS.getEnumValue());
         menuModels.add(menuModel);
 
         menuModel = new MenuModel("OUR HELPERS",R.drawable.doctor_i,R.color.color1,R.color.colorPrimary);

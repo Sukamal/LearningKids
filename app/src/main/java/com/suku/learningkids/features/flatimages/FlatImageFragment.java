@@ -57,9 +57,9 @@ public class FlatImageFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+//        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void checkVersion(View view) {
@@ -460,6 +460,24 @@ public class FlatImageFragment extends BaseFragment {
 
         flatImageModel = new ItemModel("WHITE RAT", R.drawable.whiterat, !isPaid);
         imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("BULL", R.drawable.bull, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("TURKEY", R.drawable.turkey, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("DUCK", R.drawable.duck, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("GOOSE", R.drawable.goose, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("MULE", R.drawable.mule, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("HEN", R.drawable.hen, !isPaid);
+        imageItemList.add(flatImageModel);
     }
 
     private void setWildAnimalImages(boolean isPaid) {
@@ -475,7 +493,6 @@ public class FlatImageFragment extends BaseFragment {
 
         flatImageModel = new ItemModel("FOX", R.drawable.fox, false);
         imageItemList.add(flatImageModel);
-
 
         flatImageModel = new ItemModel("WOLF", R.drawable.wolf, false);
         imageItemList.add(flatImageModel);
@@ -526,6 +543,18 @@ public class FlatImageFragment extends BaseFragment {
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("PANTHER", R.drawable.panther, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("BABOON", R.drawable.baboon, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("HIPPOPOTAMUS", R.drawable.hippo, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("PUMA", R.drawable.puma, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("BISON", R.drawable.bison, !isPaid);
         imageItemList.add(flatImageModel);
 
     }
@@ -727,6 +756,21 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("SNAIL", R.drawable.snail, !isPaid);
         imageItemList.add(flatImageModel);
 
+        flatImageModel = new ItemModel("WALRUS", R.drawable.walrus, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("STINGRAY", R.drawable.stingray, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("PORCUPINE FISH", R.drawable.porcupinefish, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("SQUID", R.drawable.squid, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("MUSSEL", R.drawable.meussel, !isPaid);
+        imageItemList.add(flatImageModel);
+
     }
 
     private void setFoodAndBevarage(boolean isPaid) {
@@ -794,7 +838,7 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("SMOOTHIE", R.drawable.smoothies, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("GARLIC BREAD", R.drawable.gerlicbread, false);
+        flatImageModel = new ItemModel("GARLIC BREAD", R.drawable.gerlicbread,  !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("SOFT DRINK", R.drawable.soft_drink, !isPaid);
@@ -812,17 +856,16 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("BICYCLE", R.drawable.bicycle, false);
         imageItemList.add(flatImageModel);
 
-
         flatImageModel = new ItemModel("SCOOTER", R.drawable.scooter, false);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("AEROPLANE", R.drawable.aeroplane, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("JEEP", R.drawable.jeep, !isPaid);
+        flatImageModel = new ItemModel("AUTO RICKSHAW", R.drawable.autorik, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("AUTO RICKSHAW", R.drawable.autorik, false);
+        flatImageModel = new ItemModel("JEEP", R.drawable.jeep, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("MOTORCYCLE", R.drawable.motorcycle, !isPaid);
@@ -850,6 +893,21 @@ public class FlatImageFragment extends BaseFragment {
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("BUS", R.drawable.bus, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("FIRE ENGINE", R.drawable.fire_engine, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("HOT AIR BALLOON", R.drawable.hot_air_balloon, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("TRACTOR", R.drawable.tractor, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("TRAM", R.drawable.tram, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("TANK", R.drawable.tank, !isPaid);
         imageItemList.add(flatImageModel);
 
     }

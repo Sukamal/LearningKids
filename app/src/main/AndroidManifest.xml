@@ -33,7 +33,9 @@
         <activity
             android:name=".features.home.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".features.parent.ParentActivity" />
+
+        <activity
+            android:name=".features.parent.ParentActivity"/>
 
         <activity
             android:name=".purchase.PurchaseActivity">

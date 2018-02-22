@@ -53,9 +53,9 @@ public class ShapeFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void checkVersion(View view) {
@@ -187,19 +187,31 @@ public class ShapeFragment extends BaseFragment {
         itemModel = new ItemModel("CUBE",R.drawable.rubikcube, R.drawable.cube, !isPaid);
         itemModelList.add(itemModel);
 
+        itemModel = new ItemModel("BLOCK",R.drawable.block_image,R.drawable.block,  !isPaid);
+        itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("SEMICIRCLE",R.drawable.semicircle_image,R.drawable.semicircle,  !isPaid);
+        itemModelList.add(itemModel);
+
         itemModel = new ItemModel("CYLINDER",R.drawable.thermosflusk,R.drawable.cylinder,  !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("CONE",R.drawable.bdcap, R.drawable.cone, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("PYRAMID",R.drawable.pyramidimage,R.drawable.pyramid,  !isPaid);
-        itemModelList.add(itemModel);
-
         itemModel = new ItemModel("SPIRAL",R.drawable.spring,R.drawable.spiral,  !isPaid);
         itemModelList.add(itemModel);
 
+        itemModel = new ItemModel("PYRAMID",R.drawable.pyramidimage,R.drawable.pyramid,  !isPaid);
+        itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("PENTAGON",R.drawable.pentagon,R.drawable.polygon,  !isPaid);
+        itemModelList.add(itemModel);
+
         itemModel = new ItemModel("HEXAGON",R.drawable.hexagon_box,R.drawable.hexagon,  !isPaid);
+        itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("HEPTAGON",R.drawable.heptagon_image,R.drawable.heptagon_shape,  !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("STAR",R.drawable.starfuit,R.drawable.star,  !isPaid);
@@ -207,6 +219,11 @@ public class ShapeFragment extends BaseFragment {
 
         itemModel = new ItemModel("HEART",R.drawable.heart_shaped,R.drawable.heart,  !isPaid);
         itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("CLUB",R.drawable.club_image,R.drawable.clubs,  !isPaid);
+        itemModelList.add(itemModel);
+
+
 
 
     }

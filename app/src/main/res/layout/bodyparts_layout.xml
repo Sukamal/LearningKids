@@ -69,14 +69,32 @@
 
             </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_subscribe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp"
+                android:layout_margin="@dimen/margin_20"
+                android:gravity="center"
+                android:text="Please Subscribe"/>
+
             <ImageView
                 android:id="@+id/iv_subscribe"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/subscribe"
-                android:visibility="gone"/>
+                android:layout_margin="@dimen/margin_20"/>
 
 
+        </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>

@@ -69,8 +69,9 @@ public class NumberFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+        addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+//        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void initFreeVersion(View view) {
@@ -104,7 +105,7 @@ public class NumberFragment extends BaseFragment {
             alphabetModels.add(alphabetModel);
         }
 
-        for(int i=11; i <= 20;i++){
+        for(int i=11; i <= 100;i++){
             alphabetModel = new ItemModel(String.valueOf(i),"","APPLE",R.drawable.apple,!isPaid);
             alphabetModels.add(alphabetModel);
         }

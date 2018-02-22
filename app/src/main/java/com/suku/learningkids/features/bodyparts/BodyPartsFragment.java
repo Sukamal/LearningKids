@@ -57,8 +57,8 @@ public class BodyPartsFragment extends BaseFragment {
     TextView tvText;
     @BindView(R.id.ll_body)
     LinearLayout llBody;
-    @BindView(R.id.iv_subscribe)
-    ImageView ivSubscribe;
+    @BindView(R.id.ll_subscribe)
+    LinearLayout llSubscribe;
 
 
     private BodyImageAdapter imageAdapter;
@@ -96,9 +96,9 @@ public class BodyPartsFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+//        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void checkVersion(View view) {
@@ -125,7 +125,7 @@ public class BodyPartsFragment extends BaseFragment {
     }
 
     private void initClickListner(){
-        ivSubscribe.setOnClickListener(new View.OnClickListener() {
+        llSubscribe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AppDialog appDialog = new AppDialog();
@@ -244,12 +244,12 @@ public class BodyPartsFragment extends BaseFragment {
                 BodyPartsModel partsModel = bodyPartsList.get(position);
                 if(partsModel.getIsLocked()){
                     llBody.setVisibility(View.GONE);
-                    ivSubscribe.setVisibility(View.VISIBLE);
+                    llSubscribe.setVisibility(View.VISIBLE);
                     speakOut("Please Subscribe");
                     initBitmap(R.drawable.subscribe);
                 }else{
                     llBody.setVisibility(View.VISIBLE);
-                    ivSubscribe.setVisibility(View.GONE);
+                    llSubscribe.setVisibility(View.GONE);
                     speakOut(partsModel.getText());
                     if(backImage != partsModel.getBackImage()){
                         initBitmap(partsModel.getBackImage());

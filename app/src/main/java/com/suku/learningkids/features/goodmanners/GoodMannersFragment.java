@@ -53,9 +53,9 @@ public class GoodMannersFragment extends BaseFragment {
 
     private void setAddType() {
         addTypeList = new ArrayList<>();
-//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void checkVersion(View view) {
@@ -160,10 +160,13 @@ public class GoodMannersFragment extends BaseFragment {
 
         ItemModel itemModel;
 
-        itemModel = new ItemModel("Say Namaste to elder people",R.drawable.saynamaste, false);
+        itemModel = new ItemModel("Always help other people",R.drawable.helppeople, false);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("Greed the elders properly",R.drawable.greed_politely, false);
+        itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("Ask permission before touching or taking things",R.drawable.asking_permissin, !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("Behave people very politely ",R.drawable.politeeee, !isPaid);
@@ -178,7 +181,7 @@ public class GoodMannersFragment extends BaseFragment {
         itemModel = new ItemModel("Respect your teacher",R.drawable.respect_teacher, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Always help other people",R.drawable.helppeople, !isPaid);
+        itemModel = new ItemModel("Say Namaste to elder people",R.drawable.saynamaste, !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("Raise your hand to say something in class",R.drawable.raisehand, !isPaid);
@@ -193,10 +196,19 @@ public class GoodMannersFragment extends BaseFragment {
         itemModel = new ItemModel("Say Thanks to the person who helps you",R.drawable.thankyou, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Say Excuse me when you disturb someone",R.drawable.excuseme, !isPaid);
+        itemModel = new ItemModel("Say Excuse me or sorry if you sneeze",R.drawable.coughing_cover, !isPaid);
+        itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("Behave people very politely ",R.drawable.politeeee, !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("Always share things with others",R.drawable.sharetoyes, !isPaid);
+        itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("Keep your books neat and tidy",R.drawable.keepbook, !isPaid);
+        itemModelList.add(itemModel);
+
+        itemModel = new ItemModel("Return things you have borrowed from others",R.drawable.returnthings, !isPaid);
         itemModelList.add(itemModel);
 
     }
