@@ -69,7 +69,7 @@ public class SeasonFragment extends BaseFragment {
     }
 
     private void initFreeVersion(View view) {
-        setSeasonImages(true);
+        setSeasonImages(false);
         initCommonItems();
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
@@ -165,16 +165,16 @@ public class SeasonFragment extends BaseFragment {
         itemModel = new ItemModel("MONSOON", "July and August",R.drawable.monsoon_s, R.drawable.monsoon_i, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("AUTUMN","September and October", R.drawable.autumn_s, R.drawable.autumn_i,  false);
+        itemModel = new ItemModel("AUTUMN","September and October", R.drawable.autumn_s, R.drawable.autumn_i,  !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("PRE-WINTER","November and December", R.drawable.prewinter_s, R.drawable.prewinter_i,false);
+        itemModel = new ItemModel("PRE-WINTER","November and December", R.drawable.prewinter_s, R.drawable.prewinter_i,!isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("WINTER", "January and February",R.drawable.winter_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("WINTER", "January and February",R.drawable.winter_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("SPRING","March and April ",R.drawable.spring_s, R.drawable.spring_i, false);
+        itemModel = new ItemModel("SPRING","March and April ",R.drawable.spring_s, R.drawable.spring_i, !isPaid);
         itemModelList.add(itemModel);
 
 

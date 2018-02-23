@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ServiceConnection;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingClientStateListener;
@@ -60,8 +61,7 @@ public class InAppPurchaseManager implements PurchasesUpdatedListener{
         startServiceConnection(new Runnable() {
             @Override
             public void run() {
-//                getPurchaseItem();
-                queryPurchases();
+                queryPurchasesTest();
                 querySkuDetailsAsync();
             }
         });
@@ -103,7 +103,7 @@ public class InAppPurchaseManager implements PurchasesUpdatedListener{
      * Query purchases across various use cases and deliver the result in a formalized way through
      * a listener
      */
-    public void queryPurchases() {
+    public void queryPurchasesTest() {
         Runnable queryToExecute = new Runnable() {
             @Override
             public void run() {
@@ -116,6 +116,27 @@ public class InAppPurchaseManager implements PurchasesUpdatedListener{
                         if(purchase.getSku().equals("learningbubu1001")){
                             mTokenToBeConsumed = purchase.getPurchaseToken();
                             consumeAsync(mTokenToBeConsumed);
+                        }
+                    }
+                }
+            }
+        };
+
+        executeServiceRequest(queryToExecute);
+    }
+
+    public void queryPurchasesPrd() {
+        Runnable queryToExecute = new Runnable() {
+            @Override
+            public void run() {
+                long time = System.currentTimeMillis();
+                Purchase.PurchasesResult purchasesResult = mBillingClient.queryPurchases(BillingClient.SkuType.INAPP);
+                List<Purchase> purchesedItems = purchasesResult.getPurchasesList();
+
+                if(purchesedItems != null && purchesedItems.size() > 0){
+                    for(Purchase purchase : purchesedItems){
+                        if(purchase.getSku().equals("learningbubu1001")){
+                            UtilClass.setConfigAfterPurchage(mActivity);
                         }
                     }
                 }
@@ -210,7 +231,6 @@ public class InAppPurchaseManager implements PurchasesUpdatedListener{
             Log.i(TAG, "Got a purchase: " + purchase + "; but signature is bad. Skipping...");
             return;
         }
-
         Log.d(TAG, "Got a verified purchase: " + purchase);
         UtilClass.setConfigAfterPurchage(mActivity);
     }
@@ -249,68 +269,9 @@ public class InAppPurchaseManager implements PurchasesUpdatedListener{
         executeServiceRequest(purchaseFlowRequest);
     }
 
-    /*public void startPurchaseFlow(String skuId, String billingType) {
-        BillingFlowParams billingFlowParams = BillingFlowParams.newBuilder()
-                .setType(billingType).setSku(skuId).build();
-        mBillingClient.launchBillingFlow(mActivity, billingFlowParams);
-    }*/
 
-
-
-       /*private void connectToPayServer(){
-        mBillingClient.startConnection(new BillingClientStateListener() {
-            @Override
-            public void onBillingSetupFinished(int responseCode) {
-                if (responseCode == BillingClient.BillingResponse.OK) {
-                    // The billing client is ready. You can query purchases here.
-                    getPurchaseItem();
-                    Log.i(TAG, "onBillingSetupFinished() response: " + responseCode);
-                } else {
-                    Log.w(TAG, "onBillingSetupFinished() error code: " + responseCode);
-                }
-            }
-
-            @Override
-            public void onBillingServiceDisconnected() {
-                // Try to restart the connection on the next request to
-                // Google Play by calling the startConnection() method.
-                Log.w(TAG, "onBillingServiceDisconnected()");
-            }
-        });
-
-    }*/
-
-//    private void getPurchaseItem(){
-//        List<String> skuList = new ArrayList<>();
-//        skuList.add("learningbubu1001");
-//
-//        SkuDetailsParams params = SkuDetailsParams.newBuilder()
-//                .setSkusList(skuList)
-//                .setType(BillingClient.SkuType.INAPP).build();
-//
-//        mBillingClient.querySkuDetailsAsync(params, new SkuDetailsResponseListener() {
-//            @Override
-//            public void onSkuDetailsResponse(int responseCode, List<SkuDetails> skuDetailsList) {
-//                if (responseCode == BillingClient.BillingResponse.OK && skuDetailsList != null) {
-//                    List<SkuDetailData> inList = new ArrayList<>();
-//                    for (SkuDetails details : skuDetailsList) {
-//                        Log.i(TAG, "Found sku: " + details);
-//                        inList.add(new SkuDetailData(details.getSku(), details.getTitle(), details.getPrice(),
-//                                details.getDescription(), details.getType()));
-//                    }
-//
-//                    if (inList.size() == 0) {
-//                        mActivity.finish();
-//                    } else {
-//                        listner.onPurchaseList(inList);
-//                    }
-//                }
-//            }
-//        });
-//
-//    }
-
-
-
+    public void checkPurchaseStatus(){
+        queryPurchasesPrd();
+    }
 
 }

@@ -22,20 +22,19 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_10"
-                android:text="TIME"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:textColor="@color/color1"
                 android:background="@color/color12"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:padding="@dimen/margin_10"
+                android:text="@string/time"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_30"
+                android:textStyle="bold" />
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/vp_time"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="@dimen/margin_10">
-            </android.support.v4.view.ViewPager>
+                android:padding="@dimen/margin_10"></android.support.v4.view.ViewPager>
 
         </LinearLayout>
 
@@ -44,36 +43,34 @@
             android:layout_height="0dp"
             android:layout_weight="0.5"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/tv_days"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_10"
-                android:text="DAYS OF WEEK"
-                android:textSize="25sp"
-                android:textColor="@color/color1"
                 android:background="@color/color12"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:padding="@dimen/margin_10"
+                android:text="@string/days_week"
+                android:textStyle="bold"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_25" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_days_week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true">
-            </android.support.v7.widget.RecyclerView>
+                android:layout_alignParentBottom="true"></android.support.v7.widget.RecyclerView>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/vp_day_week"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/tv_days"
                 android:layout_above="@id/rv_days_week"
-                android:padding="@dimen/margin_10">
-            </android.support.v4.view.ViewPager>
+                android:layout_below="@+id/tv_days"
+                android:padding="@dimen/margin_10"></android.support.v4.view.ViewPager>
 
         </RelativeLayout>
-
-
 
 
     </LinearLayout>

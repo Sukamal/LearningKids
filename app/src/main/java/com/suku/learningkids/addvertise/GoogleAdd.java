@@ -31,9 +31,9 @@ public class GoogleAdd {
         mInterstitialAd = new InterstitialAd(context);
         mInterstitialAd.setAdUnitId(context.getResources().getString(R.string.google_add_interstitial_id));
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("D463C1CED27146A7809AA8C59A1E5E8B")
+                /*.addTestDevice("D463C1CED27146A7809AA8C59A1E5E8B")
                 .addTestDevice("34BED8A5AA68EBF2EC529B13620F256D")
-                .addTestDevice("8468887C6E2CC15ECCA22E9A5B75D7B6")
+                .addTestDevice("8468887C6E2CC15ECCA22E9A5B75D7B6")*/
                 .build();
 
         mInterstitialAd.loadAd(adRequest);
@@ -82,9 +82,9 @@ public class GoogleAdd {
 //                .build();
 
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("D463C1CED27146A7809AA8C59A1E5E8B")
+                /*.addTestDevice("D463C1CED27146A7809AA8C59A1E5E8B")
                 .addTestDevice("34BED8A5AA68EBF2EC529B13620F256D")
-                .addTestDevice("8468887C6E2CC15ECCA22E9A5B75D7B6")
+                .addTestDevice("8468887C6E2CC15ECCA22E9A5B75D7B6")*/
 //                .setIsDesignedForFamilies(true)
 //                .tagForChildDirectedTreatment(true)
                 .build();

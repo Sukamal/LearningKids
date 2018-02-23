@@ -166,10 +166,10 @@ public class MonthsFragment extends BaseFragment {
         itemModel = new ItemModel("MARCH", "30 Days","Spring",R.drawable.spring_s,R.drawable.winter_i, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("APRIL", "31 Days","Spring",R.drawable.spring_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("APRIL", "31 Days","Spring",R.drawable.spring_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("MAY", "30 Days","Summer",R.drawable.summer_s,R.drawable.winter_i, false);
+        itemModel = new ItemModel("MAY", "30 Days","Summer",R.drawable.summer_s,R.drawable.winter_i, !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("JUNE", "31 Days","Summer",R.drawable.summer_s,R.drawable.winter_i, !isPaid);

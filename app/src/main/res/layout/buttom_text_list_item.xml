@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="60dp"
-    android:layout_height="60dp"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/thumb_height"
+    android:layout_height="@dimen/thumb_height"
     android:layout_margin="1dp"
-    android:padding="@dimen/margin_5"
-    android:background="@drawable/rounded_corner_rectangle">
+    android:background="@drawable/rounded_corner_rectangle"
+    android:padding="@dimen/margin_5">
+
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:src="@drawable/apple"
         android:text="JAN"
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:textColor="@color/color12"
-        android:src="@drawable/apple"/>
+        android:textSize="@dimen/text_size_20"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/iv_images_lock"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:src="@drawable/lock"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </FrameLayout>

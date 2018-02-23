@@ -1,7 +1,6 @@
 package com.suku.learningkids.features.safety;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;

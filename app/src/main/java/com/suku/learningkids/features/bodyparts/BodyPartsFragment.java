@@ -129,7 +129,7 @@ public class BodyPartsFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 AppDialog appDialog = new AppDialog();
-                appDialog.showPurchaseDialog(getActivity(),"Purchase", "To access please purchase");
+                appDialog.showPurchaseDialog(getActivity(),getActivity().getString(R.string.subscribe), getActivity().getString(R.string.subscription_details));
             }
         });
     }
@@ -138,22 +138,24 @@ public class BodyPartsFragment extends BaseFragment {
     private void setBodyParts(boolean isPaid){
         bodyPartsList = new ArrayList<BodyPartsModel>();
 
-        BodyPartsModel partsModel = new BodyPartsModel("Forehead",R.drawable.forehead,new Point(204,144),R.drawable.body1,false);
-        bodyPartsList.add(partsModel);
+        BodyPartsModel partsModel;
 
         partsModel = new BodyPartsModel("Ear",R.drawable.ear,new Point(302,193),R.drawable.body1,false);
         bodyPartsList.add(partsModel);
 
-        partsModel = new BodyPartsModel("Cheek",R.drawable.cheek,new Point(266,220),R.drawable.body1,!isPaid);
+        partsModel = new BodyPartsModel("Tooth",R.drawable.teeth,new Point(202,227),R.drawable.body1,false);
         bodyPartsList.add(partsModel);
 
-        partsModel = new BodyPartsModel("Tooth",R.drawable.teeth,new Point(202,227),R.drawable.body1,!isPaid);
-        bodyPartsList.add(partsModel);
-
-        partsModel = new BodyPartsModel("Tongue",R.drawable.tongue,new Point(207,246),R.drawable.body1,!isPaid);
+        partsModel = new BodyPartsModel("Tongue",R.drawable.tongue,new Point(207,246),R.drawable.body1,false);
         bodyPartsList.add(partsModel);
 
         partsModel = new BodyPartsModel("Lip",R.drawable.lips,new Point(233,219),R.drawable.body1,!isPaid);
+        bodyPartsList.add(partsModel);
+
+        partsModel = new BodyPartsModel("Forehead",R.drawable.forehead,new Point(204,144),R.drawable.body1,!isPaid);
+        bodyPartsList.add(partsModel);
+
+        partsModel = new BodyPartsModel("Cheek",R.drawable.cheek,new Point(266,220),R.drawable.body1,!isPaid);
         bodyPartsList.add(partsModel);
 
         partsModel = new BodyPartsModel("Stomach",R.drawable.stomach,new Point(202,393),R.drawable.body1,!isPaid);

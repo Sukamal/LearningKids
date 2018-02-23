@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/margin_10"
         android:orientation="vertical"
-        android:background="#22ff00ff">
+        android:background="@color/color_pink_transparent">
 
         <TextView
             android:id="@+id/tv_number"
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_20"
             android:textColor="@color/color3"
             android:visibility="gone"/>
 

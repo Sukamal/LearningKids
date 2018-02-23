@@ -16,15 +16,13 @@
             android:id="@+id/rv_image_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
-        </android.support.v7.widget.RecyclerView>
+            android:layout_alignParentBottom="true"></android.support.v7.widget.RecyclerView>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp_flower"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/rv_image_list">
-        </android.support.v4.view.ViewPager>
+            android:layout_above="@id/rv_image_list"></android.support.v4.view.ViewPager>
 
 
     </RelativeLayout>

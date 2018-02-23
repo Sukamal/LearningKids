@@ -17,16 +17,15 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="@dimen/margin_10"
-            android:text="DELIVERY VAN"
             android:textColor="@color/color2"
             android:background="@color/color12"
-            android:textSize="35sp" />
+            android:textSize="@dimen/text_size_35" />
 
         <ImageView
             android:id="@+id/iv_item_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="3dp"
+            android:padding="@dimen/margin_5"
             android:src="@drawable/delivery_van" />
 
     </LinearLayout>

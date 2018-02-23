@@ -78,7 +78,7 @@ public class ColorPagerAdapter extends PagerAdapter {
                 @Override
                 public void onClick(View v) {
                     AppDialog appDialog = new AppDialog();
-                    appDialog.showPurchaseDialog(context,"Purchase", "To access please purchase");
+                    appDialog.showPurchaseDialog(context,context.getString(R.string.subscribe), context.getString(R.string.subscription_details));
                 }
             });
         }

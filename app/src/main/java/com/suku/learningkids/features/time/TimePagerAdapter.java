@@ -1,12 +1,9 @@
 package com.suku.learningkids.features.time;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
@@ -25,8 +22,10 @@ public class TimePagerAdapter extends ImageItemPagerAdapter {
         super(context, flatImageModels);
     }
 
+
+
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final  int position) {
         itemView = mLayoutInflater.inflate(R.layout.time_pager_item, container, false);
         TextView tvText = (TextView) itemView.findViewById(R.id.tv_text);
         final ItemModel flatImageModel = flatImageModels.get(position);
@@ -39,6 +38,17 @@ public class TimePagerAdapter extends ImageItemPagerAdapter {
             tvText.setText("Please Subscribe");
             container.addView(itemView);
         }
+
+        tvText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(flatImageModel.isLocked()){
+                    showPurchaseDialog();
+                }
+            }
+        });
+
+
 
         return itemView;
     }

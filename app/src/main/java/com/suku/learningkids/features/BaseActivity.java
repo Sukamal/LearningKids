@@ -20,6 +20,7 @@ public class BaseActivity extends AppCompatActivity {
 
     private AddManager addManager;
     private View view;
+    protected boolean isPaidApp;
 
 
     public void displayAddBasedOnAppType(List<AddManager.AddType> addTypeList){

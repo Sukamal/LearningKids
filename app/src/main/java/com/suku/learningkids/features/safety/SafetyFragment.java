@@ -169,10 +169,10 @@ public class SafetyFragment extends BaseFragment {
         itemModel = new ItemModel("Always cross a busy road at the Zebra crossing","do",R.drawable.zebracrossing, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not play with electric plug point","dont",R.drawable.electric_plug, false);
+        itemModel = new ItemModel("Do not play with electric plug point","dont",R.drawable.electric_plug, !isPaid);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Do not touch any hot surface","dont",R.drawable.hot_surface, false);
+        itemModel = new ItemModel("Do not touch any hot surface","dont",R.drawable.hot_surface, !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("Watch TV from a safe distance","do",R.drawable.watchtv, !isPaid);

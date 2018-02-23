@@ -171,7 +171,7 @@ public class GoodHabitFragment extends BaseFragment {
         itemModel = new ItemModel("Take a bath everyday",R.drawable.take_bath, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Comb your hair neatly",R.drawable.combinghair, false);
+        itemModel = new ItemModel("Comb your hair neatly",R.drawable.combinghair, !isPaid);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("Go to school regularly",R.drawable.gotoschool, !isPaid);

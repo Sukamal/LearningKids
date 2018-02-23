@@ -75,15 +75,18 @@ public class FlatImageFragment extends BaseFragment {
         view.findViewById(R.id.ll_banner).setVisibility(View.VISIBLE);
         getImageSets(false);
         initCommonItems();
-        setAddType();
-        displayAddBasedOnAppType(addTypeList, view);
-
+        displayAdd(view);
     }
 
     private void initPaidVersion(View view) {
         view.findViewById(R.id.ll_banner).setVisibility(View.GONE);
         getImageSets(true);
         initCommonItems();
+    }
+
+    private void displayAdd(View view){
+        setAddType();
+        displayAddBasedOnAppType(addTypeList, view);
     }
 
 
@@ -917,32 +920,31 @@ public class FlatImageFragment extends BaseFragment {
 
         ItemModel flatImageModel;
 
+        flatImageModel = new ItemModel("CUP", R.drawable.cup, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("SAUCER", R.drawable.saucer, false);
+        imageItemList.add(flatImageModel);
+
         flatImageModel = new ItemModel("BOWL", R.drawable.bowl, false);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("CHIMNEY", R.drawable.chimney, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("GAS BURNER", R.drawable.gasburner, false);
+        flatImageModel = new ItemModel("GAS BURNER", R.drawable.gasburner, !isPaid);
         imageItemList.add(flatImageModel);
 
-
-        flatImageModel = new ItemModel("LPG CYLINDER", R.drawable.lpgcylinder, false);
+        flatImageModel = new ItemModel("LPG CYLINDER", R.drawable.lpgcylinder, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("RICE COOKER", R.drawable.ricecooker, false);
+        flatImageModel = new ItemModel("RICE COOKER", R.drawable.ricecooker, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("MICROWAVE OVEN", R.drawable.microwave, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("TEAPOT", R.drawable.teapot, !isPaid);
-        imageItemList.add(flatImageModel);
-
-        flatImageModel = new ItemModel("CUP", R.drawable.cup, !isPaid);
-        imageItemList.add(flatImageModel);
-
-        flatImageModel = new ItemModel("SAUCER", R.drawable.saucer, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("FRYING PAN", R.drawable.fryingpan, !isPaid);
@@ -981,7 +983,7 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("GLASS", R.drawable.glass, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("BUTTER KNIFE", R.drawable.butter_knife, false);
+        flatImageModel = new ItemModel("BUTTER KNIFE", R.drawable.butter_knife, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("FORK", R.drawable.fork, !isPaid);
@@ -1028,11 +1030,10 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("SOAP", R.drawable.soap, false);
         imageItemList.add(flatImageModel);
 
-
         flatImageModel = new ItemModel("TOWEL", R.drawable.towel, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("BUCKET", R.drawable.bucket, false);
+        flatImageModel = new ItemModel("BUCKET", R.drawable.bucket, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("MUG", R.drawable.bathmug, !isPaid);
@@ -1081,14 +1082,13 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("PILLOW", R.drawable.pillow, false);
         imageItemList.add(flatImageModel);
 
-
         flatImageModel = new ItemModel("BOLSTER", R.drawable.bolster, false);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("BLANKET", R.drawable.blanket, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("MATTRESS", R.drawable.mattress, false);
+        flatImageModel = new ItemModel("MATTRESS", R.drawable.mattress, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("DRAWERS", R.drawable.drawer, !isPaid);
@@ -1133,26 +1133,25 @@ public class FlatImageFragment extends BaseFragment {
 
         ItemModel flatImageModel;
 
-        flatImageModel = new ItemModel("STANDING", R.drawable.standing, false);
+        flatImageModel = new ItemModel("CRAWLING", R.drawable.crawling, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("CRYING", R.drawable.crying, false);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("CLAPPING", R.drawable.clapping, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("SMILING", R.drawable.smiling, false);
+        flatImageModel = new ItemModel("STANDING", R.drawable.standing, !isPaid);
         imageItemList.add(flatImageModel);
 
-
-        flatImageModel = new ItemModel("LAUGHING", R.drawable.laughing, false);
+        flatImageModel = new ItemModel("SMILING", R.drawable.smiling, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("EATING", R.drawable.eating, false);
+        flatImageModel = new ItemModel("LAUGHING", R.drawable.laughing, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("CRAWLING", R.drawable.crawling, !isPaid);
-        imageItemList.add(flatImageModel);
-
-        flatImageModel = new ItemModel("CRYING", R.drawable.crying, !isPaid);
+        flatImageModel = new ItemModel("EATING", R.drawable.eating, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("SHOUTING", R.drawable.shouting, !isPaid);
@@ -1198,20 +1197,25 @@ public class FlatImageFragment extends BaseFragment {
 
         ItemModel flatImageModel;
 
+        flatImageModel = new ItemModel("GUITAR", R.drawable.guiter, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("PIANO", R.drawable.piano, false);
+        imageItemList.add(flatImageModel);
+
         flatImageModel = new ItemModel("ACCORDION", R.drawable.accordion, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("BAGPIPE", R.drawable.bagpipe, false);
+        flatImageModel = new ItemModel("BAGPIPE", R.drawable.bagpipe, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("BANJO", R.drawable.banjo, false);
+        flatImageModel = new ItemModel("BANJO", R.drawable.banjo, !isPaid);
         imageItemList.add(flatImageModel);
 
-
-        flatImageModel = new ItemModel("CLARINET", R.drawable.clarinet, false);
+        flatImageModel = new ItemModel("CLARINET", R.drawable.clarinet, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("CONGA", R.drawable.conga, false);
+        flatImageModel = new ItemModel("CONGA", R.drawable.conga, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("DHOL", R.drawable.dhol, !isPaid);
@@ -1221,9 +1225,6 @@ public class FlatImageFragment extends BaseFragment {
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("FLUTE", R.drawable.flute, !isPaid);
-        imageItemList.add(flatImageModel);
-
-        flatImageModel = new ItemModel("GUITAR", R.drawable.guiter, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("HARMONIUM", R.drawable.harmonium, !isPaid);
@@ -1236,9 +1237,6 @@ public class FlatImageFragment extends BaseFragment {
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("MOUTH ORGAN", R.drawable.mouthorgan, !isPaid);
-        imageItemList.add(flatImageModel);
-
-        flatImageModel = new ItemModel("PIANO", R.drawable.piano, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("SARANGI", R.drawable.sarangi, !isPaid);
@@ -1286,10 +1284,10 @@ public class FlatImageFragment extends BaseFragment {
         imageItemList.add(flatImageModel);
 
 
-        flatImageModel = new ItemModel("BASKETBALL", R.drawable.asketball, false);
+        flatImageModel = new ItemModel("BASKETBALL", R.drawable.asketball, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("BADMINTON RACKET", R.drawable.badminton, false);
+        flatImageModel = new ItemModel("BADMINTON RACKET", R.drawable.badminton, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("SHUTTLECOCK", R.drawable.shuttlecock, !isPaid);
@@ -1345,20 +1343,25 @@ public class FlatImageFragment extends BaseFragment {
 
         ItemModel flatImageModel;
 
-        flatImageModel = new ItemModel("BALL PEN", R.drawable.ballpen, false);
+        flatImageModel = new ItemModel("SCHOOL BAG", R.drawable.schoolbag, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("CALCULATOR", R.drawable.calculator, false);
-        imageItemList.add(flatImageModel);
-
-        flatImageModel = new ItemModel("CLIPBOARD", R.drawable.clipboard, false);
-        imageItemList.add(flatImageModel);
-
-
-        flatImageModel = new ItemModel("CLUCHPENCIL", R.drawable.cluchpencil, false);
+        flatImageModel = new ItemModel("PENCIL", R.drawable.pencil, false);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("COLOUR PENCILS", R.drawable.colorpencil, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("BALL PEN", R.drawable.ballpen, false);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("CALCULATOR", R.drawable.calculator, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("CLIPBOARD", R.drawable.clipboard, !isPaid);
+        imageItemList.add(flatImageModel);
+
+        flatImageModel = new ItemModel("CLUTCH PENCIL", R.drawable.cluchpencil, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("COLOUR PLATE", R.drawable.colorplate, !isPaid);
@@ -1400,14 +1403,12 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("PAINT BRUSH", R.drawable.paint_brush, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("PENCIL", R.drawable.pencil, !isPaid);
-        imageItemList.add(flatImageModel);
+
 
         flatImageModel = new ItemModel("SCALE", R.drawable.scale, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("SCHOOL BAG", R.drawable.schoolbag, !isPaid);
-        imageItemList.add(flatImageModel);
+
 
         flatImageModel = new ItemModel("SHARPENER", R.drawable.sharpener, !isPaid);
         imageItemList.add(flatImageModel);
@@ -1443,11 +1444,10 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("TEACHER", R.drawable.teacher, false);
         imageItemList.add(flatImageModel);
 
-
-        flatImageModel = new ItemModel("POLICE", R.drawable.police, false);
+        flatImageModel = new ItemModel("POLICE", R.drawable.police, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("SOLDIER", R.drawable.soldier, false);
+        flatImageModel = new ItemModel("SOLDIER", R.drawable.soldier, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("TICKET CHECKER", R.drawable.ticket_checker, !isPaid);
@@ -1497,10 +1497,10 @@ public class FlatImageFragment extends BaseFragment {
         flatImageModel = new ItemModel("C.P.U", R.drawable.cpu, false);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("MONITOR", R.drawable.monitor, false);
+        flatImageModel = new ItemModel("MONITOR", R.drawable.monitor, !isPaid);
         imageItemList.add(flatImageModel);
 
-        flatImageModel = new ItemModel("C.D", R.drawable.compact_disc, false);
+        flatImageModel = new ItemModel("C.D", R.drawable.compact_disc, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("U.P.S", R.drawable.ups, !isPaid);

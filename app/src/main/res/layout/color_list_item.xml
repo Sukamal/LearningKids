@@ -7,12 +7,12 @@
         android:id="@+id/tv_color"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff0000"
-        android:padding="5dp"
-        android:textColor="@color/color_black"
-        android:textSize="15sp"
+        android:background="@color/color_red"
         android:gravity="center"
-        android:text="White"/>
+        android:padding="@dimen/margin_5"
+        android:text="White"
+        android:textColor="@color/color_black"
+        android:textSize="@dimen/text_size_15" />
 
     <ImageView
         android:id="@+id/iv_images_lock"
@@ -20,8 +20,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:src="@drawable/lock"
-        android:visibility="gone"/>
-
+        android:visibility="gone" />
 
 
 </FrameLayout>

@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#aa000000">
+        android:background="@color/color_black_transparent">
     </RelativeLayout>
 
 
@@ -21,7 +21,7 @@
         android:padding="@dimen/margin_5"
         android:drawableLeft="@mipmap/ic_launcher"
         android:textColor="@color/color_white"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size_25"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:gravity="center_vertical"
@@ -38,8 +38,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:textSize="20sp"
-            android:text="Cancel"
+            android:textSize="@dimen/text_size_20"
+            android:text="@string/cancel"
             android:textColor="@color/colorPrimary"
             android:gravity="center"
             android:padding="@dimen/margin_10"
@@ -50,8 +50,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:textSize="20sp"
-            android:text="Ok"
+            android:textSize="@dimen/text_size_20"
+            android:text="@string/ok"
             android:textColor="@color/colorPrimary"
             android:background="@color/color2"
             android:padding="@dimen/margin_10"
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/color_white"
-            android:textSize="15sp"
+            android:textSize="@dimen/text_size_20"
             android:text="Some Error Message"/>
     </ScrollView>
 

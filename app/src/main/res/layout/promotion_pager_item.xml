@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -9,48 +8,46 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/margin_5"
-        android:background="@drawable/rounded_corner_rectangle_bigborder">
+        android:background="@drawable/rounded_corner_rectangle_bigborder"
+        android:padding="@dimen/margin_5">
 
         <ImageView
             android:id="@+id/iv_backimage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/apple"/>
+            android:src="@drawable/apple" />
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#55000000"/>
+            android:background="@color/color_black_transparent" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_10">
+
             <TextView
                 android:id="@+id/tv_promotion_heading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="30sp"
-                android:textColor="#FFFFFF"
-                android:text="Promote Your App"/>
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_size_30" />
 
             <TextView
                 android:id="@+id/tv_promotion_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_below="@id/tv_promotion_heading"
-                android:textSize="20sp"
-                android:textColor="#FFFFFF"
-                android:text="Promote Your App and earn money. Promote Your App and earn money\nPromote Your App and earn money"/>
+                android:gravity="center"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_size_20" />
 
         </RelativeLayout>
 
 
-
     </FrameLayout>
-
 
 
 </LinearLayout>

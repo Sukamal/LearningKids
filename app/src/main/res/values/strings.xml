@@ -12,10 +12,49 @@
     <!--<string name="google_add_banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
     <!--<string name="google_add_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
 
-
-
     <string name="startapp_add_app_id">201528678</string>
     <string name="banner_id">123456</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+    <string name="time">TIME</string>
+    <string name="days_week">DAYS OF WEEK</string>
+    <string name="hello_parents">Hello Parents</string>
+    <string name="your_promotional_code">Your Promotional Code : </string>
+    <string name="enter_promotional_code">Enter Promotional Code : </string>
+    <string name="submit">Submit</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="subscription_details">Subscribe LearningBubu to enjoy full access without any Advertisement</string>
 
+
+    <string name="menu_english_alphabet">ENGLISH ALPHABET</string>
+    <string name="menu_numbers">NUMBERS</string>
+    <string name="menu_colours">COLOURS</string>
+    <string name="menu_shapes">SHAPES</string>
+    <string name="menu_flowers">FLOWERS</string>
+    <string name="menu_fruits">FRUITS</string>
+    <string name="menu_vegetables">VEGETABLES</string>
+    <string name="menu_domestic_animals">DOMESTIC ANIMALS</string>
+    <string name="menu_wild_animals">WILD ANIMALS</string>
+    <string name="menu_birds">BIRDS</string>
+    <string name="menu_insects_reptiles_amphibians">INSECTS, REPTILES, AMPHIBIANS</string>
+    <string name="menu_sea_creatures">SEA CREATURES</string>
+    <string name="menu_food_and_beverages">FOOD AND BEVERAGES</string>
+    <string name="menu_vehicles">VEHICLES</string>
+    <string name="menu_kitchen">KITCHEN</string>
+    <string name="menu_bathroom">BATHROOM</string>
+    <string name="menu_bedroom">BEDROOM</string>
+    <string name="menu_stationery">STATIONERY</string>
+    <string name="menu_musical_instruments">MUSICAL INSTRUMENTS</string>
+    <string name="menu_sports_equipments">SPORTS EQUIPMENTS</string>
+    <string name="menu_computer_parts">COMPUTER PARTS</string>
+    <string name="menu_body_parts">BODY PARTS</string>
+    <string name="menu_actions">ACTIONS</string>
+    <string name="menu_seasons">SEASONS</string>
+    <string name="menu_months">MONTHS</string>
+    <string name="menu_time_calender">TIME AND CALENDER</string>
+    <string name="menu_good_habits">GOOD HABITS</string>
+    <string name="menu_good_manners">GOOD MANNERS</string>
+    <string name="menu_safety">SAFETY</string>
+    <string name="menu_our_helpers">OUR HELPERS</string>
 
 </resources>

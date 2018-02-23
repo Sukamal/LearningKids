@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="@dimen/margin_10"
-    android:background="#FFFFFF">
+    android:background="@color/color_white">
 
     <TextView
         android:id="@+id/tv_title"
@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_10"
         android:gravity="center"
-        android:text="DELIVERY VAN"
-        android:textSize="30sp"
+        android:textSize="@dimen/text_size_30"
         android:textColor="@color/color3"/>
 
     <ImageView

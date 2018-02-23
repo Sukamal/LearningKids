@@ -1,7 +1,6 @@
 package com.suku.learningkids.features.time;
 
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,18 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.suku.learningkids.R;
-import com.suku.learningkids.adapter.ButtomImageAdapter;
 import com.suku.learningkids.adapter.ButtomTextAdapter;
 import com.suku.learningkids.addvertise.AddManager;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
-import com.suku.learningkids.features.safety.SafetyPagerAdapter;
 import com.suku.learningkids.models.ItemModel;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -74,8 +70,8 @@ public class TimeCalenderFragment extends BaseFragment {
     }
 
     private void initFreeVersion(View view) {
-        setTimeItem(true);
-        setDayWeekItem(true);
+        setTimeItem(false);
+        setDayWeekItem(false);
         initCommonItems();
         setAddType();
         displayAddBasedOnAppType(addTypeList, view);
@@ -130,7 +126,6 @@ public class TimeCalenderFragment extends BaseFragment {
 
             }
         });
-
     }
 
     private void initDayPager() {
@@ -162,7 +157,6 @@ public class TimeCalenderFragment extends BaseFragment {
 
             }
         });
-
     }
 
 
@@ -205,22 +199,22 @@ public class TimeCalenderFragment extends BaseFragment {
         itemModel = new ItemModel("60 Minutes = 1 Hour",0, false);
         timeItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("24 Hours = 1 Day",0, false);
+        itemModel = new ItemModel("24 Hours = 1 Day",0, !isPaid);
         timeItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("7 Days = 1 Week",0, false);
+        itemModel = new ItemModel("7 Days = 1 Week",0, !isPaid);
         timeItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("4 Weeks = 1 Month",0, false);
+        itemModel = new ItemModel("4 Weeks = 1 Month",0, !isPaid);
         timeItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("12 Months = 1 Year",0, false);
+        itemModel = new ItemModel("12 Months = 1 Year",0, !isPaid);
         timeItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("365 Days = 1 Year",0, false);
+        itemModel = new ItemModel("365 Days = 1 Year",0, !isPaid);
         timeItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("52 Weeks = 1 Year",0, false);
+        itemModel = new ItemModel("52 Weeks = 1 Year",0, !isPaid);
         timeItemModelList.add(itemModel);
 
 
@@ -239,19 +233,19 @@ public class TimeCalenderFragment extends BaseFragment {
         itemModel = new ItemModel("MONDAY",0, false);
         dayItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("TUESDAY",0, false);
+        itemModel = new ItemModel("TUESDAY",0, !isPaid);
         dayItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("WEDNESDAY",0, false);
+        itemModel = new ItemModel("WEDNESDAY",0, !isPaid);
         dayItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("THURSDAY",0, false);
+        itemModel = new ItemModel("THURSDAY",0, !isPaid);
         dayItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("FRIDAY",0, false);
+        itemModel = new ItemModel("FRIDAY",0, !isPaid);
         dayItemModelList.add(itemModel);
 
-        itemModel = new ItemModel("SATURDAY",0, false);
+        itemModel = new ItemModel("SATURDAY",0, !isPaid);
         dayItemModelList.add(itemModel);
 
     }

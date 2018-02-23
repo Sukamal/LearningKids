@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_10"
             android:gravity="center"
-            android:text="DELIVERY VAN"
-            android:textSize="60sp"
+            android:textSize="@dimen/text_size_50"
             android:textColor="@color/color3"/>
 
         <TextView
@@ -29,8 +28,7 @@
             android:layout_marginTop="@dimen/margin_10"
             android:layout_marginBottom="@dimen/margin_10"
             android:gravity="center"
-            android:text="DELIVERY VAN"
-            android:textSize="30sp"
+            android:textSize="@dimen/text_size_30"
             android:textColor="@color/color11"/>
 
         <ImageView

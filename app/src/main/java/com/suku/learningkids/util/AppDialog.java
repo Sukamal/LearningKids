@@ -133,7 +133,6 @@ public class AppDialog {
         showErrorDialog(context, title, msg, new AppDialog.DialogListener() {
             @Override
             public void OnPositivePress(Object val) {
-                Toast.makeText(context,"InAppPurchase",Toast.LENGTH_SHORT).show();
 //                UtilClass.setConfigAfterPurchage(context);
                 context.startActivity(new Intent(context,PurchaseActivity.class));
             }

@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="@dimen/margin_10">
+    android:layout_margin="@dimen/margin_10"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.4"
-        android:padding="@dimen/margin_10"
-        android:background="#22ff00ff">
+        android:background="@color/color_pink_transparent"
+        android:padding="@dimen/margin_10">
 
         <TextView
             android:id="@+id/tv_alphabet_caps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
             android:layout_gravity="bottom"
-            android:text="A"
+            android:layout_weight="0.3"
+            android:background="@drawable/rounded_corner_rectangle"
             android:gravity="center"
-            android:textSize="130sp"
+            android:padding="@dimen/margin_5"
+            android:text="A"
             android:textColor="@color/color1"
-            android:background="@drawable/rounded_corner_rectangle"/>
+            android:textSize="120sp" />
+
         <TextView
             android:id="@+id/tv_alphabet_small"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:text="a"
             android:layout_gravity="bottom"
-            android:gravity="center"
-            android:textSize="50sp"
+            android:layout_weight="0.2"
             android:background="@drawable/rounded_corner_rectangle"
-            android:textColor="@color/color4"/>
+            android:gravity="center"
+            android:text="a"
+            android:textColor="@color/color4"
+            android:textSize="50sp" />
+
         <TextView
             android:id="@+id/tv_word"
             android:layout_width="0dp"
@@ -42,8 +44,8 @@
             android:layout_weight="0.6"
             android:gravity="center"
             android:text="APPLE"
-            android:textSize="30sp"
-            android:textColor="@color/color3"/>
+            android:textColor="@color/color3"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
@@ -51,12 +53,9 @@
         android:id="@+id/iv_image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
         android:layout_margin="@dimen/margin_10"
-        android:src="@drawable/alphabet"/>
-
-
-
+        android:layout_weight="0.5"
+        android:src="@drawable/alphabet" />
 
 
 </LinearLayout>

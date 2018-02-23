@@ -166,7 +166,7 @@ public class GoodMannersFragment extends BaseFragment {
         itemModel = new ItemModel("Greed the elders properly",R.drawable.greed_politely, false);
         itemModelList.add(itemModel);
 
-        itemModel = new ItemModel("Ask permission before touching or taking things",R.drawable.asking_permissin, !isPaid);
+        itemModel = new ItemModel("Ask permission before touching or taking things",R.drawable.asking_permissin, false);
         itemModelList.add(itemModel);
 
         itemModel = new ItemModel("Behave people very politely ",R.drawable.politeeee, !isPaid);

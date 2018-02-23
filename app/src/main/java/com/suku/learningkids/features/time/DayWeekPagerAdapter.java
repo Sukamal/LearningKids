@@ -1,12 +1,9 @@
 package com.suku.learningkids.features.time;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suku.learningkids.R;
@@ -26,7 +23,7 @@ public class DayWeekPagerAdapter extends ImageItemPagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         itemView = mLayoutInflater.inflate(R.layout.days_week_pager_item, container, false);
         TextView tvTitle = (TextView) itemView.findViewById(R.id.tv_text);
         final ItemModel flatImageModel = flatImageModels.get(position);
@@ -39,6 +36,15 @@ public class DayWeekPagerAdapter extends ImageItemPagerAdapter {
             tvTitle.setText("Please Subscribe");
             container.addView(itemView);
         }
+
+        tvTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(flatImageModel.isLocked()){
+                    showPurchaseDialog();
+                }
+            }
+        });
 
         return itemView;
     }

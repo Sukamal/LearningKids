@@ -145,123 +145,123 @@ public class HomeActivity extends BaseActivity {
         menuModels = new ArrayList<>();
         MenuModel menuModel ;
 
-        menuModel = new MenuModel("ENGLISH ALPHABET",R.drawable.alphabet,R.color.color1,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_english_alphabet),R.drawable.alphabet,R.color.color1,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.ABC.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("NUMBERS",R.drawable.number,R.color.color2,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_numbers),R.drawable.number,R.color.color2,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.NUMBER.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("COLOURS",R.drawable.color,R.color.color3,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_colours),R.drawable.color,R.color.color3,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.COLOR.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SHAPES",R.drawable.shape,R.color.color4,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_shapes),R.drawable.shape,R.color.color4,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SHAPE.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("FLOWERS",R.drawable.flower,R.color.color5,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_flowers),R.drawable.flower,R.color.color5,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.FLOWER.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("FRUITS",R.drawable.fruit,R.color.color6,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_fruits),R.drawable.fruit,R.color.color6,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.FRUIT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("VEGETABLES",R.drawable.carrot_i,R.color.color7,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_vegetables),R.drawable.carrot_i,R.color.color7,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.VEGETABLE.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("DOMESTIC ANIMALS",R.drawable.cow_i,R.color.color8,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_domestic_animals),R.drawable.cow_i,R.color.color8,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.DOMESTICANIMAL.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("WILD ANIMALS",R.drawable.tiger_i,R.color.color9,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_wild_animals),R.drawable.tiger_i,R.color.color9,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.WILDANIMAL.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("BIRDS",R.drawable.dove,R.color.color10,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_birds),R.drawable.dove,R.color.color10,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.BIRD.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("INSECTS REPTILES & AMPHIBIANS",R.drawable.ladybug,R.color.color1,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_insects_reptiles_amphibians),R.drawable.ladybug,R.color.color1,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.INSECTS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SEA CREATURES",R.drawable.shark_i,R.color.color2,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_sea_creatures),R.drawable.shark_i,R.color.color2,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SEACREATURES.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("FOOD AND BEVERAGES",R.drawable.hamburger,R.color.color3,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_food_and_beverages),R.drawable.hamburger,R.color.color3,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.FOOD.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("VEHICLES",R.drawable.bus_i,R.color.color4,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_vehicles),R.drawable.bus_i,R.color.color4,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.VEHICLES.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("KITCHEN",R.drawable.teapot_i,R.color.color5,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_kitchen),R.drawable.teapot_i,R.color.color5,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.KITCHEN.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("BATHROOM",R.drawable.bathtub_i,R.color.color6,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_bathroom),R.drawable.bathtub_i,R.color.color6,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.BATHROOM.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("BEDROOM",R.drawable.bed_i,R.color.color7,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_bedroom),R.drawable.bed_i,R.color.color7,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.BEDROOM.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("STATIONERY",R.drawable.pencils,R.color.color8,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_stationery),R.drawable.pencils,R.color.color8,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.STATIONARY.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("MUSICAL INSTRUMENTS",R.drawable.guitar,R.color.color9,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_musical_instruments),R.drawable.guitar,R.color.color9,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.MUSICALINSTRUMENT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SPORTS EQUIPMENTS",R.drawable.football_i,R.color.color10,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_sports_equipments),R.drawable.football_i,R.color.color10,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SPORTSEQUIPEMENT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("COMPUTER PARTS & PERIPHERALS",R.drawable.computer,R.color.color5,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_computer_parts),R.drawable.computer,R.color.color5,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.COMPUTERPARTS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("BODY PARTS",R.drawable.eye_i,R.color.color3,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_body_parts),R.drawable.eye_i,R.color.color3,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.BODYPARTS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("ACTIONS",R.drawable.crawl_i,R.color.color10,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_actions),R.drawable.crawl_i,R.color.color10,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.ACTIONS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SEASONS",R.drawable.summer,R.color.color8,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_seasons),R.drawable.summer,R.color.color8,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SEASONS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("MONTHS",R.drawable.calendar,R.color.color7,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_months),R.drawable.calendar,R.color.color7,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.MONTHS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("TIME AND CALENDER",R.drawable.schedule,R.color.color6,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_time_calender),R.drawable.schedule,R.color.color6,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.TIMEANDCALENDER.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("GOOD HABITS",R.drawable.toothbrush_i,R.color.color2,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_good_habits),R.drawable.toothbrush_i,R.color.color2,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.GOODHABIT.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("GOOD MANNERS",R.drawable.manners_i,R.color.color7,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_good_manners),R.drawable.manners_i,R.color.color7,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.GOODMANERS.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("SAFETY",R.drawable.float_i,R.color.color9,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_safety),R.drawable.float_i,R.color.color9,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.SAFETY.getEnumValue());
         menuModels.add(menuModel);
 
-        menuModel = new MenuModel("OUR HELPERS",R.drawable.doctor_i,R.color.color1,R.color.colorPrimary);
+        menuModel = new MenuModel(getString(R.string.menu_our_helpers),R.drawable.doctor_i,R.color.color1,R.color.colorPrimary);
         menuModel.setActionCode(AppConstant.HomeMenu.OURHELPERS.getEnumValue());
         menuModels.add(menuModel);
 

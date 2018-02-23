@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -8,54 +7,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_margin="@dimen/margin_20"
-        android:background="@drawable/rounded_corner_rectangle_bigborder">
+        android:background="@drawable/rounded_corner_rectangle_bigborder"
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/ll_do_dont"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/margin_10"
-        android:background="@color/color_red">
-
-        <TextView
-            android:id="@+id/tv_title"
+        <LinearLayout
+            android:id="@+id/ll_do_dont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_10"
-            android:gravity="center"
-            android:text="DELIVERY VAN"
-            android:textSize="25sp"
-            android:textColor="@color/color2"/>
+            android:background="@color/color_red"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10">
 
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/margin_10"
+                android:textColor="@color/color2"
+                android:textSize="@dimen/text_size_25" />
 
-    </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="3dp">
+            android:padding="@dimen/margin_5">
+
             <ImageView
                 android:id="@+id/iv_item_dont"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
-                android:src="@drawable/dont"
-                />
+                android:src="@drawable/dont" />
 
             <ImageView
                 android:id="@+id/iv_item_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/delivery_van"
-                />
+                android:src="@drawable/delivery_van" />
 
 
         </LinearLayout>
-
 
 
     </LinearLayout>
