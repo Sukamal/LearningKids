@@ -58,8 +58,8 @@ public class FlatImageFragment extends BaseFragment {
     private void setAddType() {
         addTypeList = new ArrayList<>();
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
-//        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
-        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void checkVersion(View view) {
@@ -996,9 +996,6 @@ public class FlatImageFragment extends BaseFragment {
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("SIEVE", R.drawable.sieve, !isPaid);
-        imageItemList.add(flatImageModel);
-
-        flatImageModel = new ItemModel("TRAIN", R.drawable.train, !isPaid);
         imageItemList.add(flatImageModel);
 
         flatImageModel = new ItemModel("SINK", R.drawable.sink, !isPaid);

@@ -9,7 +9,7 @@ android {
         applicationId "com.suku.learningkids"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 3
+        versionCode 5
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -56,19 +56,22 @@ android {
 
     buildTypes {
         debug {
+            resValue 'string', 'google_add_app_id','ca-app-pub-8859764933276492~9256705712'
+            resValue 'string', 'startapp_add_app_id','201528612'
             resValue 'string', 'google_add_banner_id', 'ca-app-pub-3940256099942544/6300978111'
             resValue 'string', 'google_add_interstitial_id', 'ca-app-pub-3940256099942544/1033173712'
-
-            /*resValue 'string', 'google_add_banner_id','ca-app-pub-7030400816232226/8214464736'
-            resValue 'string', 'google_add_interstitial_id','ca-app-pub-7030400816232226/2311756586'*/
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.debug
         }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            resValue 'string', 'google_add_banner_id','ca-app-pub-7030400816232226/8214464736'
-            resValue 'string', 'google_add_interstitial_id','ca-app-pub-7030400816232226/2311756586'
+            resValue 'string', 'google_add_app_id','ca-app-pub-8859764933276492~9256705789'
+            resValue 'string', 'startapp_add_app_id','201528678'
+
+            resValue 'string', 'google_add_banner_id','ca-app-pub-8859764933276492/1738196469'
+            resValue 'string', 'google_add_interstitial_id','ca-app-pub-8859764933276492/1135561239'
+
             signingConfig signingConfigs.prod
             debuggable false
             jniDebuggable false

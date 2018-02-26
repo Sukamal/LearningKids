@@ -32,7 +32,7 @@ public class KidApplication extends Application{
     }
 
     private void initStartAppAdd(){
-        StartAppSDK.init(this, "Your App ID", true);
+        StartAppSDK.init(this, getString(R.string.startapp_add_app_id), true);
     }
 
 

@@ -1,19 +1,9 @@
 <resources>
     <string name="app_name">LearningBubu</string>
 
-    <string name="google_add_app_id">ca-app-pub-7030400816232226~1130181631</string>
+    <!--<string name="google_add_app_id">ca-app-pub-8859764933276492~9256705789</string>-->
+    <!--<string name="startapp_add_app_id">201528678</string>-->
 
-
-    <!--&lt;!&ndash;Production Id&ndash;&gt;-->
-    <!--&lt;!&ndash;<string name="google_add_banner_id">ca-app-pub-7030400816232226/8214464736</string>-->
-    <!--<string name="google_add_interstitial_id">ca-app-pub-7030400816232226/2311756586</string>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;Test Account&ndash;&gt;-->
-    <!--<string name="google_add_banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
-    <!--<string name="google_add_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
-
-    <string name="startapp_add_app_id">201528678</string>
-    <string name="banner_id">123456</string>
     <string name="ok">OK</string>
     <string name="cancel">CANCEL</string>
     <string name="time">TIME</string>
@@ -23,7 +13,7 @@
     <string name="enter_promotional_code">Enter Promotional Code : </string>
     <string name="submit">Submit</string>
     <string name="subscribe">Subscribe</string>
-    <string name="subscription_details">Subscribe LearningBubu to enjoy full access without any Advertisement</string>
+    <string name="subscription_details">Subscribe LearningBubu to enjoy full access in offline mode, without any Advertisement</string>
 
 
     <string name="menu_english_alphabet">ENGLISH ALPHABET</string>

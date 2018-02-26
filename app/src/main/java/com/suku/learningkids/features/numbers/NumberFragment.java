@@ -70,8 +70,8 @@ public class NumberFragment extends BaseFragment {
     private void setAddType() {
         addTypeList = new ArrayList<>();
         addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
-//        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
-        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
 
     private void initFreeVersion(View view) {
