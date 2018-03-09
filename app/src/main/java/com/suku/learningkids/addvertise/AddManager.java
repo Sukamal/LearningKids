@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdView;
 import com.startapp.android.publish.ads.banner.Banner;
+import com.startapp.android.publish.adsCommon.StartAppAd;
 import com.suku.learningkids.R;
 
 import java.util.List;
@@ -54,6 +55,7 @@ public class AddManager {
                     case STARTAPP_BANNER:
                         displayStartAppBanner(view);
                         break;
+
                 }
             }
         }
@@ -75,5 +77,14 @@ public class AddManager {
         startAppAdd.showStartAppBanner(view);
     }
 
+    public static void enableStartAppAdd(){
+        StartAppAd.enableAutoInterstitial();
+    }
+
+    public static void disableStartAppAdd(){
+        StartAppAd.disableSplash();
+        StartAppAd.disableAutoInterstitial();
+
+    }
 
 }

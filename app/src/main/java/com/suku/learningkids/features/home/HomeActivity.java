@@ -57,6 +57,7 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void initFreeVersion(){
+        setAddType();
         initRecyclerView();
         initFloatingButton();
     }
@@ -75,17 +76,29 @@ public class HomeActivity extends BaseActivity {
         });
     }
 
+    private void displayAdd(){
+        isPaidApp = ((KidApplication)getApplication()).mAppPreference.isPaidVersion();
+        if (isPaidApp) {
+            initPaidVersion();
+        } else {
+            initFreeVersion();
+        }
+    }
+
 
     private void setAddType(){
         addTypeList = new ArrayList<>();
-        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+//        addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
+//        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
+        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+        displayAddBasedOnAppType(addTypeList);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        setAddType();
         displayAddBasedOnAppType(addTypeList);
+
     }
 
     private void initRecyclerView(){
@@ -117,6 +130,7 @@ public class HomeActivity extends BaseActivity {
         }else{
             if(UtilClass.isNetworkAvailable(this)){
                 startActivity(intent);
+
             }else{
                 AppDialog appDialog = new AppDialog();
                 appDialog.showErrorDialog(HomeActivity.this, "Network Error", "Check your network connection. For offline mode please subscribe", new AppDialog.DialogListener() {
@@ -265,7 +279,7 @@ public class HomeActivity extends BaseActivity {
         menuModel.setActionCode(AppConstant.HomeMenu.OURHELPERS.getEnumValue());
         menuModels.add(menuModel);
 
-        /*menuModel = new MenuModel("PROMOTE APP",R.drawable.megaphone,R.color.color2,R.color.color_11);
+       /* menuModel = new MenuModel("PROMOTE APP",R.drawable.megaphone,R.color.color2,R.color.color11);
         menuModel.setActionCode(AppConstant.HomeMenu.PROMOTE.getEnumValue());
         menuModels.add(menuModel);*/
 

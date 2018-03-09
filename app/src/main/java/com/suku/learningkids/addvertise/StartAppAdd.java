@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdView;
 import com.startapp.android.publish.ads.banner.Banner;
+import com.startapp.android.publish.adsCommon.StartAppAd;
 import com.suku.learningkids.R;
 
 /**
@@ -38,5 +39,9 @@ public class StartAppAdd {
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT);
         mainLayout.addView(startAppBanner, bannerParameters);
+    }
+
+    public void showStartAppInterstitial(View view){
+        StartAppAd.showAd(activity);
     }
 }

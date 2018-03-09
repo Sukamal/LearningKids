@@ -34,12 +34,15 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+
     private void disableAdd(){
         findViewById(R.id.ll_banner).setVisibility(View.GONE);
+        AddManager.disableStartAppAdd();
     }
 
     private void anableAdd(){
         findViewById(R.id.ll_banner).setVisibility(View.VISIBLE);
+        AddManager.enableStartAppAdd();
     }
 
     protected void speakOut(String text) {

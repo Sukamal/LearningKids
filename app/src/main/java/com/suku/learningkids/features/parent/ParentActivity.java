@@ -62,7 +62,8 @@ public class ParentActivity extends BaseActivity {
         addTypeList = new ArrayList<>();
 //        addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
 //        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
-//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+//        addTypeList.add(AddManager.AddType.STARTAPP_INTERSTITIAL);
     }
 
     @Override
@@ -97,7 +98,7 @@ public class ParentActivity extends BaseActivity {
     private void displayView(int menuItem){
         Fragment fragment = null;
         Bundle bundle = null;
-
+//        displayInterstitial();
         if(menuItem == AppConstant.HomeMenu.ABC.getEnumValue()){
             setToolbarTitle(getString(R.string.menu_english_alphabet));
             fragment = new AlphabetFragment();
