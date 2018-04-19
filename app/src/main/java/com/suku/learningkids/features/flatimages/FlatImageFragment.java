@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.startapp.android.publish.adsCommon.AutoInterstitialPreferences;
+import com.startapp.android.publish.adsCommon.StartAppAd;
+import com.startapp.android.publish.adsCommon.StartAppSDK;
 import com.suku.learningkids.R;
 import com.suku.learningkids.adapter.ButtomImageAdapter;
 import com.suku.learningkids.adapter.ImageItemPagerAdapter;
@@ -55,12 +58,15 @@ public class FlatImageFragment extends BaseFragment {
         return view;
     }
 
+
+
     private void setAddType() {
         addTypeList = new ArrayList<>();
 //        addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
 //        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
 //        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
+
 
     private void checkVersion(View view) {
         isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();

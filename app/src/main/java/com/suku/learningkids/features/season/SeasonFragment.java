@@ -90,6 +90,7 @@ public class SeasonFragment extends BaseFragment {
         initTextToSpeach();
     }
 
+
     private void initCommonItems() {
         initPager();
         initBottomImageRecyclerView();

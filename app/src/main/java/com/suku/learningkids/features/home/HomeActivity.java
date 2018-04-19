@@ -90,16 +90,18 @@ public class HomeActivity extends BaseActivity {
         addTypeList = new ArrayList<>();
 //        addTypeList.add(AddManager.AddType.GOOGLE_INTERSTITIAL);
 //        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
-        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
-        displayAddBasedOnAppType(addTypeList);
+//        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
+//        displayAddBasedOnAppType(addTypeList);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        displayAddBasedOnAppType(addTypeList);
-
+//        displayAddBasedOnAppType(addTypeList);
     }
+
+
+
 
     private void initRecyclerView(){
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
@@ -151,9 +153,9 @@ public class HomeActivity extends BaseActivity {
             }
         }
 
-
-
     }
+
+
 
     private void setHomeMenu(){
         menuModels = new ArrayList<>();

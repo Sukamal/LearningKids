@@ -26,6 +26,7 @@ import android.widget.TextView;
 import com.suku.learningkids.R;
 import com.suku.learningkids.adapter.ButtomImageAdapter;
 import com.suku.learningkids.addvertise.AddManager;
+import com.suku.learningkids.addvertise.StartAppAdd;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
@@ -77,6 +78,7 @@ public class BodyPartsFragment extends BaseFragment {
         ButterKnife.bind(this,view);
         displayScale = getResources().getDisplayMetrics().density;
         checkVersion(view);
+
         return view;
     }
 
@@ -87,6 +89,7 @@ public class BodyPartsFragment extends BaseFragment {
         initTextToSpeach();
 
     }
+
 
     private void initCommonItems() {
         initBitmap(R.drawable.body1);

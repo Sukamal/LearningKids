@@ -88,6 +88,16 @@ public class AppPreference {
         appEditor.commit();
     }
 
+    public long getLastAddDisplayTime() {
+        return preferences.getLong(AppConstant.Preferences.LAST_INTESTETIAL_ADD_DISPLAYED.name(), System.currentTimeMillis());
+    }
+    public void setLastAddDisplayTime() {
+        appEditor.putLong(AppConstant.Preferences.LAST_INTESTETIAL_ADD_DISPLAYED.name(), System.currentTimeMillis());
+        appEditor.commit();
+    }
+
+
+
     public boolean isAppRegistered(){
         if(getAppRefId() == null){
             return false;

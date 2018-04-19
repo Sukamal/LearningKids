@@ -85,6 +85,7 @@ public class ColorFragment extends BaseFragment {
 //        applyAnimation();
     }
 
+
     private void initCommonItems(){
         initPager();
         initAlphabetRecyclerView();

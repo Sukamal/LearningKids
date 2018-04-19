@@ -90,6 +90,7 @@ public class SafetyFragment extends BaseFragment {
         initTextToSpeach();
     }
 
+
     private void initCommonItems() {
         initPager();
         initBottomImageRecyclerView();

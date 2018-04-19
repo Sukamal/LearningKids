@@ -89,6 +89,7 @@ public class MonthsFragment extends BaseFragment {
         initTextToSpeach();
     }
 
+
     private void initCommonItems() {
         initPager();
         initBottomImageRecyclerView();

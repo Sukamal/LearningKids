@@ -1,14 +1,17 @@
 package com.suku.learningkids.features;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 
 import com.suku.learningkids.R;
 import com.suku.learningkids.addvertise.AddManager;
+import com.suku.learningkids.addvertise.StartAppAdd;
 import com.suku.learningkids.application.KidApplication;
 import com.suku.learningkids.util.AppConstant;
 
@@ -70,7 +73,6 @@ public class BaseFragment extends Fragment {
     public void disableAdd(View view){
     }
 
-
     public void displayAddBasedOnAppType(List<AddManager.AddType> addTypeList, View view){
         addManager = new AddManager(getActivity());
         this.view = view;
@@ -109,4 +111,33 @@ public class BaseFragment extends Fragment {
     protected void setApplicationMode(AppConstant.AppType mode){
         ((KidApplication)getActivity().getApplication()).mAppPreference.setAppType(mode);
     }
+
+    public long getAddDisplayTimeDifference(){
+        long lastDisplayed,current,difference = 0;
+        current = System.currentTimeMillis();
+        Log.e("LK_current",String.valueOf(current));
+        lastDisplayed = ((KidApplication)getActivity().getApplication()).mAppPreference.getLastAddDisplayTime();
+        Log.e("LK_last",String.valueOf(lastDisplayed));
+        difference = current - lastDisplayed;
+        Log.e("LK_diff",String.valueOf(difference));
+
+        return difference;
+    }
+
+    public void displayStartAppIntestetialAdd(){
+
+        if(((KidApplication)getActivity().getApplication()).mAppPreference.isPaidVersion() == false){
+            if(getAddDisplayTimeDifference() > Long.parseLong(getString(R.string.add_display_threshoald))){
+                new StartAppAdd(getActivity()).showStartAppInterstitial(null);
+                ((KidApplication)getActivity().getApplication()).mAppPreference.setLastAddDisplayTime();
+            }
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        displayStartAppIntestetialAdd();
+    }
+
 }

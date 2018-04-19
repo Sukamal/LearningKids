@@ -17,6 +17,7 @@ import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.features.BaseFragment;
 import com.suku.learningkids.features.home.RecyclerSpacesItemDecoration;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.util.AppConstant;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -44,6 +45,7 @@ public class AlphabetFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_alphabet,container,false);
         ButterKnife.bind(this,view);
         checkVersion(view);
+//        testCheckPaidVersion();
         return view;
     }
 
@@ -62,6 +64,7 @@ public class AlphabetFragment extends BaseFragment {
 //        addTypeList.add(AddManager.AddType.GOOGLE_BANNER);
 //        addTypeList.add(AddManager.AddType.STARTAPP_BANNER);
     }
+
 
     private void initFreeVersion(View view) {
         setAddType();
@@ -222,6 +225,14 @@ public class AlphabetFragment extends BaseFragment {
         });
 
         rvAlphabetList.setAdapter(listAdapter);
+    }
+
+    private void testCheckPaidVersion(){
+        if(((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion()){
+            setApplicationMode(AppConstant.AppType.FREE);
+        }else{
+            setApplicationMode(AppConstant.AppType.PAID);
+        }
     }
 
 }

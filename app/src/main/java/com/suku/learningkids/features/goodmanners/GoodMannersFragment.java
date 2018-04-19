@@ -89,6 +89,7 @@ public class GoodMannersFragment extends BaseFragment {
         initTextToSpeach();
     }
 
+
     private void initCommonItems() {
         initPager();
         initBottomImageRecyclerView();

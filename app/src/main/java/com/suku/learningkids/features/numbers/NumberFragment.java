@@ -58,6 +58,7 @@ public class NumberFragment extends BaseFragment {
 //        applyAnimation();
     }
 
+
     private void checkVersion(View view) {
         isPaidApp = ((KidApplication) getActivity().getApplication()).mAppPreference.isPaidVersion();
         if (isPaidApp) {

@@ -71,13 +71,16 @@ public class AppConstant {
     public enum Preferences {
         APPLICATION_TYPE,
         DEVICE_ID,
-        DEVICE_REGISTERED_KEY
+        DEVICE_REGISTERED_KEY,
+        LAST_INTESTETIAL_ADD_DISPLAYED
     }
 
     public static enum ExtraTag{
         HOME_MENU_ACTION,
         FLAT_IMAGE_DISPLAY_CODE
     }
+
+    public static long ADD_DISPLAY_THRESHOLD = 60000 * 1;
 
 
 }

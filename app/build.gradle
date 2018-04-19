@@ -9,8 +9,8 @@ android {
         applicationId "com.suku.learningkids"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 6
-        versionName "1.1"
+        versionCode 8
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -60,6 +60,7 @@ android {
             resValue 'string', 'startapp_add_app_id','201528612'
             resValue 'string', 'google_add_banner_id', 'ca-app-pub-3940256099942544/6300978111'
             resValue 'string', 'google_add_interstitial_id', 'ca-app-pub-3940256099942544/1033173712'
+            resValue 'string', 'add_display_threshoald','30000'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.debug
         }
@@ -71,6 +72,8 @@ android {
 
             resValue 'string', 'google_add_banner_id','ca-app-pub-8859764933276492/1738196469'
             resValue 'string', 'google_add_interstitial_id','ca-app-pub-8859764933276492/1135561239'
+
+            resValue 'string', 'add_display_threshoald','240000'
 
             signingConfig signingConfigs.prod
             debuggable false

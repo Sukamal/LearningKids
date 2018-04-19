@@ -93,6 +93,7 @@ public class TimeCalenderFragment extends BaseFragment {
         initTextToSpeach();
     }
 
+
     private void initCommonItems() {
         initTimePager();
         initDayPager();

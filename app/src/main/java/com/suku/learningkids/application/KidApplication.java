@@ -26,6 +26,7 @@ public class KidApplication extends Application{
     public void onCreate() {
         super.onCreate();
         mAppPreference = new AppPreference(this);
+        mAppPreference.setLastAddDisplayTime();
         checkAppFlavour();
         initTextToSpeach();
     }
@@ -36,21 +37,9 @@ public class KidApplication extends Application{
 
     private void initStartAppAdd(){
         StartAppSDK.init(this, getString(R.string.startapp_add_app_id), true);
-
         //gain more control over the frequency of Autostitial Ads using two methods: time frequency and activity frequency.
-
-        StartAppAd.enableAutoInterstitial();
-        //1 minute interval between two consecutive ads (time in seconds)
-        StartAppAd.setAutoInterstitialPreferences(
-                new AutoInterstitialPreferences()
-                        .setSecondsBetweenAds(100)
-        );
-
-        //show an Autostitial after each 3 activities:
-        StartAppAd.setAutoInterstitialPreferences(
-                new AutoInterstitialPreferences()
-                        .setActivitiesBetweenAds(3)
-        );
+        StartAppAd.disableSplash();
+        StartAppAd.disableAutoInterstitial();
     }
 
 
@@ -59,7 +48,7 @@ public class KidApplication extends Application{
         if(mAppPreference.isPaidVersion()){
             AddManager.disableStartAppAdd();
         }else{
-            initGoogleAdd();
+//            initGoogleAdd();
             initStartAppAdd();
 
         }

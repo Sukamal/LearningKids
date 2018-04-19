@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdView;
 import com.startapp.android.publish.ads.banner.Banner;
+import com.startapp.android.publish.adsCommon.AutoInterstitialPreferences;
 import com.startapp.android.publish.adsCommon.StartAppAd;
 import com.suku.learningkids.R;
 
@@ -78,7 +79,13 @@ public class AddManager {
     }
 
     public static void enableStartAppAdd(){
-        StartAppAd.enableAutoInterstitial();
+        disableStartAppAdd();
+//        StartAppAd.enableAutoInterstitial();
+//        StartAppAd.setAutoInterstitialPreferences(
+//                new AutoInterstitialPreferences()
+//                        .setSecondsBetweenAds(200)
+//                        .setActivitiesBetweenAds(4)
+//        );
     }
 
     public static void disableStartAppAdd(){
