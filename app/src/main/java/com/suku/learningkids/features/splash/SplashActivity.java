@@ -46,6 +46,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import suku.com.testlib1.ActivityOne;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -75,9 +76,9 @@ public class SplashActivity extends AppCompatActivity {
     private void initializeSplash(){
         checkDeviceRegistration();
         startZoomInAnimation();
-        if(!isAppRegistered){
-            getAppRegisterInfo();
-        }
+//        if(!isAppRegistered){
+//            getAppRegisterInfo();
+//        }
 
     }
 
@@ -126,10 +127,13 @@ public class SplashActivity extends AppCompatActivity {
                     }
 
                 }else if(msg.what == MSG_DISPLAY_NEXT_SCREEN){
-                    if(isAppRegistered){
-                        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
-                    }
-//
+//                    if(isAppRegistered){
+//                        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+//                    }
+
+//                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                    startActivity(new Intent(SplashActivity.this, ActivityOne.class));
+
                 }
 
             }

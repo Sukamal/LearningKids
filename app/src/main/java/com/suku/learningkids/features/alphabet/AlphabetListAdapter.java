@@ -1,5 +1,6 @@
 package com.suku.learningkids.features.alphabet;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.suku.learningkids.R;
 import com.suku.learningkids.commonInterface.AdapterItemClickListener;
 import com.suku.learningkids.models.ItemModel;
+import com.suku.learningkids.util.UtilClass;
 
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
 
     private List<ItemModel> alphabetList;
     private AdapterItemClickListener clickListener;
+    private Context context;
 
 
 
@@ -42,6 +45,7 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
 
     @Override
     public AlphabetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        context = parent.getContext();
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.alphabet_list_item, parent, false);
         AlphabetViewHolder holder = new AlphabetViewHolder(view);
@@ -52,6 +56,12 @@ public class AlphabetListAdapter extends RecyclerView.Adapter<AlphabetListAdapte
     public void onBindViewHolder(AlphabetViewHolder holder, int position) {
         ItemModel alphabetModel = alphabetList.get(position);
         holder.tvAlphabet.setText(alphabetModel.getHeading());
+//        if(alphabetModel.getHeading().equals("100")){
+//            holder.tvAlphabet.setTextSize(UtilClass.dpToPx(context,20));
+//        }else{
+//            holder.tvAlphabet.setTextSize(UtilClass.dpToPx(context,30));
+//        }
+
         holder.position = position;
         if(alphabetModel.isLocked()){
             holder.ivImagesLock.setVisibility(View.VISIBLE);

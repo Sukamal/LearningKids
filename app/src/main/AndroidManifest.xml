@@ -45,6 +45,9 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity android:name="suku.com.testlib1.ActivityOne">
+        </activity>
+
         <!-- FOR STARTAPP ADDVERTIZE -->
 
         <activity

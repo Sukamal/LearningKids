@@ -9,8 +9,8 @@ android {
         applicationId "com.suku.learningkids"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 8
-        versionName "1.2"
+        versionCode 11
+        versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -56,10 +56,10 @@ android {
 
     buildTypes {
         debug {
-            resValue 'string', 'google_add_app_id','ca-app-pub-8859764933276492~9256705712'
+            resValue 'string', 'google_add_app_id',''
             resValue 'string', 'startapp_add_app_id','201528612'
-            resValue 'string', 'google_add_banner_id', 'ca-app-pub-3940256099942544/6300978111'
-            resValue 'string', 'google_add_interstitial_id', 'ca-app-pub-3940256099942544/1033173712'
+            resValue 'string', 'google_add_banner_id', ''
+            resValue 'string', 'google_add_interstitial_id', ''
             resValue 'string', 'add_display_threshoald','30000'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.debug
@@ -67,11 +67,11 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            resValue 'string', 'google_add_app_id','ca-app-pub-8859764933276492~9256705789'
-            resValue 'string', 'startapp_add_app_id','201528678'
+            resValue 'string', 'google_add_app_id',''
+            /*resValue 'string', 'startapp_add_app_id','203837122'*/
 
-            resValue 'string', 'google_add_banner_id','ca-app-pub-8859764933276492/1738196469'
-            resValue 'string', 'google_add_interstitial_id','ca-app-pub-8859764933276492/1135561239'
+            resValue 'string', 'google_add_banner_id',''
+            resValue 'string', 'google_add_interstitial_id',''
 
             resValue 'string', 'add_display_threshoald','240000'
 
@@ -87,6 +87,18 @@ android {
      }*/
 
 }
+
+
+allprojects {
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -105,6 +117,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 
     compile 'com.android.billingclient:billing:1.0+'
+
 
 
 }
